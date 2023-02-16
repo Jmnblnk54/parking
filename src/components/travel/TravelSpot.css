@@ -1,0 +1,5 @@
+.ant-picker-time-panel
+  .ant-picker-content
+  .ant-picker-time-panel-column::after {
+  all: unset;
+}

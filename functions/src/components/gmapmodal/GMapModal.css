@@ -1,0 +1,62 @@
+.gmap-modal {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100% !important;
+  top: 0 !important;
+}
+.gmap-modal .ant-modal-content {
+  min-width: 40%;
+  height: fit-content;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.gmap-modal .ant-modal-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  width: 100% !important;
+  align-items: flex-start;
+}
+.gmap-modal .top {
+  display: flex;
+  align-items: center;
+}
+.gmap-modal .middle {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+.gmap-modal .middle h2 {
+  margin: 0px 0px 0px 20px;
+  color: #080f28;
+  font-size: 25px;
+}
+.gmap-modal .bottom {
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+  width: 100%;
+}
+.gmap-modal .bottom .modal-button {
+  background: #4d9d74;
+  padding: 6px 30px;
+  border: none;
+  border-radius: 30px;
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.gmap-modal .bottom .modal-button:hover {
+  background: #6db992;
+}
+.gmap-modal .bottom .modal-button:focus-visible {
+  border: none;
+}

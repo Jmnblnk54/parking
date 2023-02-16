@@ -1,0 +1,112 @@
+.edit-spot-modal {
+  top: 0 !important;
+
+  height: 100%;
+  width: 100% !important;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.edit-spot-modal .ant-modal-content {
+  min-width: 90%;
+  min-height: 60%;
+  border-radius: 20px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.edit-spot-modal .ant-modal-body {
+  width: 100% !important;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.edit-spot-modal .ant-input,
+.edit-spot-modal .ant-input-lg,
+.edit-spot-modal .ant-select,
+.edit-spot-modal .ant-input-affix-wrapper {
+  width: 100%;
+  border-bottom: 1px solid #d9d9d9;
+  border-top: 0;
+  border-left: 0;
+  border-right: 0;
+  box-shadow: none;
+  padding: 2px;
+}
+.edit-spot-modal .ant-input-lg,
+.edit-spot-modal .ant-select,
+.edit-spot-modal .ant-input-affix-wrapper {
+  margin-bottom: 10px !important;
+}
+.edit-spot-modal .ant-select-selector {
+  padding: 0px !important;
+  border: none !important;
+  border-bottom: 1px solid black;
+  border-radius: 0;
+}
+
+.edit-spot-modal .ant-input:hover,
+.edit-spot-modal .ant-input-affix-wrapper:hover {
+  border-color: #40a9ff;
+  border-right-width: 1px;
+  z-index: 1;
+}
+
+.edit-spot-modal .input-address {
+  border-bottom: 1px solid #d9d9d9;
+  border-top: 0;
+  border-left: 0;
+  border-right: 0;
+  box-shadow: none;
+  padding: 2px;
+}
+.edit-spot-modal .input-address:focus-visible {
+  outline: none;
+  box-shadow: 0 0 5pt 1pt #b2fed7;
+  border: 1px solid #b2fed8;
+}
+.edit-spot-modal .top {
+  display: flex;
+  align-items: center;
+}
+
+.edit-spot-modal .top h2 {
+  margin: 0px 0px 0px 20px;
+  color: #080f28;
+  font-size: 36px;
+}
+.edit-spot-modal .bottom {
+  margin-top: 20px;
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.edit-spot-modal .bottom .button {
+  padding: 0px 30px;
+  font-size: 16px;
+
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+
+  background: #4d9d74;
+  color: #fff;
+}
+.edit-spot-modal .bottom .button:hover {
+  background: #6db992;
+}
+.edit-spot-modal .rdrCalendarWrapper {
+  width: 100%;
+}
+.edit-spot-modal .rdrMonth {
+  width: 100%;
+}

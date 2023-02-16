@@ -1,0 +1,108 @@
+.editPayment-modal {
+  top: 0;
+  height: 80%;
+  width: 100% !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.editPayment-modal h2 {
+  margin-bottom: 0;
+}
+.editPayment-modal .ant-modal-content {
+  min-width: 40%;
+  min-height: 45%;
+  border-radius: 20px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.editPayment-modal .ant-modal-body {
+  height: 270px;
+  width: 100% !important;
+
+  display: flex;
+  flex-direction: column;
+  /* justify-content: space-between; */
+  align-items: flex-start;
+}
+
+.editPayment-modal .top {
+  display: flex;
+  align-items: center;
+}
+
+.editPayment-modal .top h2 {
+  margin: 0px 0px 0px 20px;
+  color: #080f28;
+  font-size: 36px;
+}
+
+.editPayment-modal .main {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+}
+.editPayment-modal .main .row {
+  margin-top: 10px;
+}
+.editPayment-modal .main .row .ant-input {
+  width: 100%;
+  padding: 10px;
+
+  font-weight: 500;
+
+  border-radius: 0;
+  border-bottom: 1px solid !important;
+  border: none;
+  outline: none;
+
+  color: #091028 !important;
+}
+.editPayment-modal .main .row .ant-input:focus {
+  border: 0 !important;
+  box-shadow: none;
+}
+
+.editPayment-modal .bottom {
+  margin-top: 20px;
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.editPayment-modal .button {
+  background: #4d9d74;
+  padding: 4px 10px;
+  width: 100px;
+  border: none;
+  border-radius: 20px;
+  color: #fff;
+  font-size: 14px;
+  cursor: pointer;
+  margin-left: 5px;
+  height: 30px;
+}
+.editPayment-modal .button:hover {
+  background: #6db992;
+}
+
+@media screen and (max-width: 720px) {
+  .editPayment-modal .ant-modal-content {
+    min-width: 90%;
+  }
+  .editPayment-modal .top h2 {
+    margin: 0px 0px 0px 20px;
+    color: #080f28;
+    font-size: 30px;
+  }
+  .editPayment-modal .button {
+    margin-top: 10px;
+  }
+}
