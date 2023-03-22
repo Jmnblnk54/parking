@@ -625,15 +625,27 @@ export const Super = styled.div`
 `;
 export const Wrapper = styled.div`
   display: flex;
-  width: 100%;
-  justify-content: space-between;
   align-items: center;
-  padding: 40px 30px 20px 40px;
+  width: 100%;
+  max-width: 1157px;
+  margin: auto;
+  padding-top: 20px;
+  padding-bottom: 20px;
   .logo {
-    flex: 2;
+    width: 100%;
+    max-width: 106px;
     img {
       cursor: pointer;
     }
+  }
+
+  .search-div1 {
+    margin-right: 10px;
+    margin-left: 10px;
+  }
+  .nav-menu-div {
+    width: 100%;
+    max-width: 385px;
   }
   .ant-menu-horizontal {
     border: none;
