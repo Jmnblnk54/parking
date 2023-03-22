@@ -138,13 +138,7 @@ export default function YouFindYouGo(props) {
           </Menu>
         </div>
 
-        <div
-          style={{
-            position: "relative",
-            marginTop: "10px",
-            width: "1157px"
-          }}
-        >
+        <div class="hero-search-bar">
           <PlacesAutocomplete
             value={props.addressSearchByTraveler}
             onChange={(e) => handleChange(e)}
@@ -266,6 +260,14 @@ const Wrapper = styled.div`
     height: inherit;
     object-fit: cover;
   }
+
+  .hero-search-bar {
+      position: relative;
+      marginTop: 10px;
+      width: 100%;
+      max-width: 1157px;
+    }
+
   .main {
     display: flex;
     flex-direction: column;

@@ -9,14 +9,15 @@ import { useHistory } from "react-router";
 
 import background2 from "../../../assets/images/background2.png";
 
+
 export default function Header() {
   const history = useHistory();
   const type = localStorage.getItem("User Type");
   return (
     <Wrapper>
       <div className="bg-opacity">
-        <Row style={{ height: "100%" }} align="middle">
-          <Col lg={10} xl={12} md={12} sm={24} xs={24} flex>
+        <div class="host-row">
+          <div class="host-col">
             <h1>HOST WITH YUGO.</h1>
             <h2 id="share-space">
               SHARE YOUR SPACE.
@@ -59,27 +60,54 @@ export default function Header() {
                 </Button>
               </Col>
             </Row>
-          </Col>
-          <Col lg={14} xl={12} md={12} sm={24} xs={24}>
+          </div>
+          <div class="host-col">
             <img className="right-img" src={Group3} width={"100%"} alt="" />
-          </Col>
-        </Row>
+          </div>
+        </div>
       </div>
     </Wrapper>
   );
 }
 export const Wrapper = styled.div`
-  margin-left: 50px;
-  margin-right: 30px;
-  height: fit-content;
-  min-height: calc(100vh - 111px);
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: auto;
+  height: 80vh;
+  padding: 4%;
+
   h1 {
     font-family: arciform;
+    line-height: 15px;
   }
   #share-space {
-    line-height: 60px;
-    font-size: 70px;
+    line-height: 56px;
+    font-size: 63px;
   }
+
+  .right-img {
+    width: 100%;
+    max-width: 820px;
+  }
+
+  .host-col {
+    width: 50%;
+    display: flex;
+    flex-basis: content;
+    flex-direction: column;
+    justify-content: center;
+    // align-items: center;
+    margin: auto;
+  }
+
+  .host-row {
+    padding: 4%;
+    width: 100%;
+    display: flex;
+  }
+
   .ant-btn {
     background-color: #080f28 !important;
     border-radius: 15px !important;

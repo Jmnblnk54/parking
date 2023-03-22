@@ -42,20 +42,23 @@ export default function UserCard() {
   );
 }
 export const Wrapper = styled.div`
-  height: 450px;
-  padding: 0px 40px 50px 40px;
-
+  
+  height: auto;
   display: flex;
-  justify-content: space-between;
   align-items: center;
-
-  background-color: white;
+  justify-content: center;
+  overflow: hidden;
+  width: 100%;
+  padding: 4%;
+  margin: auto;
+  margin-top: 2%;
+  margin-bottom: 2%;
 
   .user-card {
     background: #9c9fa9;
-
-    width: 350px;
-    height: 350px;
+    width: 569px;
+    height: 486px;
+    margin-right: 35.33px;
 
     label {
       font-family: arciform;
@@ -85,8 +88,9 @@ export const Wrapper = styled.div`
   #mobile-icon,
   #money-icon {
     position: absolute;
-    right: -25px;
-    bottom: -30px;
+    width: 316px;
+    right: -47px;
+    bottom: -68px;
   }
 
   @media screen and (max-width: 930px) {
