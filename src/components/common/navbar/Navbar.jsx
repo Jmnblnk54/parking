@@ -627,10 +627,11 @@ export const Wrapper = styled.div`
   display: flex;
   align-items: center;
   width: 100%;
-  max-width: 1157px;
+  // max-width: 1157px;
   margin: auto;
-  padding-top: 20px;
-  padding-bottom: 20px;
+  // padding-top: 20px;
+  // padding-bottom: 20px;
+  padding: 2%;
   .logo {
     width: 100%;
     max-width: 106px;

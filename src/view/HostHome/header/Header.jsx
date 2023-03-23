@@ -61,7 +61,7 @@ export default function Header() {
               </Col>
             </Row>
           </div>
-          <div class="host-col">
+          <div class="host-col-img">
             <img className="right-img" src={Group3} width={"100%"} alt="" />
           </div>
         </div>
@@ -76,15 +76,18 @@ export const Wrapper = styled.div`
   justify-content: center;
   margin: auto;
   height: 80vh;
-  padding: 4%;
+  padding: 2%;
+  margin-top:2%;
+  margin-bottom: 2%;
 
   h1 {
     font-family: arciform;
     line-height: 15px;
   }
   #share-space {
-    line-height: 56px;
-    font-size: 63px;
+    line-height: 68px;
+    font-size: 70px;
+    margin-bottom: 2%;
   }
 
   .right-img {
@@ -93,19 +96,19 @@ export const Wrapper = styled.div`
   }
 
   .host-col {
-    width: 50%;
+    width: 100%;
     display: flex;
     flex-basis: content;
     flex-direction: column;
     justify-content: center;
     // align-items: center;
-    margin: auto;
+    // margin: auto;
   }
 
   .host-row {
-    padding: 4%;
     width: 100%;
     display: flex;
+    justify-content: space-between;
   }
 
   .ant-btn {

@@ -265,7 +265,7 @@ const Wrapper = styled.div`
       position: relative;
       marginTop: 10px;
       width: 100%;
-      max-width: 1157px;
+      // max-width: 1157px;
     }
 
   .main {
@@ -305,7 +305,7 @@ const Wrapper = styled.div`
       align-items: center;
       width: 100%;
       height: 75px;
-      max-width: 1157px;
+      // max-width: 1157px;
     }
     
     .css-2b097c-container {
