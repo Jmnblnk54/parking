@@ -239,6 +239,7 @@ export default function TravellerProfile() {
 
 export const Wrapper = styled.div`
   background-color: rgba(77, 157, 116, 0.2);
+
   .my-Profile {
     display: flex;
     align-items: center;
@@ -253,7 +254,7 @@ export const Wrapper = styled.div`
   }
   .switch-btn {
     width: 416px;
-
+    border: none;
     border-radius: 20px;
     background-color: #080f28;
     color: white;

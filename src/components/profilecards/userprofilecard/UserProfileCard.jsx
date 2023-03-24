@@ -201,6 +201,7 @@ export const Wrapper = styled.div`
     line-height: 0.7;
     min-height: 370px;
     width: 100%;
+    box-shadow: 0px 5px 32px 0px rgba(214,214,214,1);
     h1 {
       margin: 0px;
       font-size: 40px;

@@ -121,11 +121,11 @@ export default function Hostprofilecard({
           </div>
           <Row style={{ marginTop: "10px" }}>
             <Col className="personal-Info-Col">
-              <div className="settings-li">
                 <a onClick={() => setShowPersonal(true)}>
+                  <div className="settings-li">
                   Personal Information
+                  </div>
                 </a>
-              </div>
               {/* <Select
                 defaultValue="personal information"
                 className="personal-Info-Select"
@@ -143,11 +143,11 @@ export default function Hostprofilecard({
           </Row>
           <Row>
             <Col className="personal-Info-Col">
+            <a href onClick={() => setShow(true)}>
               <div className="settings-li">
-                <a href onClick={() => setShow(true)}>
                   Payout Method
-                </a>
               </div>
+              </a>
               {/* <Select
                 defaultValue="payout method"
                 className="personal-Info-Select"
@@ -158,11 +158,11 @@ export default function Hostprofilecard({
           </Row>
           <Row>
             <Col className="personal-Info-Col">
+            <a onClick={() => history.push("/host/myspots")}>
               <div className="settings-li">
-                <a onClick={() => history.push("/host/myspots")}>
                   Listing Information
-                </a>
               </div>
+            </a>
               {/* <Select
                 defaultValue="listing information"
                 className="personal-Info-Select"
@@ -173,9 +173,11 @@ export default function Hostprofilecard({
           </Row>
           <Row>
             <Col xs={24} className="personal-Info-Col">
+            <a onClick={() => setShowReferral(true)}>
               <div className="settings-li">
-                <a onClick={() => setShowReferral(true)}>My Referral Code</a>
+                My Referral Code
               </div>
+              </a>
               {/* <Select
                 defaultValue="my referral code"
                 className="personal-Info-Select"
@@ -226,6 +228,7 @@ export const Wrapper = styled.div`
     line-height: 0.7;
   }
   .user-profile-card {
+    box-shadow: 0px 5px 32px 0px rgba(214,214,214,1);
     border-radius: 20px;
     line-height: 0.7;
     min-height: 370px;
@@ -247,6 +250,8 @@ export const Wrapper = styled.div`
     }
     #account-text {
       margin-top: 20px;
+      text-transform: capitalize;
+      color: #b9b9b9;
     }
   }
   .ant-select:not(.ant-select-customize-input) .ant-select-selector {
@@ -328,9 +333,9 @@ export const Wrapper = styled.div`
 
   .settings-li {
     width: 100%;
-
     padding: 10px 0px;
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid #b9b9b9;
+    color: #000;
 
     a {
       color: black;

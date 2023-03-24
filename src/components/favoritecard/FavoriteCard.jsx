@@ -28,6 +28,7 @@ export default function FavoriteCard() {
 export const Wrapper = styled.div`
   width: 100%;
   .user-profile-card {
+    box-shadow: 0px 5px 32px 0px rgba(214,214,214,1);
     border-radius: 20px;
     margin-top: 20px;
     .ant-card-body {
