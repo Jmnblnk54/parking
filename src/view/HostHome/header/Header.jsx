@@ -16,8 +16,8 @@ export default function Header() {
   return (
     <Wrapper>
       <div className="bg-opacity">
-        <div class="host-row">
-          <div class="host-col">
+        <div className="host-row">
+          <div className="host-col">
             <h1>HOST WITH YUGO.</h1>
             <h2 id="share-space">
               SHARE YOUR SPACE.
@@ -61,7 +61,7 @@ export default function Header() {
               </Col>
             </Row>
           </div>
-          <div class="host-col-img">
+          <div className="host-col-img">
             <img className="right-img" src={Group3} width={"100%"} alt="" />
           </div>
         </div>

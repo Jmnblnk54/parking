@@ -56,21 +56,22 @@ export default function UpcomingTrip() {
                   <div className="details">
                     {/* <h3>{val?.spotData.spotName}</h3> */}
                     <div className="green-title">
-                      {"Spot Name:" + "\t" + val?.spotData.spotName}
+                      <span className="description-title">Spot Name:</span><br></br>
+                      {"\t" + val?.spotData.spotName}
                     </div>
 
-                    <div>Starting&nbsp;On</div>
+                    <div className="description-title">Starting&nbsp;On:</div>
                     <div className="date">
-                      <div>
+                      <div className="green-title">
                         {moment(val?.startDate, "MM-DD-YYYY, ddd hh:mm")
                           .format("MM-DD-YYYY, ddd hh:mm a")
                           .toString()}
                       </div>
                     </div>
 
-                    <div>Leaving&nbsp;On</div>
+                    <div className="description-title">Leaving&nbsp;On:</div>
                     <div className="date">
-                      <div>
+                      <div className="green-title">
                         {moment(val?.endDate, "MM-DD-YYYY, ddd hh:mm")
                           .format("MM-DD-YYYY, ddd hh:mm a")
                           .toString()}

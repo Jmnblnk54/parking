@@ -180,7 +180,7 @@ export default function MyProfile() {
     <>
       <Navbar />
       <Wrapper>
-        <div class="dash">
+        <div className="dash">
           {error ? (
             <Modal
               visible={error ? true : false}
@@ -258,7 +258,6 @@ const Wrapper = styled.div`
   background-color: #e7f0eb;
 
   .dash {
-    // height: fit-content;
     padding: 0px 30px 20px 30px;
 
   }

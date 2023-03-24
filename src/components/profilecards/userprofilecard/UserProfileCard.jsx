@@ -109,24 +109,24 @@ export default function UserProfileCard({ user, setUser }) {
             </Col>
           </Row>
           <div className="Account-Para-Div">
-            <p id="account-text">account settings</p>
+            <p id="account-text" className="description-title">account settings</p>
           </div>
           <Row style={{ marginTop: "10px" }}>
             <Col className="personal-Info-Col">
+            <a onClick={() => setShowPersonal(true)}>
               <div className="settings-li">
-                <a onClick={() => setShowPersonal(true)}>
                   Personal Information
-                </a>
               </div>
+              </a>
             </Col>
           </Row>
           <Row>
             <Col className="personal-Info-Col">
+            <a href onClick={() => setShowPaymentModal(true)}>
               <div className="settings-li">
-                <a href onClick={() => setShowPaymentModal(true)}>
                   Payment Method
-                </a>
               </div>
+              </a>
               {/* <Select
                 defaultValue="payout method"
                 className="personal-Info-Select"
@@ -150,9 +150,11 @@ export default function UserProfileCard({ user, setUser }) {
           </Row> */}
           <Row>
             <Col xs={24} className="personal-Info-Col">
+            <a onClick={() => setShowReferral(true)}>
               <div className="settings-li">
-                <a onClick={() => setShowReferral(true)}>My Referral Code</a>
+                My Referral Code
               </div>
+              </a>
               {/* <Select
                 defaultValue="my referral code"
                 className="personal-Info-Select"
@@ -184,6 +186,11 @@ export default function UserProfileCard({ user, setUser }) {
 export const Wrapper = styled.div`
   .ant-upload {
     width: 0px;
+  }
+  .description-title {
+    color: #b9b9b9;
+    font-weight: normal;
+    text-transform: capitalize;
   }
   .ant-rate {
     color: #4d9d74;
@@ -286,6 +293,8 @@ export const Wrapper = styled.div`
       width: 150px;
       height: 150px;
       border-radius: 50%;
+      border: 4px solid #4d9d74;
+      object-fit: cover;
     }
   }
   .account-image-div {
@@ -300,9 +309,9 @@ export const Wrapper = styled.div`
 
   .settings-li {
     width: 100%;
-
     padding: 10px 0px;
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid #b9b9b9;
+    color: #000;
 
     a {
       color: black;

@@ -138,7 +138,7 @@ export default function YouFindYouGo(props) {
           </Menu>
         </div>
 
-        <div class="hero-search-bar">
+        <div className="hero-search-bar">
           <PlacesAutocomplete
             value={props.addressSearchByTraveler}
             onChange={(e) => handleChange(e)}

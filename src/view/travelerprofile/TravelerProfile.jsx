@@ -179,14 +179,7 @@ export default function TravellerProfile() {
     <>
       <Navbar />
       <Wrapper>
-        <div
-          style={{
-            backgroundColor: "#e7f0eb",
-            paddingLeft: "30px",
-            paddingRight: "30px",
-            paddingBottom: "10px",
-          }}
-        >
+        <div className="dash">
           {error ? <Alert message={error} closable /> : null}
           <div className="my-Profile">
             <h1>MY PROFILE</h1>
@@ -238,13 +231,17 @@ export default function TravellerProfile() {
 }
 
 export const Wrapper = styled.div`
-  background-color: rgba(77, 157, 116, 0.2);
-
+  height: calc(100% - 114.25px);
+  background-color: #e7f0eb;
+  
+  .dash {
+    padding: 0px 30px 20px 30px;
+  }
+  
   .my-Profile {
     display: flex;
     align-items: center;
     justify-content: space-between;
-
     padding-top: 20px;
     padding-bottom: 10px;
     width: 100%;

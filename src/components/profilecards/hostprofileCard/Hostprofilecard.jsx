@@ -117,7 +117,7 @@ export default function Hostprofilecard({
             </Col>
           </Row>
           <div className="Account-Para-Div">
-            <p id="account-text">account settings</p>
+            <p id="account-text" className="description-title">account settings</p>
           </div>
           <Row style={{ marginTop: "10px" }}>
             <Col className="personal-Info-Col">
@@ -216,6 +216,11 @@ export const Wrapper = styled.div`
   .ant-upload {
     width: 0px;
   }
+  .description-title {
+    color: #b9b9b9;
+    font-weight: normal;
+    text-transform: capitalize;
+  }
   .ant-rate {
     color: #4d9d74;
     font-size: 12px;
@@ -250,8 +255,6 @@ export const Wrapper = styled.div`
     }
     #account-text {
       margin-top: 20px;
-      text-transform: capitalize;
-      color: #b9b9b9;
     }
   }
   .ant-select:not(.ant-select-customize-input) .ant-select-selector {
@@ -319,6 +322,8 @@ export const Wrapper = styled.div`
       width: 150px;
       height: 150px;
       border-radius: 50%;
+      border: 4px solid #4d9d74;
+      object-fit: cover;
     }
   }
   .account-image-div {

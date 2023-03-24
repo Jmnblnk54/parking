@@ -25,7 +25,7 @@ export default function Testimonial() {
             ullamcorper suscipit lobortis nisl ut aliquip ex ea co.png
           </p>
           <div className="overlay">
-            <img class="blue-curve" src={curve1} />
+            <img className="blue-curve" src={curve1} />
 
             <img src={Group99} id="user-img" />
             <h1>John Smith</h1>
@@ -39,7 +39,7 @@ export default function Testimonial() {
             ullamcorper suscipit lobortis nisl ut aliquip ex ea co.png
           </p>
           <div className="overlay">
-            <img class="blue-curve" src={curve1} />
+            <img className="blue-curve" src={curve1} />
             <img src={Group99} id="user-img" />
             <h1>Sarah anderson</h1>
           </div>
@@ -52,7 +52,7 @@ export default function Testimonial() {
             ullamcorper suscipit lobortis nisl ut aliquip ex ea co.png
           </p>
           <div className="overlay">
-            <img class="blue-curve last-curve" src={curve1} />
+            <img className="blue-curve last-curve" src={curve1} />
 
             <img src={Group99} id="user-img" />
             <h1>Paul green</h1>
@@ -72,7 +72,7 @@ export default function Testimonial() {
                 aliquip ex ea co.png
               </p>
               <div className="overlay">
-                <img class="blue-curve" src={curve1} />
+                <img className="blue-curve" src={curve1} />
 
                 <img src={Group99} id="user-img" />
                 <h1>John Smith</h1>
@@ -89,7 +89,7 @@ export default function Testimonial() {
                 aliquip ex ea co.png
               </p>
               <div className="overlay">
-                <img class="blue-curve" src={curve2} />
+                <img className="blue-curve" src={curve2} />
                 <img src={Group99} id="user-img" />
                 <h1>Sarah anderson</h1>
               </div>
@@ -105,7 +105,7 @@ export default function Testimonial() {
                 aliquip ex ea co.png
               </p>
               <div className="overlay">
-                <img class="blue-curve last-curve" src={curve3} />
+                <img className="blue-curve last-curve" src={curve3} />
 
                 <img src={Group99} id="user-img" />
                 <h1>Paul green</h1>

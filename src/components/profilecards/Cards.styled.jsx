@@ -44,7 +44,7 @@ export const Wrapper = styled.div`
         align-items: center;
         .image {
           width: 100%;
-          max-width: 139px;
+          // max-width: 139px;
           height: 139px;
           display: flex;
           justify-content: center;
@@ -68,7 +68,6 @@ export const Wrapper = styled.div`
           }
           .green-title {
             margin-top: -3px;
-            font-weight: bold;
             color: #4d9d74;
           }
         }
