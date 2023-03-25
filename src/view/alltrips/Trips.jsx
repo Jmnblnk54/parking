@@ -89,7 +89,8 @@ export default function Trips() {
 export const Wrapper = styled.div`
   background: #eff0f2;
   display: flex;
-  height: calc(100% - 114.25px);
+  // height: calc(100% - 114.25px);
+  height: 100%;
   .reservation-header-div {
     width: 57%;
     overflow-y: scroll;

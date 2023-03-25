@@ -254,7 +254,8 @@ export default function MyProfile() {
 }
 
 const Wrapper = styled.div`
-  height: calc(100% - 114.25px);
+  // height: calc(100% - 114.25px);
+  height: 100%;
   background-color: #e7f0eb;
 
   .dash {
