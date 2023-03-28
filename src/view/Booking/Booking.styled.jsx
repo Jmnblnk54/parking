@@ -9,8 +9,7 @@ export const Wrapper = styled.div`
 
 export const Div = styled.div`
   background-color: #9c9fa9;
-  // height: calc(100% - 114px);
-  height: 100%;
+  height: calc(100% - 114px);
   width: 100%;
   display: flex;
 

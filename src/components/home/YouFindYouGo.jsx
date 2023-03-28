@@ -138,7 +138,13 @@ export default function YouFindYouGo(props) {
           </Menu>
         </div>
 
-        <div className="hero-search-bar">
+        <div
+          style={{
+            width: "100%",
+            position: "relative",
+            marginTop: "10px",
+          }}
+        >
           <PlacesAutocomplete
             value={props.addressSearchByTraveler}
             onChange={(e) => handleChange(e)}
@@ -251,7 +257,7 @@ export default function YouFindYouGo(props) {
 }
 
 const Wrapper = styled.div`
-  height: 80vh;
+  height: calc(100vh - 200px);
   color: white;
   .bg-img {
     position: absolute;
@@ -260,14 +266,6 @@ const Wrapper = styled.div`
     height: inherit;
     object-fit: cover;
   }
-
-  .hero-search-bar {
-      position: relative;
-      marginTop: 10px;
-      width: 100%;
-      // max-width: 1157px;
-    }
-
   .main {
     display: flex;
     flex-direction: column;
@@ -284,9 +282,6 @@ const Wrapper = styled.div`
     }
     .ant-menu-title-content {
       color: white;
-    }
-    .location-search-input {
-      border-radius:5px!important; 
     }
     .ant-menu-horizontal:not(.ant-menu-dark) > .ant-menu-item:hover::after,
     .ant-menu-horizontal:not(.ant-menu-dark) > .ant-menu-submenu:hover::after,
@@ -305,9 +300,7 @@ const Wrapper = styled.div`
       align-items: center;
       width: 100%;
       height: 75px;
-      // max-width: 1157px;
     }
-    
     .css-2b097c-container {
       width: 100%;
     }
@@ -319,9 +312,6 @@ const Wrapper = styled.div`
       padding: 10px 15px;
       color: black;
       border: 1px solid transparent;
-      border-radius: 5px;
-      width: 100%;
-      max-width: ;
       :focus-visible {
         outline: none;
         box-shadow: 0 0 5pt 1pt #b2fed7;

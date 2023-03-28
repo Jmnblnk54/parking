@@ -13,61 +13,58 @@ import bar from "../../assets/icons/bar.svg";
 
 export default function Info() {
   return (
-
-      <InfoSection>
-          <Card className="user-card">
-            <div className="text-responsive">
-              <label>
-                <img src={bar} className="bar1" />u find.
-              </label>
-              <p>
-                input your desired location to compare prices of YUGO spots in the
-                area
-              </p>
-            </div>
-            <img width="250" id="location-icon" src={location} />
-          </Card>
-          <Card className="user-card">
-            <div className="text-responsive">
-              <img className="top-image-center" src={logo} />
-              <p>
-                once you have paid and reserved your spot, you will recieve
-                directions to go to your secured spot.
-              </p>
-            </div>
-            <img width="270" id="car-icon" src={car} />
-          </Card>
-          <Card className="user-card">
-            <div className="text-responsive">
-              <label>
-                <img src={bar} className="bar2" />u park.
-              </label>
-              <p>
-                follow instructions from your host, park and you are all set to go!
-              </p>
-            </div>
-            <img width="270" id="home-icon" src={house} />
-          </Card>
-      </InfoSection>
+    <Wrapper>
+      <Card className="user-card">
+        <div className="text-responsive">
+          <label>
+            <img src={bar} className="bar1" />u find.
+          </label>
+          <p>
+            input your desired location to compare prices of YUGO spots in the
+            area
+          </p>
+        </div>
+        <img width="250" id="location-icon" src={location} />
+      </Card>
+      <Card className="user-card">
+        <div className="text-responsive">
+          <img className="top-image-center" src={logo} />
+          <p>
+            once you have paid and reserved your spot, you will recieve
+            directions to go to your secured spot.
+          </p>
+        </div>
+        <img width="270" id="car-icon" src={car} />
+      </Card>
+      <Card className="user-card">
+        <div className="text-responsive">
+          <label>
+            <img src={bar} className="bar2" />u park.
+          </label>
+          <p>
+            follow instructions from your host, park and you are all set to go!
+          </p>
+        </div>
+        <img width="270" id="home-icon" src={house} />
+      </Card>
+    </Wrapper>
   );
 }
-export const InfoSection = styled.div`
-  height: auto;
+export const Wrapper = styled.div`
+  height: 450px;
+  padding: 0px 40px 50px 40px;
+
   display: flex;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
-  overflow: hidden;
-  width: 100%;
-  padding: 4%;
-  margin: auto;
-  margin-top: 2%;
-  margin-bottom: 2%;
+
+  background-color: white;
 
   .user-card {
     background-color: rgba(77, 157, 116, 0.4);
-    width: 569px;
-    height: 486px;
-    margin-right: 35.33px;
+
+    width: 350px;
+    height: 350px;
 
     label {
       font-family: arciform;
@@ -101,16 +98,10 @@ export const InfoSection = styled.div`
     #car-icon,
     #home-icon {
       position: absolute;
-      width: 405px;
-      right: -58px;
-      bottom: -68px;
+      right: -25px;
+      bottom: -30px;
     }
   }
-
-  .user-card:last-child{
-    margin-right: 0px!important;
-  }
-
   @media screen and (max-width: 930px) {
     flex-direction: column;
     height: fit-content;

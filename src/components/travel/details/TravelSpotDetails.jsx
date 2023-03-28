@@ -269,7 +269,7 @@ function TravelSpotDetails(props) {
                 <div style={{ flex: 1 }}>
                   starting on
                   <div className="date-time">
-                    <div >
+                    <div>
                       {moment(spotData?.startDate).format(
                         "MM-DD-YYYY, ddd hh:mm"
                       )}

@@ -179,7 +179,14 @@ export default function TravellerProfile() {
     <>
       <Navbar />
       <Wrapper>
-        <div className="dash">
+        <div
+          style={{
+            backgroundColor: "#e7f0eb",
+            paddingLeft: "30px",
+            paddingRight: "30px",
+            paddingBottom: "10px",
+          }}
+        >
           {error ? <Alert message={error} closable /> : null}
           <div className="my-Profile">
             <h1>MY PROFILE</h1>
@@ -231,18 +238,12 @@ export default function TravellerProfile() {
 }
 
 export const Wrapper = styled.div`
-  // height: calc(100% - 114.25px);
-    height: 100%;
-  background-color: #e7f0eb;
-  
-  .dash {
-    padding: 0px 30px 20px 30px;
-  }
-  
+  background-color: rgba(77, 157, 116, 0.2);
   .my-Profile {
     display: flex;
     align-items: center;
     justify-content: space-between;
+
     padding-top: 20px;
     padding-bottom: 10px;
     width: 100%;
@@ -252,7 +253,7 @@ export const Wrapper = styled.div`
   }
   .switch-btn {
     width: 416px;
-    border: none;
+
     border-radius: 20px;
     background-color: #080f28;
     color: white;

@@ -12,6 +12,8 @@ import twitter from "../../../assets/twitter.png";
 
 import styled from "styled-components";
 export default function Footer() {
+  const userType = localStorage.getItem("User Type");
+
   return (
     <Wrapper>
       <div className="main">
@@ -59,18 +61,22 @@ export default function Footer() {
               <div className="top">
                 <img className="logo" src={whiteLogoSvg} />
               </div>
-              <li>
-                <a href="#">FAQS</a>
-              </li>
-              <li>
-                <a href="#">Privacy Policy</a>
-              </li>
-              <li>
-                <a href="#">Terms and Conditions</a>
-              </li>
-              <li>
-                <a href="#">Contact Us</a>
-              </li>
+              {userType === null ? (
+                <>
+                  <li>
+                    <a href="/faq">FAQS</a>
+                  </li>
+                  <li>
+                    <a href="/privacy">Privacy Policy</a>
+                  </li>
+                  <li>
+                    <a href="/terms">Terms and Conditions</a>
+                  </li>
+                  <li>
+                    <a href="/about">Contact Us</a>
+                  </li>
+                </>
+              ) : null}
             </ul>
           </div>
           <div className="columns">
