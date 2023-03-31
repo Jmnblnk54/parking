@@ -55,7 +55,8 @@ export default function CommonInfoPage({ title, subtitle, children }) {
 }
 
 const MainWrapper = styled.div`
-  height: calc(100vh - 114px);
+  /* height: calc(100vh - 114px); */
+ 
   padding: 10px 40px 40px 40px;
   background-color: #eff0f2ff;
   .top {
@@ -79,6 +80,7 @@ const MainWrapper = styled.div`
   .main {
     height: calc(100% - 109px);
     .left {
+      font-size: 18px;
       height: 100%;
       padding: 20px;
       background-color: white;

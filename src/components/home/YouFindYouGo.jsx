@@ -120,6 +120,7 @@ export default function YouFindYouGo(props) {
               background: "transparent",
               border: "none",
               display: "block",
+              fontSize:"20px"
             }}
             // onClick={() => console.log("ALI")}
           >
@@ -277,7 +278,7 @@ const Wrapper = styled.div`
     backdrop-filter: brightness(0.6);
     .title {
       color: white;
-      font-size: 30px;
+      font-size: 40px;
       font-weight: 500;
     }
     .ant-menu-title-content {

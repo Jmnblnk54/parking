@@ -35,6 +35,7 @@
     "react-geocode": "^0.2.3",
     "react-geolocated": "^4.0.1",
     "react-google-autocomplete": "^2.7.0",
+    "react-payment-card-component": "^0.2.1",
     "react-phone-number-input": "^3.2.2",
     "react-places-autocomplete": "^7.3.0",
     "react-redux": "^7.2.6",
@@ -44,6 +45,7 @@
     "react-social-login-buttons": "^3.6.0",
     "react-toastify": "^9.0.5",
     "redux": "^4.2.0",
+    "stripe": "^11.16.0",
     "styled-components": "^5.3.5",
     "twemoji": "^14.0.2",
     "web-vitals": "^2.1.4"
