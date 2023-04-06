@@ -15,7 +15,6 @@ export const Wrapper = styled.div`
   }
 
   .profile-card-upcom {
-    box-shadow: 0px 5px 32px 0px rgba(214,214,214,1);
     height: 100%;
     border-radius: 20px;
 
@@ -43,9 +42,8 @@ export const Wrapper = styled.div`
         display: flex;
         align-items: center;
         .image {
-          width: 100%;
-          // max-width: 139px;
-          height: 139px;
+          width: 40%;
+          height: 100%;
           display: flex;
           justify-content: center;
           img {
@@ -55,19 +53,21 @@ export const Wrapper = styled.div`
         }
         .details {
           margin-left: 10px;
-          width: 100%;
-          // font-size: 17px;
           h3 {
             margin: 0px;
             font-weight: bold;
           }
           .date {
             border-radius: 5px;
+            background: #eff0f2;
             display: flex;
             flex-direction: row;
+            padding: 6px;
+            width: 165px;
           }
           .green-title {
             margin-top: -3px;
+            font-weight: bold;
             color: #4d9d74;
           }
         }
@@ -101,9 +101,5 @@ export const Wrapper = styled.div`
     .profile-card {
       margin: 0 !important;
     }
-  }
-  .description-title {
-    color: #b9b9b9;
-    font-weight: normal;
   }
 `;

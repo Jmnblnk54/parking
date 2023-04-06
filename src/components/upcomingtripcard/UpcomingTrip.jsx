@@ -30,7 +30,6 @@ export const Wrapper = styled.div`
   .user-profile-card {
     border-radius: 35px;
     margin-top: 20px;
-    box-shadow: 0px 5px 32px 0px rgba(214,214,214,1);
     .ant-card-body {
       padding: 5px 16px 11px 18px;
       h1 {

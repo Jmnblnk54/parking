@@ -52,25 +52,22 @@ export default function UpcomingCard() {
                   <div className="details">
                     {/* <h3>{val?.spotData?.spotName}</h3> */}
                     <div className="green-title">
-                      <span className="description-title">
-                        Spot Name:
-                      </span><br></br>
-                      {"\t" + val?.spotData?.spotName}
+                      {"Spot Name:" + "\t" + val?.spotData?.spotName}
                     </div>
 
-                    <div className="description-title">Starting&nbsp;On:</div>
+                    <div>Starting&nbsp;On</div>
                     <div className="date">
-                      <div className="green-title">
+                      <div>
                         {moment(val?.startDate, "MM-DD-YYYY, ddd hh:mm").format(
                           "MM-DD-YYYY, ddd hh:mm a"
                         )}
                       </div>
                     </div>
 
-                    <div className="description-title">Leaving&nbsp;On:</div>
+                    <div>Leaving&nbsp;On</div>
 
                     <div className="date">
-                      <div className="green-title">
+                      <div>
                         {moment(val?.endDate, "MM-DD-YYYY, ddd hh:mm").format(
                           "MM-DD-YYYY, ddd hh:mm a"
                         )}

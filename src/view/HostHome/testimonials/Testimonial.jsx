@@ -25,7 +25,7 @@ export default function Testimonial() {
             ullamcorper suscipit lobortis nisl ut aliquip ex ea co.png
           </p>
           <div className="overlay">
-            <img className="blue-curve" src={curve1} />
+            <img id="curve" src={curve1} />
 
             <img src={Group99} id="user-img" />
             <h1>John Smith</h1>
@@ -39,7 +39,7 @@ export default function Testimonial() {
             ullamcorper suscipit lobortis nisl ut aliquip ex ea co.png
           </p>
           <div className="overlay">
-            <img className="blue-curve" src={curve1} />
+            <img id="curve" src={curve1} />
             <img src={Group99} id="user-img" />
             <h1>Sarah anderson</h1>
           </div>
@@ -52,7 +52,7 @@ export default function Testimonial() {
             ullamcorper suscipit lobortis nisl ut aliquip ex ea co.png
           </p>
           <div className="overlay">
-            <img className="blue-curve last-curve" src={curve1} />
+            <img id="curve" src={curve1} />
 
             <img src={Group99} id="user-img" />
             <h1>Paul green</h1>
@@ -72,7 +72,7 @@ export default function Testimonial() {
                 aliquip ex ea co.png
               </p>
               <div className="overlay">
-                <img className="blue-curve" src={curve1} />
+                <img id="curve" src={curve1} />
 
                 <img src={Group99} id="user-img" />
                 <h1>John Smith</h1>
@@ -89,7 +89,7 @@ export default function Testimonial() {
                 aliquip ex ea co.png
               </p>
               <div className="overlay">
-                <img className="blue-curve" src={curve2} />
+                <img id="curve" src={curve2} />
                 <img src={Group99} id="user-img" />
                 <h1>Sarah anderson</h1>
               </div>
@@ -105,7 +105,7 @@ export default function Testimonial() {
                 aliquip ex ea co.png
               </p>
               <div className="overlay">
-                <img className="blue-curve last-curve" src={curve3} />
+                <img id="curve" src={curve3} />
 
                 <img src={Group99} id="user-img" />
                 <h1>Paul green</h1>
@@ -124,9 +124,6 @@ export const Wrapper = styled.div`
   width: 100%;
   display: flex;
   justify-content: center;
-  margin-top: 4%;
-  margin-bottom: 4%;
-
 
   .container {
     display: flex;
@@ -152,26 +149,22 @@ export const Wrapper = styled.div`
     background-color: white;
 
     p {
-      padding: 30px 30px 15px 30px;
-      line-height: 18px;
+      padding: 30px 30px 0px 30px;
     }
     .overlay {
       position: relative;
       z-index: 1;
-      overflow: hidden;
+
       height: 130px;
 
-      .blue-curve {
+      #curve {
         z-index: 2;
         width: -webkit-fill-available;
         position: absolute;
-        height: 150px;
+        height: 130px;
         object-fit: cover;
         object-position: top;
         background-color: white;
-      }
-      .last-curve {
-        transform: scaleX(-1);
       }
       /* div {
         z-index: 3;
@@ -189,7 +182,7 @@ export const Wrapper = styled.div`
       /* } */
       h1 {
         position: absolute;
-        color: #BBD0C6;
+        color: white;
         font-size: 25px;
         top: 80px;
         z-index: 3;
