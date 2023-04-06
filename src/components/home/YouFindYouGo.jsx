@@ -139,13 +139,7 @@ export default function YouFindYouGo(props) {
           </Menu>
         </div>
 
-        <div
-          style={{
-            width: "100%",
-            position: "relative",
-            marginTop: "10px",
-          }}
-        >
+        <div class="hero-search-bar">
           <PlacesAutocomplete
             value={props.addressSearchByTraveler}
             onChange={(e) => handleChange(e)}
@@ -240,10 +234,9 @@ export default function YouFindYouGo(props) {
             alt=""
             onClick={() => props.handleMethod()}
           />
-        </div>
-
-        <div className="my-location">
-          <LocationButton onPress={props.useMyLocation} />
+            <div className="my-location">
+             <LocationButton onPress={props.useMyLocation} />
+           </div>
         </div>
         {/* {!isGeolocationAvailable
           ? "Value"
@@ -266,6 +259,16 @@ const Wrapper = styled.div`
     width: 100%;
     height: inherit;
     object-fit: cover;
+  }
+  .hero-search-bar {
+    width: 100%;
+    position: relative;
+    margin-top: 10px;
+    max-width: 1000px;
+  }
+
+  .hero-search-bar input {
+    border-radius: 6px;
   }
   .main {
     display: flex;
