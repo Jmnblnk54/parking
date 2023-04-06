@@ -180,7 +180,14 @@ export default function MyProfile() {
     <>
       <Navbar />
       <Wrapper>
-        <div className="dash">
+        <div
+          style={{
+            backgroundColor: "#e7f0eb",
+            height: "fit-content",
+
+            padding: "0px 30px 20px 30px",
+          }}
+        >
           {error ? (
             <Modal
               visible={error ? true : false}
@@ -254,17 +261,11 @@ export default function MyProfile() {
 }
 
 const Wrapper = styled.div`
-  // height: calc(100% - 114.25px);
-  height: 100%;
-  background-color: #e7f0eb;
-
-  .dash {
-    padding: 0px 30px 20px 30px;
-
-  }
+  height: calc(100% - 114.25px);
   .spinner {
     display: flex;
     justify-content: center;
+
     height: calc(100vh - 208px);
   }
   .my-Profile {
@@ -280,11 +281,11 @@ const Wrapper = styled.div`
 
     .switch-btn {
       width: 416px;
+
       border-radius: 20px;
       background-color: #080f28;
       color: white;
       height: 38px;
-      border: none;
     }
   }
   .switch {

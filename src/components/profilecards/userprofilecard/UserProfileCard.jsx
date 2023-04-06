@@ -109,24 +109,24 @@ export default function UserProfileCard({ user, setUser }) {
             </Col>
           </Row>
           <div className="Account-Para-Div">
-            <p id="account-text" className="description-title">account settings</p>
+            <p id="account-text">account settings</p>
           </div>
           <Row style={{ marginTop: "10px" }}>
             <Col className="personal-Info-Col">
-            <a onClick={() => setShowPersonal(true)}>
               <div className="settings-li">
+                <a onClick={() => setShowPersonal(true)}>
                   Personal Information
+                </a>
               </div>
-              </a>
             </Col>
           </Row>
           <Row>
             <Col className="personal-Info-Col">
-            <a href onClick={() => setShowPaymentModal(true)}>
               <div className="settings-li">
+                <a href onClick={() => setShowPaymentModal(true)}>
                   Payment Method
+                </a>
               </div>
-              </a>
               {/* <Select
                 defaultValue="payout method"
                 className="personal-Info-Select"
@@ -150,11 +150,9 @@ export default function UserProfileCard({ user, setUser }) {
           </Row> */}
           <Row>
             <Col xs={24} className="personal-Info-Col">
-            <a onClick={() => setShowReferral(true)}>
               <div className="settings-li">
-                My Referral Code
+                <a onClick={() => setShowReferral(true)}>My Referral Code</a>
               </div>
-              </a>
               {/* <Select
                 defaultValue="my referral code"
                 className="personal-Info-Select"
@@ -187,11 +185,6 @@ export const Wrapper = styled.div`
   .ant-upload {
     width: 0px;
   }
-  .description-title {
-    color: #b9b9b9;
-    font-weight: normal;
-    text-transform: capitalize;
-  }
   .ant-rate {
     color: #4d9d74;
     font-size: 12px;
@@ -208,7 +201,6 @@ export const Wrapper = styled.div`
     line-height: 0.7;
     min-height: 370px;
     width: 100%;
-    box-shadow: 0px 5px 32px 0px rgba(214,214,214,1);
     h1 {
       margin: 0px;
       font-size: 40px;
@@ -293,8 +285,6 @@ export const Wrapper = styled.div`
       width: 150px;
       height: 150px;
       border-radius: 50%;
-      border: 4px solid #4d9d74;
-      object-fit: cover;
     }
   }
   .account-image-div {
@@ -309,16 +299,16 @@ export const Wrapper = styled.div`
 
   .settings-li {
     width: 100%;
+
     padding: 10px 0px;
-    border-bottom: 1px solid #b9b9b9;
-    color: #000;
+    border-bottom: 1px solid black;
 
     a {
       color: black;
     }
   }
 
-  @media screen and (max-width: 1140px) {
+  @media screen and (max-width: 1045px) {
     #account-text {
       margin-top: 8px !important;
     }

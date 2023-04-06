@@ -313,7 +313,7 @@ export default function Navbar(props) {
             </PlacesAutocomplete>
           </div>
         )}
-        <div className="onclick-menu-div">
+        <div className="click-menu-div">
           <Dropdown overlay={renderItems} trigger={["click"]}>
             <MenuFoldOutlined />
           </Dropdown>
@@ -625,28 +625,15 @@ export const Super = styled.div`
 `;
 export const Wrapper = styled.div`
   display: flex;
-  align-items: center;
   width: 100%;
-  // max-width: 1157px;
-  margin: auto;
-  // padding-top: 20px;
-  // padding-bottom: 20px;
-  padding: 2%;
+  justify-content: space-between;
+  align-items: center;
+  padding: 40px 30px 20px 40px;
   .logo {
-    width: 100%;
-    max-width: 106px;
+    flex: 2;
     img {
       cursor: pointer;
     }
-  }
-
-  .search-div1 {
-    margin-right: 10px;
-    margin-left: 10px;
-  }
-  .nav-menu-div {
-    width: 100%;
-    max-width: 385px;
   }
   .ant-menu-horizontal {
     border: none;
@@ -699,7 +686,7 @@ export const Wrapper = styled.div`
     display: block;
     flex: 2;
   }
-  .onclick-menu-div {
+  .click-menu-div {
     display: none;
   }
 
@@ -730,7 +717,7 @@ export const Wrapper = styled.div`
     .nav-menu-div {
       display: none;
     }
-    .onclick-menu-div {
+    .click-menu-div {
       display: block;
       font-size: 30px;
       margin-left: 10px;

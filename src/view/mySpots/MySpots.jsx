@@ -101,8 +101,7 @@ export default function MySpots() {
 export const Wrapper = styled.div`
   background: #eff0f2;
   display: flex;
-  // height: calc(100% - 114px);
-  height: 100%;
+  height: calc(100% - 114px);
   .reservation-header-div {
     width: 50%;
     overflow-y: scroll;

@@ -35,6 +35,10 @@ import travelerMessages from "./view/travelermessages/travelerMessages";
 import Transactions from "./view/transactions/Transactions";
 import HostTransaction from "./view/transactions/HostTransaction";
 import StartTrip from "./view/starttrip/StartTrip";
+import TermsConditions from "./view/terms-conditions/TermsConditions";
+import FAQ from "./view/faq/FAQ";
+import Privacy from "./view/privacy/Privacy";
+import About from "./view/about/About";
 
 //Auth Provider
 
@@ -173,6 +177,30 @@ const Routes = () => {
           isAuthentication={session}
           userType={type}
         />
+        <AuthedRoute
+          path="/terms"
+          component={TermsConditions}
+          isAuthentication={session}
+          userType={type}
+        />
+        <AuthedRoute
+          path="/faq"
+          component={FAQ}
+          isAuthentication={session}
+          userType={type}
+        />
+        <AuthedRoute
+          path="/privacy"
+          component={Privacy}
+          isAuthentication={session}
+          userType={type}
+        />
+        <AuthedRoute
+          path="/about"
+          component={About}
+          isAuthentication={session}
+          userType={type}
+        />
 
         <AuthedRouteHost
           path="/host/home"
@@ -235,7 +263,24 @@ const Routes = () => {
           isAuthentication={session}
           userType={type}
         />
-
+        <AuthedRouteHost
+          path="/terms"
+          component={TermsConditions}
+          isAuthentication={session}
+          userType={type}
+        />
+        <AuthedRouteHost
+          path="/faqs"
+          component={FAQ}
+          isAuthentication={session}
+          userType={type}
+        />
+        <AuthedRouteHost
+          path="/privacy"
+          component={FAQ}
+          isAuthentication={session}
+          userType={type}
+        />
         {/* <AuthedRouteTraveler path="/traveler/login" component={Login} exact={true} /> */}
         {/* <AuthedRouteTraveler path="/traveler/signup" component={Signup} /> */}
         <AuthedRouteTraveler
@@ -320,6 +365,24 @@ const Routes = () => {
           isAuthentication={session}
           userType={type}
         />
+        <AuthedRouteTraveler
+          path="/traveler/terms"
+          component={TermsConditions}
+          isAuthentication={session}
+          userType={type}
+        />
+        <AuthedRouteTraveler
+          path="/traveler/faq"
+          component={FAQ}
+          isAuthentication={session}
+          userType={type}
+        />
+        <AuthedRouteTraveler
+          path="/traveler/terms"
+          component={TermsConditions}
+          isAuthentication={session}
+          userType={type}
+        />
         {session && type === "HOST" ? (
           <>
             <Redirect to="/host/home" exact={true} />
@@ -358,8 +421,8 @@ const AuthedRoute = ({
       to={
         isAuthentication
           ? userType === "HOST"
-            ? "/host/profile"
-            : "/traveler/profile"
+            ? "/host/home"
+            : "/traveler/home"
           : "/"
       }
     />

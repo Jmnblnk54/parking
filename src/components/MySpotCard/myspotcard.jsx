@@ -426,9 +426,8 @@ const Wrapper = styled.div`
     }
     .status {
       font-size: 16px;
-    }
-    .status label {
-      color: #b9b9b9;
+
+      font-weight: bold;
     }
     .miles {
       margin-top: -3px;

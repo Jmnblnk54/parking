@@ -26,11 +26,8 @@ export default function HostHome() {
 const Wrapper = styled.div`
   background-image: url("${background}");
   background-repeat: no-repeat;
-  background-position: 127px 40px;
-  background-size: 31%;
-  // background-position: 299px 40px;
-  // background-size: 28%;
-
+  background-position: 21px 63px;
+  background-size: 34%;
   @media screen and (max-width: 720px) {
     background-image: none;
   }
