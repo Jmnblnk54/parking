@@ -207,278 +207,281 @@ export default function Navbar(props) {
             : { background: "white" }
         }
       >
-        <div className="logo">
-          <img
-            src={logo}
-            height={"40px"}
-            onClick={() => history.push("/travelers")}
-            alt=""
-          />
-        </div>
-        {location.pathname.includes("/search") ? null : (
-          <div className="search-drop-down">
-            <div className="search-image">
-              <SearchOutlined
-                style={{ fill: "black" }}
-                onClick={() => setshowSearch(!showSearch)}
-              />
+
+
+          <div className="logo">
+            <img
+              src={logo}
+              height={"40px"}
+              onClick={() => history.push("/travelers")}
+              alt=""
+            />
+          </div>
+          {location.pathname.includes("/search") ? null : (
+            <div className="search-drop-down">
+              <div className="search-image">
+                <SearchOutlined
+                  style={{ fill: "black" }}
+                  onClick={() => setshowSearch(!showSearch)}
+                />
+              </div>
             </div>
-          </div>
-        )}
+          )}
 
-        {location.pathname.includes("/search") ? null : (
-          <div className="search-div1">
-            <PlacesAutocomplete
-              value={addressSearchByTraveler}
-              onChange={(e) => handleChange(e)}
-              onSelect={(e) => handleChange(e)}
-            >
-              {({
-                getInputProps,
-                suggestions,
-                getSuggestionItemProps,
-                loading,
-              }) => {
-                return (
-                  <Dropdown
-                    overlayClassName="top-search-dd"
-                    key="dropdown"
-                    placement="bottom"
-                    visible={true}
-                    overlay={
-                      suggestions.length > 0 ? (
-                        <Menu className="autocomplete-dropdown-container">
-                          {loading}
-                          {suggestions.map((suggestion, key) => {
-                            const className = suggestion.active
-                              ? "suggestion-item--active"
-                              : "suggestion-item";
-                            return (
-                              <Menu.Item
-                                className={className}
-                                key={key}
-                                onClick={(event) => {
-                                  getSuggestionItemProps(suggestion).onClick(
-                                    event
-                                  );
-                                }}
-                                onMouseDown={(event) => {
-                                  getSuggestionItemProps(
-                                    suggestion
-                                  ).onMouseDown(event);
-                                }}
-                                onTouchEnd={(event) => {
-                                  getSuggestionItemProps(suggestion).onTouchEnd(
-                                    event
-                                  );
-                                }}
-                                onTouchStart={(event) => {
-                                  getSuggestionItemProps(
-                                    suggestion
-                                  ).onTouchStart(event);
-                                }}
-                                role="option"
-                              >
-                                {suggestion.description.substring(0, 50)}
-                                {suggestion.description.length > 50 && "..."}
-                              </Menu.Item>
-                            );
-                          })}
-                        </Menu>
-                      ) : (
-                        <></>
-                      )
-                    }
-                  >
-                    <Input
-                      placeholder="where are you going ? "
-                      size="large"
-                      suffix={suffix}
-                      {...getInputProps({
-                        className: "location-search-input",
-                        name: "address",
-                        placeholder: "where are you going ?",
-                        size: "large",
-                      })}
-                      value={addressSearchByTraveler}
-                      onKeyDownCapture={(e) => {
-                        if (e.key == "Enter") {
-                          handleMethod();
-                        }
-                      }}
-                    />
-                  </Dropdown>
-                );
-              }}
-            </PlacesAutocomplete>
+          {location.pathname.includes("/search") ? null : (
+            <div className="search-div1">
+              <PlacesAutocomplete
+                value={addressSearchByTraveler}
+                onChange={(e) => handleChange(e)}
+                onSelect={(e) => handleChange(e)}
+              >
+                {({
+                  getInputProps,
+                  suggestions,
+                  getSuggestionItemProps,
+                  loading,
+                }) => {
+                  return (
+                    <Dropdown
+                      overlayClassName="top-search-dd"
+                      key="dropdown"
+                      placement="bottom"
+                      visible={true}
+                      overlay={
+                        suggestions.length > 0 ? (
+                          <Menu className="autocomplete-dropdown-container">
+                            {loading}
+                            {suggestions.map((suggestion, key) => {
+                              const className = suggestion.active
+                                ? "suggestion-item--active"
+                                : "suggestion-item";
+                              return (
+                                <Menu.Item
+                                  className={className}
+                                  key={key}
+                                  onClick={(event) => {
+                                    getSuggestionItemProps(suggestion).onClick(
+                                      event
+                                    );
+                                  }}
+                                  onMouseDown={(event) => {
+                                    getSuggestionItemProps(
+                                      suggestion
+                                    ).onMouseDown(event);
+                                  }}
+                                  onTouchEnd={(event) => {
+                                    getSuggestionItemProps(suggestion).onTouchEnd(
+                                      event
+                                    );
+                                  }}
+                                  onTouchStart={(event) => {
+                                    getSuggestionItemProps(
+                                      suggestion
+                                    ).onTouchStart(event);
+                                  }}
+                                  role="option"
+                                >
+                                  {suggestion.description.substring(0, 50)}
+                                  {suggestion.description.length > 50 && "..."}
+                                </Menu.Item>
+                              );
+                            })}
+                          </Menu>
+                        ) : (
+                          <></>
+                        )
+                      }
+                    >
+                      <Input
+                        placeholder="where are you going ? "
+                        size="large"
+                        suffix={suffix}
+                        {...getInputProps({
+                          className: "location-search-input",
+                          name: "address",
+                          placeholder: "where are you going ?",
+                          size: "large",
+                        })}
+                        value={addressSearchByTraveler}
+                        onKeyDownCapture={(e) => {
+                          if (e.key == "Enter") {
+                            handleMethod();
+                          }
+                        }}
+                      />
+                    </Dropdown>
+                  );
+                }}
+              </PlacesAutocomplete>
+            </div>
+          )}
+          <div className="click-menu-div">
+            <Dropdown overlay={renderItems} trigger={["click"]}>
+              <MenuFoldOutlined />
+            </Dropdown>
           </div>
-        )}
-        <div className="click-menu-div">
-          <Dropdown overlay={renderItems} trigger={["click"]}>
-            <MenuFoldOutlined />
-          </Dropdown>
-        </div>
-        <div className="nav-menu-div">
-          <Menu mode="horizontal" disabledOverflow>
-            {/* // <Popover placement="bottomLeft" content={content} trigger="click"> */}
+          <div className="nav-menu-div">
+            <Menu mode="horizontal" disabledOverflow>
+              {/* // <Popover placement="bottomLeft" content={content} trigger="click"> */}
 
-            {session ? (
-              type === "HOST" ? (
+              {session ? (
+                type === "HOST" ? (
+                  <>
+                    <Menu.Item onClick={() => history.push("/host/home")}>
+                      HOST&nbsp;
+                      <img src={Line1} height={"40px"} alt="" />
+                    </Menu.Item>
+                    <Menu.Item onClick={() => setShowVideo(true)}>
+                      HOW IT WORKS&nbsp;
+                      <img src={Line1} height={"40px"} alt="" />
+                    </Menu.Item>
+                    <Menu.SubMenu
+                      className="sub-menu"
+                      title={
+                        <Menu.Item style={{ padding: "0px" }}>
+                          Host YUGO
+                          <img
+                            style={{ margin: "10px", width: "30px" }}
+                            src={avatar}
+                            alt=""
+                          />
+                        </Menu.Item>
+                      }
+                    >
+                      <Menu.Item
+                        className="sub-menu-item"
+                        onClick={() => history.push("/host/profile")}
+                      >
+                        PROFILE
+                      </Menu.Item>
+                      <Menu.Item
+                        className="sub-menu-item"
+                        onClick={() => history.push("/host/transactions")}
+                      >
+                        TRANSACTION
+                      </Menu.Item>
+                      <Menu.Item
+                        className="sub-menu-item"
+                        style={{ color: "red" }}
+                        onClick={logoutHandle}
+                      >
+                        LOGOUT
+                      </Menu.Item>
+                    </Menu.SubMenu>
+                  </>
+                ) : (
+                  <>
+                    <Menu.Item onClick={() => history.push("/traveler/home")}>
+                      TRAVELER&nbsp;
+                      <img src={Line1} height={"40px"} alt="" />
+                    </Menu.Item>
+                    <Menu.Item onClick={() => setShowVideo(true)}>
+                      HOW IT WORKS&nbsp;
+                      <img src={Line1} height={"40px"} alt="" />
+                    </Menu.Item>
+
+                    <Menu.SubMenu
+                      className="sub-menu"
+                      title={
+                        <Menu.Item style={{ padding: "0px" }}>
+                          MY YUGO
+                          <img
+                            style={{ margin: "10px", width: "30px" }}
+                            src={avatar}
+                            alt=""
+                          />
+                        </Menu.Item>
+                      }
+                    >
+                      <Menu.Item
+                        className="sub-menu-item"
+                        onClick={() => history.push("/traveler/profile")}
+                      >
+                        PROFILE
+                      </Menu.Item>
+                      <Menu.Item
+                        className="sub-menu-item"
+                        onClick={() => history.push("/traveler/transactions")}
+                      >
+                        TRANSACTION
+                      </Menu.Item>
+                      <Menu.Item
+                        className="sub-menu-item"
+                        style={{ color: "red" }}
+                        onClick={logoutHandle}
+                      >
+                        LOGOUT
+                      </Menu.Item>
+                    </Menu.SubMenu>
+                  </>
+                )
+              ) : (
                 <>
-                  <Menu.Item onClick={() => history.push("/host/home")}>
+                  <Menu.Item onClick={() => history.push("/hosts")}>
                     HOST&nbsp;
                     <img src={Line1} height={"40px"} alt="" />
                   </Menu.Item>
-                  <Menu.Item onClick={() => setShowVideo(true)}>
-                    HOW IT WORKS&nbsp;
-                    <img src={Line1} height={"40px"} alt="" />
-                  </Menu.Item>
-                  <Menu.SubMenu
-                    className="sub-menu"
-                    title={
-                      <Menu.Item style={{ padding: "0px" }}>
-                        Host YUGO
-                        <img
-                          style={{ margin: "10px", width: "30px" }}
-                          src={avatar}
-                          alt=""
-                        />
-                      </Menu.Item>
-                    }
-                  >
-                    <Menu.Item
-                      className="sub-menu-item"
-                      onClick={() => history.push("/host/profile")}
-                    >
-                      PROFILE
-                    </Menu.Item>
-                    <Menu.Item
-                      className="sub-menu-item"
-                      onClick={() => history.push("/host/transactions")}
-                    >
-                      TRANSACTION
-                    </Menu.Item>
-                    <Menu.Item
-                      className="sub-menu-item"
-                      style={{ color: "red" }}
-                      onClick={logoutHandle}
-                    >
-                      LOGOUT
-                    </Menu.Item>
-                  </Menu.SubMenu>
-                </>
-              ) : (
-                <>
-                  <Menu.Item onClick={() => history.push("/traveler/home")}>
+                  <Menu.Item onClick={() => history.push("/travelers")}>
                     TRAVELER&nbsp;
                     <img src={Line1} height={"40px"} alt="" />
                   </Menu.Item>
+
                   <Menu.Item onClick={() => setShowVideo(true)}>
                     HOW IT WORKS&nbsp;
                     <img src={Line1} height={"40px"} alt="" />
                   </Menu.Item>
-
                   <Menu.SubMenu
                     className="sub-menu"
                     title={
                       <Menu.Item style={{ padding: "0px" }}>
-                        MY YUGO
-                        <img
-                          style={{ margin: "10px", width: "30px" }}
-                          src={avatar}
-                          alt=""
-                        />
+                        LOG IN&nbsp;&nbsp;
                       </Menu.Item>
                     }
                   >
                     <Menu.Item
                       className="sub-menu-item"
-                      onClick={() => history.push("/traveler/profile")}
+                      onClick={() => history.push("/host/login")}
                     >
-                      PROFILE
+                      LOGIN HOST
                     </Menu.Item>
                     <Menu.Item
                       className="sub-menu-item"
-                      onClick={() => history.push("/traveler/transactions")}
+                      onClick={() => history.push("/traveler/login")}
                     >
-                      TRANSACTION
-                    </Menu.Item>
-                    <Menu.Item
-                      className="sub-menu-item"
-                      style={{ color: "red" }}
-                      onClick={logoutHandle}
-                    >
-                      LOGOUT
+                      LOGIN TRAVELER
                     </Menu.Item>
                   </Menu.SubMenu>
                 </>
+              )}
+
+              {/* // </Popover> */}
+              {/* <Menu.Item onClick={() => history.push("/traveler/profile")}>
+                    My YUGO <img style={{ width: "30px" }} src={avatar} />
+                  </Menu.Item> */}
+
+              {/* {isLoggedIn ? (
+              history?.location?.pathname.includes("host") ? (
+                <Menu.Item onClick={() => history.push("/host/login")}>
+                  LOG IN&nbsp;&nbsp;
+                </Menu.Item>
+              ) : (
+                <Menu.Item onClick={() => history.push("/traveler/login")}>
+                  LOG IN&nbsp;&nbsp;
+                </Menu.Item>
               )
-            ) : (
-              <>
-                <Menu.Item onClick={() => history.push("/hosts")}>
-                  HOST&nbsp;
-                  <img src={Line1} height={"40px"} alt="" />
-                </Menu.Item>
-                <Menu.Item onClick={() => history.push("/travelers")}>
-                  TRAVELER&nbsp;
-                  <img src={Line1} height={"40px"} alt="" />
-                </Menu.Item>
-
-                <Menu.Item onClick={() => setShowVideo(true)}>
-                  HOW IT WORKS&nbsp;
-                  <img src={Line1} height={"40px"} alt="" />
-                </Menu.Item>
-                <Menu.SubMenu
-                  className="sub-menu"
-                  title={
-                    <Menu.Item style={{ padding: "0px" }}>
-                      LOG IN&nbsp;&nbsp;
-                    </Menu.Item>
-                  }
-                >
-                  <Menu.Item
-                    className="sub-menu-item"
-                    onClick={() => history.push("/host/login")}
-                  >
-                    LOGIN HOST
-                  </Menu.Item>
-                  <Menu.Item
-                    className="sub-menu-item"
-                    onClick={() => history.push("/traveler/login")}
-                  >
-                    LOGIN TRAVELER
-                  </Menu.Item>
-                </Menu.SubMenu>
-              </>
-            )}
-
-            {/* // </Popover> */}
-            {/* <Menu.Item onClick={() => history.push("/traveler/profile")}>
-                  My YUGO <img style={{ width: "30px" }} src={avatar} />
-                </Menu.Item> */}
-
-            {/* {isLoggedIn ? (
-            history?.location?.pathname.includes("host") ? (
-              <Menu.Item onClick={() => history.push("/host/login")}>
-                LOG IN&nbsp;&nbsp;
+            ) : history?.location?.pathname.includes("host") ? (
+              <Menu.Item onClick={() => history.push("/host/profile")}>
+                Host YUGO
+                <img style={{ width: "30px" }} src={avatar} />
               </Menu.Item>
             ) : (
-              <Menu.Item onClick={() => history.push("/traveler/login")}>
-                LOG IN&nbsp;&nbsp;
+              <Menu.Item onClick={() => history.push("/traveler/profile")}>
+                My YUGO <img style={{ width: "30px" }} src={avatar} />
               </Menu.Item>
-            )
-          ) : history?.location?.pathname.includes("host") ? (
-            <Menu.Item onClick={() => history.push("/host/profile")}>
-              Host YUGO
-              <img style={{ width: "30px" }} src={avatar} />
-            </Menu.Item>
-          ) : (
-            <Menu.Item onClick={() => history.push("/traveler/profile")}>
-              My YUGO <img style={{ width: "30px" }} src={avatar} />
-            </Menu.Item>
-          )} */}
-          </Menu>
-        </div>
+            )} */}
+            </Menu>
+          </div>
+
         <Modal
           className="video-modal"
           visible={showVideo}
@@ -594,7 +597,6 @@ export default function Navbar(props) {
   );
 }
 export const Super = styled.div`
-  padding: 0px 30px 10px 30px;
 
   @media screen and (min-width: 999px) {
     margin: -30px;
@@ -624,13 +626,19 @@ export const Super = styled.div`
   }
 `;
 export const Wrapper = styled.div`
-  display: flex;
-  width: 100%;
-  justify-content: space-between;
-  align-items: center;
-  padding: 40px 30px 20px 40px;
+padding: 20px;
+width: 100%;
+display: flex;
+justify-content: center;
+margin: auto;
+max-width: 1800px;
+align-items: center;
+
   .logo {
     flex: 2;
+    text-align: center;
+    width: 100%;
+    max-width: 200px;
     img {
       cursor: pointer;
     }
@@ -638,7 +646,7 @@ export const Wrapper = styled.div`
   .ant-menu-horizontal {
     border: none;
     display: flex;
-    justify-content: end;
+    justify-content: center;
   }
   .ant-menu-horizontal:not(.ant-menu-dark) > .ant-menu-item,
   .ant-menu-horizontal:not(.ant-menu-dark) > .ant-menu-submenu {
@@ -683,6 +691,7 @@ export const Wrapper = styled.div`
 
   .nav-menu-div {
     width: 100%;
+    max-width: 400px;
     display: block;
     flex: 2;
   }
