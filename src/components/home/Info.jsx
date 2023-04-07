@@ -51,20 +51,20 @@ export default function Info() {
   );
 }
 export const Wrapper = styled.div`
-  height: 450px;
-  padding: 0px 40px 50px 40px;
-
+  padding: 40px 40px 90px 40px;
+  max-width: 1800px;
   display: flex;
-  justify-content: space-between;
   align-items: center;
-
+  margin: auto;
+  width: 100%;
+  justify-content: center;
   background-color: white;
 
   .user-card {
     background-color: rgba(77, 157, 116, 0.4);
-
-    width: 350px;
-    height: 350px;
+    width: 550px;
+    height: 550px;
+    margin-right: 2%;
 
     label {
       font-family: arciform;
@@ -98,9 +98,13 @@ export const Wrapper = styled.div`
     #car-icon,
     #home-icon {
       position: absolute;
-      right: -25px;
+      right: -49px;
       bottom: -30px;
+      width: 373px;
     }
+  }
+  .user-card:last-child {
+    margin-right: 0;
   }
   @media screen and (max-width: 930px) {
     flex-direction: column;
@@ -146,7 +150,7 @@ export const Wrapper = styled.div`
     #home-icon {
       position: relative !important;
       right: 0 !important;
-      bottom: 0 !important    ;
+      bottom: 0 !important;
       width: 150px;
     }
   }
