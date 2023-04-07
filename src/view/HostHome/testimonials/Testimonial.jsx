@@ -52,7 +52,7 @@ export default function Testimonial() {
             ullamcorper suscipit lobortis nisl ut aliquip ex ea co.png
           </p>
           <div className="overlay">
-            <img id="curve" src={curve1} />
+            <img class="last" id="curve" src={curve1} />
 
             <img src={Group99} id="user-img" />
             <h1>Paul green</h1>
@@ -105,7 +105,7 @@ export default function Testimonial() {
                 aliquip ex ea co.png
               </p>
               <div className="overlay">
-                <img id="curve" src={curve3} />
+                <img class="last" id="curve" src={curve3} />
 
                 <img src={Group99} id="user-img" />
                 <h1>Paul green</h1>
@@ -132,6 +132,10 @@ export const Wrapper = styled.div`
     margin: 0px 40px;
   }
 
+  .last {
+    transform: scaleX(-1);
+  }
+
   .main {
     display: flex !important;
     justify-content: center;
@@ -154,8 +158,8 @@ export const Wrapper = styled.div`
     .overlay {
       position: relative;
       z-index: 1;
-
       height: 130px;
+      overflow: hidden;
 
       #curve {
         z-index: 2;
