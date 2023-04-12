@@ -310,6 +310,7 @@ export const Wrapper = styled.div`
     }
   }
   .image-Div {
+    object-fit: cover;
     img {
       width: 150px;
       height: 150px;

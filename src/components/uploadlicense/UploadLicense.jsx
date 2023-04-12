@@ -198,6 +198,7 @@ const Wrapper = styled.div`
     }
   }
   .image-div {
+    object-fit: cover;
     display: flex;
     flex-direction: column;
     align-items: center;
