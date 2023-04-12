@@ -180,14 +180,7 @@ export default function MyProfile() {
     <>
       <Navbar />
       <Wrapper>
-        <div
-          style={{
-            backgroundColor: "#e7f0eb",
-            height: "fit-content",
-
-            padding: "0px 30px 20px 30px",
-          }}
-        >
+        <div class="profile-sub-wrap">
           {error ? (
             <Modal
               visible={error ? true : false}
@@ -261,13 +254,22 @@ export default function MyProfile() {
 }
 
 const Wrapper = styled.div`
-  height: calc(100% - 114.25px);
+  // height: calc(100% - 114.25px);
+  height: 100%;
+
+  .profile-sub-wrap {
+    background-color: #e7f0eb;
+    height: 100%;
+    padding: 30px 30px 20px 30px;
+    height: 100%;
+  }
   .spinner {
     display: flex;
     justify-content: center;
 
     height: calc(100vh - 208px);
   }
+
   .my-Profile {
     display: flex;
     align-items: center;

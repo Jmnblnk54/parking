@@ -73,6 +73,12 @@ export const Wrapper = styled.div`
   margin-right: 30px;
   height: fit-content;
   min-height: calc(100vh - 111px);
+  width: 100%;
+  max-width: 1800px;
+  margin: auto;
+  justify-content: center;
+  display: flex;
+
   h1 {
     font-family: arciform;
   }
@@ -93,6 +99,10 @@ export const Wrapper = styled.div`
   .side-header-text {
     margin-top: 5px;
     line-height: 1;
+  }
+  .bg-opacity {
+    width: 100%;
+    padding: 2%;
   }
   @media screen and (max-width: 720px) {
     margin: 0px;

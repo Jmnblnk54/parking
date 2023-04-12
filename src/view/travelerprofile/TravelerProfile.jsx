@@ -179,14 +179,7 @@ export default function TravellerProfile() {
     <>
       <Navbar />
       <Wrapper>
-        <div
-          style={{
-            backgroundColor: "#e7f0eb",
-            paddingLeft: "30px",
-            paddingRight: "30px",
-            paddingBottom: "10px",
-          }}
-        >
+        <div class="profile-sub-wrap">
           {error ? <Alert message={error} closable /> : null}
           <div className="my-Profile">
             <h1>MY PROFILE</h1>
@@ -239,6 +232,13 @@ export default function TravellerProfile() {
 
 export const Wrapper = styled.div`
   background-color: rgba(77, 157, 116, 0.2);
+  height: 100%;
+
+  .profile-sub-wrap {
+    background-color: #e7f0eb;
+    padding: 30px 30px 20px 30px;
+    height: 100%;
+  }
   .my-Profile {
     display: flex;
     align-items: center;
