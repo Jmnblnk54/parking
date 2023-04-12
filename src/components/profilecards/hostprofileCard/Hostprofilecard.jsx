@@ -247,6 +247,8 @@ export const Wrapper = styled.div`
     }
     #account-text {
       margin-top: 20px;
+      text-transform: uppercase;
+      color: #b5b4b4;
     }
   }
   .ant-select:not(.ant-select-customize-input) .ant-select-selector {
@@ -310,11 +312,12 @@ export const Wrapper = styled.div`
     }
   }
   .image-Div {
-    object-fit: cover;
     img {
       width: 150px;
       height: 150px;
       border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid #4d9d74;
     }
   }
   .account-image-div {
