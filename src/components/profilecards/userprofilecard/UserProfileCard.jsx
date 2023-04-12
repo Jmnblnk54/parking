@@ -201,6 +201,9 @@ export const Wrapper = styled.div`
     line-height: 0.7;
     min-height: 370px;
     width: 100%;
+    -webkit-box-shadow: 0px 0px 37px -3px rgba(194,194,194,1);
+    -moz-box-shadow: 0px 0px 37px -3px rgba(194,194,194,1);
+    box-shadow: 0px 0px 37px -3px rgba(194,194,194,1);
     h1 {
       margin: 0px;
       font-size: 40px;

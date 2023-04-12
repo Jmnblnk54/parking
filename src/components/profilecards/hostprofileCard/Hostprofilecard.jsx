@@ -226,6 +226,9 @@ export const Wrapper = styled.div`
     line-height: 0.7;
   }
   .user-profile-card {
+    -webkit-box-shadow: 0px 0px 37px -3px rgba(194,194,194,1);
+    -moz-box-shadow: 0px 0px 37px -3px rgba(194,194,194,1);
+    box-shadow: 0px 0px 37px -3px rgba(194,194,194,1);
     border-radius: 20px;
     line-height: 0.7;
     min-height: 370px;

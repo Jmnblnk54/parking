@@ -251,13 +251,21 @@ export const Wrapper = styled.div`
       margin: 0px;
     }
   }
+
+  .profile-card-upcom {
+    -webkit-box-shadow: 0px 0px 37px -3px rgba(194,194,194,1);
+    -moz-box-shadow: 0px 0px 37px -3px rgba(194,194,194,1);
+    box-shadow: 0px 0px 37px -3px rgba(194,194,194,1);
+  }
+
   .switch-btn {
     width: 416px;
-
+    outline: none;
     border-radius: 20px;
     background-color: #080f28;
     color: white;
     height: 38px;
+    border: none;
   }
   .switchButton {
     width: 100%;

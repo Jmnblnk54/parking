@@ -37,7 +37,9 @@ export const Wrapper = styled.div`
   .walletcard {
     height: 100%;
     width: 100%;
-
+    -webkit-box-shadow: 0px 0px 37px -3px rgba(194,194,194,1);
+    -moz-box-shadow: 0px 0px 37px -3px rgba(194,194,194,1);
+    box-shadow: 0px 0px 37px -3px rgba(194,194,194,1);
     background-color: rgba(77, 157, 116, 0.2);
     text-align: center;
     border-radius: 20px;

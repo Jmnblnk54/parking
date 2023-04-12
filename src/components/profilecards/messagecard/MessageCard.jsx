@@ -70,6 +70,9 @@ export const Wrapper = styled.div`
   .user-profile-card {
     border-radius: 20px;
     margin-top: 20px;
+    -webkit-box-shadow: 0px 0px 37px -3px rgba(194,194,194,1);
+    -moz-box-shadow: 0px 0px 37px -3px rgba(194,194,194,1);
+    box-shadow: 0px 0px 37px -3px rgba(194,194,194,1);
     .ant-card-body {
       padding: 5px 16px 11px 18px;
       h1 {

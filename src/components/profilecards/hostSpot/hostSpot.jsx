@@ -29,7 +29,10 @@ export default function UpcomingReservation() {
 export const Wrapper = styled.div`
   width: 100%;
   .user-profile-card {
-    border-radius: 35px;
+    -webkit-box-shadow: 0px 0px 37px -3px rgba(194,194,194,1);
+    -moz-box-shadow: 0px 0px 37px -3px rgba(194,194,194,1);
+    box-shadow: 0px 0px 37px -3px rgba(194,194,194,1);
+    border-radius: 20px;
     margin-top: 20px;
     .ant-card-body {
       padding: 5px 16px 11px 18px;

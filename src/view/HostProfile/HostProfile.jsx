@@ -283,11 +283,12 @@ const Wrapper = styled.div`
 
     .switch-btn {
       width: 416px;
-
+      outline: none;
       border-radius: 20px;
       background-color: #080f28;
       color: white;
       height: 38px;
+      border: none;
     }
   }
   .switch {
