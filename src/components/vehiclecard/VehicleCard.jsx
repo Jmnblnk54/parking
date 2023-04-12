@@ -13,12 +13,12 @@ export default function VehicleCard({ user, handleDelete }) {
       <Wrapper>
         <Card className="user-profile-card">
           <h1>VEHICLE INFORMATION</h1>
-          <p>
-            {user.vehicleModel === ""
+          <p className="static-text">
+            { user.vehicleModel === ""
               ? "No Car Registered"
               : user?.vehicleMake + "\t" + user?.vehicleModel}
           </p>
-          <p>
+          <p className="static-text">
             {user.LicensePlateNumber === "" ||
             user.LicensePlateNumber === "undefined"
               ? "No License Number"
@@ -83,6 +83,11 @@ box-shadow: 0px 0px 37px -3px rgba(194,194,194,1);
         margin: 0px;
         white-space: nowrap;
       }
+    }
+    .static-text {
+      // margin-top: 20px;
+      text-transform: capitalize;
+      color: #b5b4b4;  
     }
     p {
       margin: 0px;

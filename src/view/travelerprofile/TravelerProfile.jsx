@@ -179,7 +179,7 @@ export default function TravellerProfile() {
     <>
       <Navbar />
       <Wrapper>
-        <div class="profile-sub-wrap">
+        <div className="profile-sub-wrap">
           {error ? <Alert message={error} closable /> : null}
           <div className="my-Profile">
             <h1>MY PROFILE</h1>

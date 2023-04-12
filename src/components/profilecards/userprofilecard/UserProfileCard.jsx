@@ -113,20 +113,20 @@ export default function UserProfileCard({ user, setUser }) {
           </div>
           <Row style={{ marginTop: "10px" }}>
             <Col className="personal-Info-Col">
+            <a onClick={() => setShowPersonal(true)}>
               <div className="settings-li">
-                <a onClick={() => setShowPersonal(true)}>
                   Personal Information
-                </a>
-              </div>
+                </div>
+              </a>
             </Col>
           </Row>
           <Row>
             <Col className="personal-Info-Col">
+            <a href onClick={() => setShowPaymentModal(true)}>
               <div className="settings-li">
-                <a href onClick={() => setShowPaymentModal(true)}>
                   Payment Method
-                </a>
               </div>
+              </a>
               {/* <Select
                 defaultValue="payout method"
                 className="personal-Info-Select"
@@ -150,9 +150,12 @@ export default function UserProfileCard({ user, setUser }) {
           </Row> */}
           <Row>
             <Col xs={24} className="personal-Info-Col">
+              
+            <a onClick={() => setShowReferral(true)}>
               <div className="settings-li">
-                <a onClick={() => setShowReferral(true)}>My Referral Code</a>
+                My Referral Code
               </div>
+              </a>
               {/* <Select
                 defaultValue="my referral code"
                 className="personal-Info-Select"
@@ -221,7 +224,7 @@ export const Wrapper = styled.div`
     }
     #account-text {
       margin-top: 20px;
-      text-transform: uppercase;
+      text-transform: capitalize;
       color: #b5b4b4;
     }
   }
@@ -307,9 +310,9 @@ export const Wrapper = styled.div`
 
   .settings-li {
     width: 100%;
-
+    color: #000;
     padding: 10px 0px;
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid #eeeded;
 
     a {
       color: black;

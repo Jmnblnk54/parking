@@ -11,7 +11,7 @@ export default function FavoriteCard() {
       <Wrapper>
         <Card className="user-profile-card">
           <h1>FAVORITES</h1>
-          <p>View my favorite spots</p>
+          <p className="static-text">View my favorite spots</p>
           <div className="buttons">
             <button
               className="book-now-button"
@@ -38,6 +38,10 @@ box-shadow: 0px 0px 37px -3px rgba(194,194,194,1);
       h1 {
         margin: 0px;
       }
+    }
+    .static-text {
+      text-transform: capitalize;
+      color: #b5b4b4;  
     }
     p {
       margin: 0px;

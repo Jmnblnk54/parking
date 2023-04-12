@@ -180,7 +180,7 @@ export default function MyProfile() {
     <>
       <Navbar />
       <Wrapper>
-        <div class="profile-sub-wrap">
+        <div className="profile-sub-wrap">
           {error ? (
             <Modal
               visible={error ? true : false}

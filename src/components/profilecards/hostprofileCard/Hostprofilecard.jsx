@@ -250,7 +250,7 @@ export const Wrapper = styled.div`
     }
     #account-text {
       margin-top: 20px;
-      text-transform: uppercase;
+      text-transform: capitalize;
       color: #b5b4b4;
     }
   }

@@ -52,6 +52,8 @@ box-shadow: 0px 0px 37px -3px rgba(194,194,194,1);
           img {
             width: 100%;
             object-fit: cover;
+            width: 100%;
+            height: 200px;
           }
         }
         .details {

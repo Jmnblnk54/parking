@@ -15,7 +15,7 @@ export default function MessageCard() {
           style={{ marginTop: "20px" }}
         >
           <h1 id="heading">MESSAGE INBOX</h1>
-          <p>Click to chat</p>
+          <p className="static-text">Click to chat</p>
           <div className="buttons">
             <button
               className="book-now-button"
@@ -67,6 +67,12 @@ export default function MessageCard() {
 
 export const Wrapper = styled.div`
   width: 100%;
+
+  .static-text {
+    text-transform: capitalize;
+    color: #b5b4b4;  
+  }
+
   .user-profile-card {
     border-radius: 20px;
     margin-top: 20px;

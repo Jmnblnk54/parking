@@ -52,7 +52,7 @@ export default function Testimonial() {
             ullamcorper suscipit lobortis nisl ut aliquip ex ea co.png
           </p>
           <div className="overlay">
-            <img class="last" id="curve" src={curve1} />
+            <img className="last" id="curve" src={curve1} />
 
             <img src={Group99} id="user-img" />
             <h1>Paul green</h1>
@@ -105,7 +105,7 @@ export default function Testimonial() {
                 aliquip ex ea co.png
               </p>
               <div className="overlay">
-                <img class="last" id="curve" src={curve3} />
+                <img className="last" id="curve" src={curve3} />
 
                 <img src={Group99} id="user-img" />
                 <h1>Paul green</h1>
