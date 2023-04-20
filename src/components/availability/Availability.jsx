@@ -22,44 +22,47 @@ export default function Availabilty(props) {
 
           <Row>
             <Col lg={24}>
-              <DateRange
-                minDate={new Date()}
-                editableDateInputs={true}
-                onChange={(item) => {
-                  setState([item.selection]);
-                  console.log(item.selection);
+              <div className="date-col">
+                <DateRange
+                  minDate={new Date()}
+                  editableDateInputs={true}
+                  onChange={(item) => {
+                    setState([item.selection]);
+                    console.log(item.selection);
+                    props.setData({
+                      ...props.data,
+                      startDate: item.selection.startDate.toUTCString(),
+                      endDate: item.selection.endDate.toUTCString(),
+                    });
+                  }}
+                  rangeColors={["#4d9d74", "#4d9d74", "#4d9d74"]}
+                  moveRangeOnFirstSelection={false}
+                  ranges={state}
+                />
+              </div>
+              <div className="date-col">
+              <Checkbox
+                onChange={() => {
                   props.setData({
                     ...props.data,
-                    startDate: item.selection.startDate.toUTCString(),
-                    endDate: item.selection.endDate.toUTCString(),
+                    check: true,
                   });
                 }}
-                rangeColors={["#4d9d74", "#4d9d74", "#4d9d74"]}
-                moveRangeOnFirstSelection={false}
-                ranges={state}
-              />
-            </Col>
-          </Row>
-          <Checkbox
-            onChange={() => {
-              props.setData({
-                ...props.data,
-                check: true,
-              });
-            }}
-            style={{ marginTop: "20px" }}
-            value={props.data?.check}
-          >
-            I accept the
-            <span style={{ color: "#4d9d74" }}>
-              &nbsp;Terms Of Use and Privacy Policy
-            </span>
-          </Checkbox>
-          <Row>
-            <Col style={{ marginTop: "10px" }} lg={24}>
-              <button onClick={props.handleListSpot} id="spot-button">
-                List my spot
-              </button>
+                value={props.data?.check}
+              >
+                I accept the
+                <span style={{ color: "#4d9d74" }}>
+                  &nbsp;Terms Of Use and Privacy Policy
+                </span>
+              </Checkbox>
+              <Row>
+                <Col style={{ marginTop: "10px" }} lg={24}>
+                  <button onClick={props.handleListSpot} id="spot-button">
+                    List my spot
+                  </button>
+                </Col>
+              </Row>
+              </div>
             </Col>
           </Row>
         </Card>
@@ -117,5 +120,23 @@ export const Wrapper = styled.div`
     button {
       cursor: pointer;
     }
+  }
+  .rdrCalendarWrapper {
+    width: 100%;
+    height: 365px;
+  }
+  .rdrMonthsVertical {
+    justify-content: center;
+    margin: auto;
+  }
+  .date-col {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .ant-checkbox-wrapper {
+    font-size: 10px;
   }
 `;
