@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import { Col, message, Modal, Row, Spin } from "antd";
 import MessageCard from "../../components/profilecards/messagecard/MessageCard";
 import UpcomingReservation from "../../components/profilecards/upcomingcard/UpcomingCard";
+import addNewSpot from "../../components/profilecards/addSpot/addSpot";
 import HostProfileCard from "../../components/profilecards/hostprofileCard/Hostprofilecard";
 import WalletCard from "../../components/profilecards/walletcard/WalletCard";
 
@@ -14,6 +15,7 @@ import HostSpot from "../../components/profilecards/hostSpot/hostSpot";
 import fire from "../../config/config";
 import { LoadingOutlined } from "@ant-design/icons";
 import { Zoom } from "@mui/material";
+import AddNewSpot from "../../components/profilecards/addSpot/addSpot";
 
 const antIcon = (
   <LoadingOutlined
@@ -239,7 +241,9 @@ export default function MyProfile() {
                 <Col xs={24} sm={24} md={24} lg={8} xl={8}>
                   <HostSpot />
                 </Col>
-                <Col xs={24} sm={24} md={24} lg={8} xl={8}></Col>
+                <Col xs={24} sm={24} md={24} lg={8} xl={8}>
+                <AddNewSpot />
+                </Col>
               </Row>
             </>
           ) : (

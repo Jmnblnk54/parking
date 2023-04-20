@@ -20,6 +20,7 @@ export const Wrapper = styled.div`
     height: 100%;
     justify-content: center;
     align-items: center;
+    background: #4d9d74;
   }
 
   .bodyContent {
