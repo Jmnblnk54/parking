@@ -11,7 +11,7 @@ export default function UpcomingReservation() {
     <Wrapper>
       <Card className="user-profile-card" bordered={false}>
         <h1>MY SPOTS</h1>
-        <p>View my spots</p>
+        <p class="sub-text">View my spots</p>
         <div className="buttons">
           <button
             className="book-now-button"
@@ -62,5 +62,10 @@ export const Wrapper = styled.div`
       cursor: pointer;
       margin-left: 5px;
     }
+  }
+  .sub-text {
+    margin-top: 20px;
+    text-transform: capitalize;
+    color: #b5b4b4;
   }
 `;

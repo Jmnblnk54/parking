@@ -421,8 +421,8 @@ const AuthedRoute = ({
       to={
         isAuthentication
           ? userType === "HOST"
-            ? "/host/home"
-            : "/traveler/home"
+            ? "/host/profile"
+            : "/traveler/profile"
           : "/"
       }
     />
