@@ -16,9 +16,21 @@ import styled from "styled-components";
 import fire from "../../config/config";
 import PlaceAuto from "../Google Auto/PlaceAutocomplete";
 import { geocodeByAddress, getLatLng } from "react-places-autocomplete";
+import { useState, useEffect } from 'react';
+
 let count = 0;
 
 export default function ListSpot(props) {
+  const [count, setCount] = useState(0);
+
+  useEffect(() => {
+    setCount(0); // Reset input count on every refresh
+  }, []);
+
+  const handleClick = () => {
+    setCount(count + 1);
+  }
+
   const [previewVisible, setPreviewVisible] = React.useState(false);
   const [previewImage, setPreviewImage] = React.useState("");
   const [previewTitle, setPreviewTitle] = React.useState("");
@@ -216,6 +228,9 @@ export default function ListSpot(props) {
     <>
       <Wrapper>
         <Card className="list-spot" bordered={false}>
+        <div className="num-row">
+            <h2 style={{ color: count >= 4 ? 'green' : '#c7c7c7' }}>1</h2>
+          </div>
           <h1>List your spot</h1>
           <label>UPLOAD IMAGES</label>
 
@@ -243,16 +258,20 @@ export default function ListSpot(props) {
               />
             </Modal>
           </>
+
           <label>SPOT NAME</label>
 
           <Input
             allowClear
             value={props.data.spotName}
             onChange={(e) => {
+          
               props.setData({
                 ...props.data,
                 spotName: e.target.value,
               });
+              handleClick();
+              console.log(handleClick);
             }}
           />
           <label>SPOT ADDRESS</label>
@@ -281,6 +300,8 @@ export default function ListSpot(props) {
                 ...props.data,
                 noOfSpot: e.target.value,
               });
+              handleClick();
+              console.log(handleClick);
             }}
           />
           <label>DESCRIPTION</label>
@@ -292,6 +313,8 @@ export default function ListSpot(props) {
                 ...props.data,
                 spotDescription: e.target.value,
               });
+              handleClick();
+              console.log(handleClick);
             }}
           />
           <label>
@@ -317,7 +340,9 @@ export default function ListSpot(props) {
                   !props.halfDay
                     ? props.setData({ ...props.data, type: "Half Day" })
                     : props.setData({ ...props.data, type: "" });
-                }}
+                    handleClick();
+                    console.log(handleClick);
+                  }}
               >
                 HOURLY
               </button>
@@ -330,6 +355,8 @@ export default function ListSpot(props) {
                   !props.daily
                     ? props.setData({ ...props.data, type: "Daily" })
                     : props.setData({ ...props.data, type: "" });
+                    handleClick();
+                    console.log(handleClick);
                 }}
               >
                 DAILY
@@ -343,6 +370,8 @@ export default function ListSpot(props) {
                   !props.weekly
                     ? props.setData({ ...props.data, type: "Weekly" })
                     : props.setData({ ...props.data, type: "" });
+                    handleClick();
+                    console.log(handleClick);
                 }}
               >
                 WEEKLY
@@ -356,6 +385,8 @@ export default function ListSpot(props) {
                   !props.monthly
                     ? props.setData({ ...props.data, type: "Monthly" })
                     : props.setData({ ...props.data, type: "" });
+                  handleClick();
+                  console.log(handleClick);
                 }}
               >
                 MONTHLY
@@ -367,6 +398,7 @@ export default function ListSpot(props) {
     </>
   );
 }
+
 export const Wrapper = styled.div`
   .list-spot {
     background-color: white;
@@ -387,6 +419,12 @@ export const Wrapper = styled.div`
         background-color: #356e51;
       }
     }
+  }
+
+  .num-row h2 {
+    margin: 0;
+    // color: #c7c7c7;
+    font-size: 20px;
   }
 
   .ant-input-lg,

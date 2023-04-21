@@ -18,10 +18,13 @@ export default function Availabilty(props) {
     <>
       <Wrapper>
         <Card className="availability-card" bordered={false}>
+          <div className="num-row">
+            <h2>3</h2>
+          </div>
           <h1>Mark your availability</h1>
-
           <Row>
-            <Col lg={24}>
+            <div className="card-col">
+
               <div className="date-col">
                 <DateRange
                   minDate={new Date()}
@@ -63,7 +66,7 @@ export default function Availabilty(props) {
                 </Col>
               </Row>
               </div>
-            </Col>
+            </div>
           </Row>
         </Card>
       </Wrapper>
@@ -71,6 +74,9 @@ export default function Availabilty(props) {
   );
 }
 export const Wrapper = styled.div`
+
+  width: 100%;
+
   .availability-card {
     height: 550px;
     border-radius: 20px;
@@ -128,15 +134,46 @@ export const Wrapper = styled.div`
   .rdrMonthsVertical {
     justify-content: center;
     margin: auto;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    align-items: center;
+  }
+  .card-col {
+    width: 100%;
   }
   .date-col {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    width: 100%;
   }
 
   .ant-checkbox-wrapper {
     font-size: 10px;
+  }
+
+  .rdrMonth {
+    width: 100%;
+  }
+
+  .num-row h2 {
+    margin: 0;
+    color: #c7c7c7;
+    font-size: 20px;
+  }
+
+  @media screen and (max-width: 991px) {
+    .card-col {
+      width: 100%;
+    }
+    .rdrMonthsVertical {
+      max-width: 100%;
+    }
+    .rdrMonth {
+      width: 100%;
+    }
   }
 `;

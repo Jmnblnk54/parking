@@ -19,6 +19,9 @@ export default function PriceSpot(props) {
     <>
       <Wrapper>
         <Card className="price-spot" bordered={false}>
+          <div className="num-row">
+            <h2>2</h2>
+          </div>
           <h1>Price your spot(s)</h1>
           <Row
             gutter={16}
@@ -179,6 +182,7 @@ export default function PriceSpot(props) {
   );
 }
 export const Wrapper = styled.div`
+  width: 100%;
   .price-spot {
     background-color: white;
     border-radius: 30px;
@@ -199,6 +203,11 @@ export const Wrapper = styled.div`
       margin-top: 10px;
       display: flex;
       align-items: center;
+    }
+    .num-row h2 {
+      margin: 0;
+      color: #c7c7c7;
+      font-size: 20px;
     }
     .row-card {
       background-color: #eff0f2;

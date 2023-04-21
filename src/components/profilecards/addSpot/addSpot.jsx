@@ -66,6 +66,7 @@ export const Wrapper = styled.div`
       font-size: 14px;
       cursor: pointer;
       margin-left: 5px;
+      border: 1px solid #fff;
     }
   }
   .sub-text {

@@ -259,7 +259,7 @@ export default function MyProfile() {
 
 const Wrapper = styled.div`
   // height: calc(100% - 114.25px);
-  height: 100%;
+  // height: 100%;
 
   .profile-sub-wrap {
     background-color: #e7f0eb;
@@ -318,5 +318,14 @@ const Wrapper = styled.div`
         margin: 0px !important;
       }
     }
+
+    .price-spot {
+      width: 50%!important;
+    }
+
+    .availability-card {
+      width: 50%!important;
+    }
+
   }
 `;

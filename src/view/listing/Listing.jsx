@@ -125,62 +125,93 @@ export default function Listing() {
             )}
             <Row>
               <Col lg={24}>
-                <h1 style={{ textAlign: "start" }}>
-                  {"Manage Listing".toUpperCase()}
-                </h1>
+                <h1>MANAGE LISTING</h1>
               </Col>
             </Row>
-            <Row gutter={16}>
-              <Col lg={8}>
-                <ListSpot
-                  halfDay={halfDay}
-                  setHalfDay={setHalfDay}
-                  daily={daily}
-                  setDaily={setDaily}
-                  weekly={weekly}
-                  setWeekly={setWeekly}
-                  monthly={monthly}
-                  setMonthly={setMonthly}
-                  data={data}
-                  setData={setData}
-                />
-              </Col>
-              <Col lg={8}>
-                <PriceSpot
-                  halfDay={halfDay}
-                  setHalfDay={setHalfDay}
-                  daily={daily}
-                  setDaily={setDaily}
-                  weekly={weekly}
-                  setWeekly={setWeekly}
-                  monthly={monthly}
-                  setMonthly={setMonthly}
-                  data={data}
-                  setData={setData}
-                />
-              </Col>
-              <Col lg={8}>
-                <Availabilty
-                  data={data}
-                  setData={setData}
-                  handleListSpot={handleListSpot}
-                />
-              </Col>
-            </Row>
+            <div className="flex-row">
+                <div className="listing-col">
+                  <ListSpot
+                    halfDay={halfDay}
+                    setHalfDay={setHalfDay}
+                    daily={daily}
+                    setDaily={setDaily}
+                    weekly={weekly}
+                    setWeekly={setWeekly}
+                    monthly={monthly}
+                    setMonthly={setMonthly}
+                    data={data}
+                    setData={setData}
+                  />
+                </div>
+                <div className="listing-col">
+                  <PriceSpot
+                    halfDay={halfDay}
+                    setHalfDay={setHalfDay}
+                    daily={daily}
+                    setDaily={setDaily}
+                    weekly={weekly}
+                    setWeekly={setWeekly}
+                    monthly={monthly}
+                    setMonthly={setMonthly}
+                    data={data}
+                    setData={setData}
+                  />
+                </div>
+                <div className="listing-col">
+                  <Availabilty
+                    data={data}
+                    setData={setData}
+                    handleListSpot={handleListSpot}
+                  />
+                </div>
+            </div>
           </div>
-          </Wrapper>
+        </Wrapper>
     </>
   );
 }
 
 export const Wrapper = styled.div`
-  background-color: #000;
-  height: 100%;
-
+    height: 100%;
+  
   .profile-sub-wrap {
     background-color: #e7f0eb;
     height: 100%;
     padding: 30px 30px 20px 30px;
     height: 100%;
+  }
+  .flex-row {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    width: 100%;
+    flex-wrap: wrap;
+  }
+
+  .listing-col {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 30%;
+    margin: 10px;
+  }
+
+  @media screen and (max-width: 991px) {
+    height: auto!important;
+    
+    .listing-col {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      margin: auto;
+      max-width: 100%;
+      margin-bottom: 5%; 
+    }
+
+    .flex-row {
+      flex-direction: column;
+    }
+
   }
 `;
