@@ -34,18 +34,16 @@ export default function PriceSpot(props) {
             <h2 style={{ color: count >= 2 ? 'green' : '#c7c7c7' }}>2</h2>
           </div>
           <h1>Price your spot(s)</h1>
-          <Row
-            gutter={16}
-            align="middle"
-            className={props.halfDay ? "row-card" : "row-card disabled"}
-          >
-            <Col xl={19}>
+          <div
+            className={props.halfDay ? "row-card" : "row-card disabled"} >
+            <div className="time-col">
               <button>Hourly</button>
-            </Col>
+            </div>
             <Col xl={5}>
-              <Row align="middle" className="price-row">
+            <div className="col">
+              <div className="price-row">
                 <Col lg={5}>$&nbsp;</Col>
-                <Col lg={19}>
+                <div className="input-col">
                   <input
                     type="number"
                     className="input-price"
@@ -62,22 +60,20 @@ export default function PriceSpot(props) {
                       });
                     }}
                   />
-                </Col>
-              </Row>
+                  </div>
+               </div> 
+              </div>
             </Col>
-          </Row>
-          <Row
-            gutter={16}
-            align="middle"
-            className={props.daily ? "row-card" : "row-card disabled"}
-          >
-            <Col xl={19}>
+          </div>
+          <div className={props.daily ? "row-card" : "row-card disabled"}>
+            <div className="time-col">
               <button>Daily</button>
-            </Col>
+            </div>
             <Col xl={5}>
-              <Row align="middle" className="price-row">
+            <div className="col">
+              <div className="price-row">
                 <Col lg={5}>$&nbsp;</Col>
-                <Col lg={19}>
+                <div className="input-col">
                   <input
                     type="number"
                     className="input-price"
@@ -94,54 +90,49 @@ export default function PriceSpot(props) {
                       });
                     }}
                   />
-                </Col>
-              </Row>
+                </div>
+              </div>
+              </div>
             </Col>
-          </Row>
-          <Row
-            gutter={16}
-            align="middle"
-            className={props.weekly ? "row-card" : "row-card disabled"}
-          >
-            <Col xl={19}>
+          </div>
+          <div className={props.weekly ? "row-card" : "row-card disabled"} >
+            <div className="time-col">
               <button>Weekly</button>
-            </Col>
+            </div>
             <Col xl={5}>
-              <Row align="middle" className="price-row">
+              <div className="col">
+              <div className="price-row">
                 <Col lg={5}>$&nbsp;</Col>
-                <Col lg={19}>
-                  <input
-                    type="number"
-                    className="input-price"
-                    placeholder="00"
-                    min="1"
-                    max="99"
-                    disabled={!props.weekly}
-                    value={props.data.weeklyPrice}
-                    onChange={(e) => {
-                      handleClick();
-                      props.setData({
-                        ...props.data,
-                        weeklyPrice: e.target.value,
-                      });
-                    }}
-                  />
-                </Col>
-              </Row>
+                  <div className="input-col">
+                    <input
+                      type="number"
+                      className="input-price"
+                      placeholder="00"
+                      min="1"
+                      max="99"
+                      disabled={!props.weekly}
+                      value={props.data.weeklyPrice}
+                      onChange={(e) => {
+                        handleClick();
+                        props.setData({
+                          ...props.data,
+                          weeklyPrice: e.target.value,
+                        });
+                      }}
+                    />
+                  </div>
+                </div>
+              </div>
             </Col>
-          </Row>
-          <Row
-            gutter={16}
-            align="middle"
-            className={props.monthly ? "row-card" : "row-card disabled"}
-          >
-            <Col xl={19}>
+          </div>
+          <div className={props.monthly ? "row-card" : "row-card disabled"} >
+            <div className="time-col">
               <button>Monthly</button>
-            </Col>
-            <Col xl={5}>
-              <Row align="middle" className="price-row">
-                <Col lg={5}>$&nbsp;</Col>
-                <Col lg={19}>
+            </div>
+            <div className="col">
+              <div className="price-row">
+                <Col>$&nbsp;</Col>
+                <div className="input-col">
                   <input
                     type="number"
                     className="input-price"
@@ -158,10 +149,10 @@ export default function PriceSpot(props) {
                       });
                     }}
                   />
-                </Col>
-              </Row>
-            </Col>
-          </Row>
+                </div>
+              </div>
+            </div>
+          </div>
           <Row>
             <Col>
               <p id="crypto-text">
@@ -198,6 +189,20 @@ export default function PriceSpot(props) {
 }
 export const Wrapper = styled.div`
   width: 100%;
+
+  .price-row {
+    display: flex;
+    width: 100%;
+    max-width: 75px;
+  }
+
+  .row-card {
+    display: flex;
+    justify-content: space-between;
+    padding: 5px;
+    align-items: center;
+  }
+
   .price-spot {
     background-color: white;
     border-radius: 30px;
