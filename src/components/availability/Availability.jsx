@@ -1,11 +1,21 @@
 import { Card, Checkbox, Col, Row } from "antd";
-import { useState } from "react";
+import { useState,  useEffect } from "react";
 import { DateRange } from "react-date-range";
 import "react-date-range/dist/styles.css"; // main style file
 import "react-date-range/dist/theme/default.css"; // theme css file
 import styled from "styled-components";
 
 export default function Availabilty(props) {
+  const [count, setCount] = useState(0);
+
+  useEffect(() => {
+    setCount(0); // Reset input count on every refresh
+  }, []);
+
+  const handleClick = () => {
+    setCount(count + 1);
+  }
+
   const [state, setState] = useState([
     {
       startDate: new Date(),
@@ -19,7 +29,7 @@ export default function Availabilty(props) {
       <Wrapper>
         <Card className="availability-card" bordered={false}>
           <div className="num-row">
-            <h2>3</h2>
+            <h2 style={{ color: count >= 1 ? 'green' : '#c7c7c7' }}>3</h2>
           </div>
           <h1>Mark your availability</h1>
           <Row>
@@ -37,6 +47,7 @@ export default function Availabilty(props) {
                       startDate: item.selection.startDate.toUTCString(),
                       endDate: item.selection.endDate.toUTCString(),
                     });
+                    handleClick();
                   }}
                   rangeColors={["#4d9d74", "#4d9d74", "#4d9d74"]}
                   moveRangeOnFirstSelection={false}

@@ -1,14 +1,25 @@
-import { useState } from "react";
+import { useState,  useEffect} from "react";
 import { Card, Col, Row, Input, Checkbox, Radio, Tooltip } from "antd";
 import styled from "styled-components";
 import { InfoCircleFilled } from "@ant-design/icons";
 
 export default function PriceSpot(props) {
+  const [count, setCount] = useState(0);
+
+  useEffect(() => {
+    setCount(0); // Reset input count on every refresh
+  }, []);
+
+  const handleClick = () => {
+    setCount(count + 1);
+  }
+
   const [value, setValue] = useState(2);
 
   const onChange = (e) => {
     console.log("checked box", e.target.value);
     setValue(e.target.value);
+    handleClick();
   };
   // console.log(props.halfDay);
   // console.log(props.daily);
@@ -20,7 +31,7 @@ export default function PriceSpot(props) {
       <Wrapper>
         <Card className="price-spot" bordered={false}>
           <div className="num-row">
-            <h2>2</h2>
+            <h2 style={{ color: count >= 2 ? 'green' : '#c7c7c7' }}>2</h2>
           </div>
           <h1>Price your spot(s)</h1>
           <Row
@@ -44,6 +55,7 @@ export default function PriceSpot(props) {
                     disabled={!props.halfDay}
                     value={props.data.halfDayPrice}
                     onChange={(e) => {
+                      handleClick();
                       props.setData({
                         ...props.data,
                         halfDayPrice: e.target.value,
@@ -75,6 +87,7 @@ export default function PriceSpot(props) {
                     disabled={!props.daily}
                     value={props.data.dailyPrice}
                     onChange={(e) => {
+                      handleClick();
                       props.setData({
                         ...props.data,
                         dailyPrice: e.target.value,
@@ -106,6 +119,7 @@ export default function PriceSpot(props) {
                     disabled={!props.weekly}
                     value={props.data.weeklyPrice}
                     onChange={(e) => {
+                      handleClick();
                       props.setData({
                         ...props.data,
                         weeklyPrice: e.target.value,
@@ -137,6 +151,7 @@ export default function PriceSpot(props) {
                     disabled={!props.monthly}
                     value={props.data.monthlyPrice}
                     onChange={(e) => {
+                      handleClick();
                       props.setData({
                         ...props.data,
                         monthlyPrice: e.target.value,
