@@ -61,7 +61,7 @@ const PlacesAuto = (props) => {
               {...getInputProps({
                 className: "location-search-input",
                 name: "address",
-                placeholder: props.noPlaceHolder ? "" : "where are you going ?",
+                placeholder: props.noPlaceHolder ? "ADD SPOT ADDRESS" : "where are you going ?",
                 size: "large",
               })}
               value={props.value}

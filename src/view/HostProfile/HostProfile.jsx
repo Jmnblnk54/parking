@@ -1,15 +1,14 @@
 import React, { useEffect, useState } from "react";
-
 import { Col, message, Modal, Row, Spin } from "antd";
 import MessageCard from "../../components/profilecards/messagecard/MessageCard";
 import UpcomingReservation from "../../components/profilecards/upcomingcard/UpcomingCard";
 import addNewSpot from "../../components/profilecards/addSpot/addSpot";
+import {BrowserRouter as Router, useHistory } from "react-router-dom";
 import HostProfileCard from "../../components/profilecards/hostprofileCard/Hostprofilecard";
 import WalletCard from "../../components/profilecards/walletcard/WalletCard";
-
 import Navbar from "../../components/common/navbar/Navbar";
 // import { Wrapper } from "../spotNearMe/SpotNearMe.styled";
-import { useHistory } from "react-router";
+// import { useHistory } from "react-router";
 import styled from "styled-components";
 import HostSpot from "../../components/profilecards/hostSpot/hostSpot";
 import fire from "../../config/config";
@@ -44,6 +43,7 @@ export default function MyProfile() {
   const userId = localStorage.getItem("USERID");
   const uType = localStorage.getItem("User Type");
   const token = localStorage.getItem("Auth Token");
+  console.log('this' + history);
 
   const [error, setError] = useState("");
   const [stripeAccount, setStripeAccount] = useState("");
@@ -88,7 +88,8 @@ export default function MyProfile() {
   }
 
   const SwitchToTraveler = () => {
-    console.log("UID", userData);
+    console.log("Button has been clicked");
+    // console.log("UID", userData);
     fire
       .firestore()
       .collection("users")
@@ -130,7 +131,7 @@ export default function MyProfile() {
               localStorage.setItem("User Type", "TRAVELER");
               // localStorage.setItem("STRIPE_CUSTOMERID", userData?.customerId);
               window.location.reload(false);
-              history.push("/traveler/profile");
+              this.props.history.push("/traveler/profile");
             })
             .catch((e) => console.log(e));
         } else {

@@ -1,9 +1,9 @@
 import { Alert, Col, message, Row } from "antd";
 import React, { useEffect, useState } from "react";
-import { useHistory } from "react-router";
+// import { useHistory } from "react-router";
 import styled from "styled-components";
 import fire from "../../config/config";
-
+import {BrowserRouter as Router, useHistory } from "react-router-dom";
 import Navbar from "../../components/common/navbar/Navbar";
 import FavoriteCard from "../../components/favoritecard/FavoriteCard";
 import MessageCard from "../../components/profilecards/messagecard/MessageCard";
@@ -35,6 +35,7 @@ export default function TravellerProfile() {
   const userId = localStorage.getItem("USERID");
   const uType = localStorage.getItem("User Type");
   const token = localStorage.getItem("Auth Token");
+  console.log('this' + history);
   const [error, setError] = useState("");
   useEffect(() => {
     async function getData() {
@@ -46,7 +47,7 @@ export default function TravellerProfile() {
         .onSnapshot((query) => {
           if (query.size === 0) {
             console.log("NO FOUND");
-            console.log("Hassan", uType);
+            console.log("test", uType);
           } else {
             query.forEach((e) => {
               setUser({
@@ -135,6 +136,7 @@ export default function TravellerProfile() {
               localStorage.setItem("User Type", "HOST");
               window.location.reload(false);
               history.push("/host/profile");
+
             });
         } else {
           e.forEach((doc) => {

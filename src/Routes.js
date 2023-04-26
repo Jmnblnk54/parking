@@ -385,11 +385,11 @@ const Routes = () => {
         />
         {session && type === "HOST" ? (
           <>
-            <Redirect to="/host/home" exact={true} />
+            <Redirect to="/host/profile" exact={true} />
           </>
         ) : (
           <>
-            <Redirect to="/traveler/home" exact={true} />
+            <Redirect to="/traveler/profile" exact={true} />
           </>
         )}
         <Redirect to="/" />
@@ -417,6 +417,7 @@ const AuthedRoute = ({
       )}
     />
   ) : (
+    // Inital login routes
     <Redirect
       to={
         isAuthentication

@@ -258,29 +258,32 @@ export default function ListSpot(props) {
               />
             </Modal>
           </>
+          <div class="option-col">
+            {/* <label>SPOT NAME</label> */}
+            <Input
+              allowClear
+              value={props.data.spotName}
+              placeholder="ADD SPOT NAME"
+              onChange={(e) => {
+                props.setData({
+                  ...props.data,
+                  spotName: e.target.value,
+                });
+                handleClick();
+                console.log(handleClick);
+              }}
+            />
+          </div>
 
-          <label>SPOT NAME</label>
-
-          <Input
-            allowClear
-            value={props.data.spotName}
-            onChange={(e) => {
-          
-              props.setData({
-                ...props.data,
-                spotName: e.target.value,
-              });
-              handleClick();
-              console.log(handleClick);
-            }}
-          />
-          <label>SPOT ADDRESS</label>
-          <PlaceAuto
-            value={props.data.spotAddress}
-            handleSelect={handleSelect}
-            handlePlace={handlePlace}
-            noPlaceHolder
-          />
+          <div class="option-col">
+            {/* <label>SPOT ADDRESS</label> */}
+            <PlaceAuto
+              value={props.data.spotAddress}
+              handleSelect={handleSelect}
+              handlePlace={handlePlace}
+              noPlaceHolder
+            />
+          </div>
           {/* <Input
             allowClear
             value={props.data.spotAddress}
@@ -291,32 +294,47 @@ export default function ListSpot(props) {
               });
             }}
           /> */}
-          <label>NUMBER OF SPOTS</label>
-          <Input
-            allowClear
-            value={props.data.noOfSpot}
-            onChange={(e) => {
-              props.setData({
-                ...props.data,
-                noOfSpot: e.target.value,
-              });
-              handleClick();
-              console.log(handleClick);
-            }}
-          />
-          <label>DESCRIPTION</label>
-          <Input
-            allowClear
-            value={props.data.spotDescription}
-            onChange={(e) => {
-              props.setData({
-                ...props.data,
-                spotDescription: e.target.value,
-              });
-              handleClick();
-              console.log(handleClick);
-            }}
-          />
+
+          <div class="option-col">
+            {/* <label>NUMBER OF SPOTS</label> */}
+            <Input
+              allowClear
+              value={props.data.noOfSpot}
+              type="number"
+              placeholder="ADD NUMBER OF SPOTS"
+              min="1"
+              max="99"
+              disabled=""
+              onChange={(e) => {
+                props.setData({
+                  ...props.data,
+                  noOfSpot: e.target.value,
+                });
+                handleClick();
+                console.log(handleClick);
+              }}
+            />
+          </div>
+
+          <div class="option-col">
+            {/* <label>DESCRIPTION</label> */}
+            <Input
+              allowClear
+              value={props.data.spotDescription}
+              placeholder="DESCRIBE THE SPOT LOCATION"
+              onChange={(e) => {
+                props.setData({
+                  ...props.data,
+                  spotDescription: e.target.value,
+                });
+                handleClick();
+                console.log(handleClick);
+              }}
+            />
+          </div>
+         
+
+ 
           <label>
             AVAILABILITY
             <span style={{ marginLeft: "10px", fontSize: "10px" }}>
@@ -400,6 +418,7 @@ export default function ListSpot(props) {
 }
 
 export const Wrapper = styled.div`
+  width: 100%;
   .list-spot {
     background-color: white;
     border-radius: 30px;
@@ -421,10 +440,25 @@ export const Wrapper = styled.div`
     }
   }
 
+  label {
+    font-size: 12px;
+    color: #b5b4b4;
+  }
+
   .num-row h2 {
     margin: 0;
     // color: #c7c7c7;
     font-size: 20px;
+  }
+
+  .option-col {
+    height: 45px;
+    margin-top: 1%;
+    margin-bottom: 1%;
+  }
+
+  .option-col location-search-input {
+    font-size: 13px!important;
   }
 
   .ant-input-lg,
