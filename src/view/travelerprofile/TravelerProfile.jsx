@@ -277,6 +277,7 @@ export const Wrapper = styled.div`
     color: white;
     height: 38px;
   }
+
   @media screen and (max-width: 670px) {
     .my-Profile {
       flex-direction: column;

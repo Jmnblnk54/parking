@@ -1,6 +1,7 @@
 import { Card } from "antd";
 import moment from "moment";
 import React, { useEffect, useState } from "react";
+import styled from "styled-components";
 import { useHistory } from "react-router";
 import spotImage from "../../../assets/images/spot-image.svg";
 import fire from "../../../config/config";
@@ -32,7 +33,8 @@ export default function UpcomingCard() {
   }, []);
   return (
     <>
-      <Wrapper>
+      <Wrapping>
+        <Wrapper>
         <Card className="profile-card-upcom" bordered={false}>
           <h2>UPCOMING RESERVATIONS</h2>
 
@@ -50,29 +52,15 @@ export default function UpcomingCard() {
                     />
                   </div>
                   <div className="details">
-                    {/* <h3>{val?.spotData?.spotName}</h3> */}
-                    <div className="green-title">
-                      {"Spot Name:" + "\t" + val?.spotData?.spotName}
+                    <div className="details-title">
+                      <p>Spot Name: <span>{"\t" + val?.spotData?.spotName}</span></p>
                     </div>
-
-                    <div>Starting&nbsp;On</div>
-                    <div className="date">
-                      <div>
-                        {moment(val?.startDate, "MM-DD-YYYY, ddd hh:mm").format(
-                          "MM-DD-YYYY, ddd hh:mm a"
-                        )}
+                    <div className="details-title">
+                      <p>Starting&nbsp;On: <span>{moment(val?.startDate, "MM/DD/YYYY, ddd hh:mm").format("MM/DD/YYYY, ddd hh:mm a")}</span></p>
+                    </div>
+                      <div className="details-title">
+                        <p>Ending&nbsp;On: <span>{moment(val?.endDate, "MM/DD/YYYY, ddd hh:mm").format("MM/DD/YYYY, ddd hh:mm a")}</span></p>
                       </div>
-                    </div>
-
-                    <div>Leaving&nbsp;On</div>
-
-                    <div className="date">
-                      <div>
-                        {moment(val?.endDate, "MM-DD-YYYY, ddd hh:mm").format(
-                          "MM-DD-YYYY, ddd hh:mm a"
-                        )}
-                      </div>
-                    </div>
                   </div>
                 </div>
               );
@@ -88,7 +76,36 @@ export default function UpcomingCard() {
             </button>
           </div>
         </Card>
-      </Wrapper>
+        </Wrapper>
+      </Wrapping>
     </>
   );
 }
+
+const Wrapping = styled.div`
+  .details-title {
+    text-transform: capitalize;
+    color: #b5b4b4;
+
+    span {
+      color: #4d9d74;
+      font-weight: bold;
+    }
+
+    p {
+      display: flex;
+      flex-direction: column;
+      margin: 0;
+      padding: 0;
+      line-height: 19px;
+    }
+  }
+
+  .details {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 10px;
+  }
+`;

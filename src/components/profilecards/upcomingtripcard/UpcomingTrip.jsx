@@ -60,18 +60,14 @@ export default function UpcomingTrip() {
                     <div>Starting&nbsp;On</div>
                     <div className="date">
                       <div>
-                        {moment(val?.startDate, "MM-DD-YYYY, ddd hh:mm")
-                          .format("MM-DD-YYYY, ddd hh:mm a")
-                          .toString()}
+                        {moment(val?.startDate, "MM/DD/YYYY, ddd hh:mm").format("MM/DD/YYYY, ddd hh:mm a").toString()}
                       </div>
                     </div>
 
                     <div>Leaving&nbsp;On</div>
                     <div className="date">
                       <div>
-                        {moment(val?.endDate, "MM-DD-YYYY, ddd hh:mm")
-                          .format("MM-DD-YYYY, ddd hh:mm a")
-                          .toString()}
+                        {moment(val?.endDate, "MM/DD/YYYY, ddd hh:mm").format("MM/DD/YYYY, ddd hh:mm a").toString()}
                       </div>
                     </div>
                   </div>
