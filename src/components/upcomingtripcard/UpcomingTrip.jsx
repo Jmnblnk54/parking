@@ -10,7 +10,7 @@ export default function UpcomingTrip() {
     <>
       <Wrapper>
         <Card className="user-profile-card">
-          <h1>Upcoming trips</h1>
+          <h2>Upcoming trips</h2>
           <p>View my upcoming trips</p>
           <div className="buttons">
             <button

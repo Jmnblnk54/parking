@@ -10,7 +10,7 @@ export default function FavoriteCard() {
     <>
       <Wrapper>
         <Card className="user-profile-card">
-          <h1>FAVORITES</h1>
+          <h2>FAVORITES</h2>
           <p className="static-text">View my favorite spots</p>
           <div className="buttons">
             <button

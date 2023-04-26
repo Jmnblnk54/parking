@@ -329,4 +329,13 @@ const Wrapper = styled.div`
     }
 
   }
+  @media screen and (max-width: 670px) {
+    .my-Profile {
+      flex-direction: column;
+      align-items: flex-start;
+      .switch-btn {
+        width: 100%;
+      }
+    }
+  }
 `;

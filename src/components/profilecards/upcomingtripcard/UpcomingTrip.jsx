@@ -36,10 +36,8 @@ export default function UpcomingTrip() {
       <Wrapper>
         <Card
           className="profile-card-upcom"
-          bordered={false}
-          style={{ minHeight: "322px" }}
-        >
-          <h1>UPCOMING TRIPS</h1>
+          bordered={false}>
+          <h2>UPCOMING TRIPS</h2>
           {reservationData.length === 0 ? (
             <h2 style={{ alignSelf: "center" }}>{error}</h2>
           ) : (

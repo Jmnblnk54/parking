@@ -14,7 +14,7 @@ export default function MessageCard() {
           bordered={false}
           style={{ marginTop: "20px" }}
         >
-          <h1 id="heading">MESSAGE INBOX</h1>
+          <h2 id="heading">MESSAGE INBOX</h2>
           <p className="static-text">Click to chat</p>
           <div className="buttons">
             <button

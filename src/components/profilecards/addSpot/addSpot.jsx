@@ -10,7 +10,7 @@ export default function AddNewSpot() {
   return (
     <Wrapper>
       <Card className="user-profile-card" bordered={false}>
-        <h1>ADD SPOT</h1>
+        <h2>ADD SPOT</h2>
         <p class="sub-text">Add a new parking space</p>
         <div className="buttons">
           <button
@@ -47,6 +47,9 @@ export const Wrapper = styled.div`
     p {
       margin: 0px;
       margin-top: -5px;
+      color: #fff;
+    }
+    h2 {
       color: #fff;
     }
     .buttons {

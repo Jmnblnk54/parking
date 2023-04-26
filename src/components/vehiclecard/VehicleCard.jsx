@@ -12,7 +12,7 @@ export default function VehicleCard({ user, handleDelete }) {
     <>
       <Wrapper>
         <Card className="user-profile-card">
-          <h1>VEHICLE INFORMATION</h1>
+          <h2>VEHICLE INFORMATION</h2>
           <p className="static-text">
             { user.vehicleModel === ""
               ? "No Car Registered"

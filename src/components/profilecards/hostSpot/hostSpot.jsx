@@ -10,7 +10,7 @@ export default function UpcomingReservation() {
   return (
     <Wrapper>
       <Card className="user-profile-card" bordered={false}>
-        <h1>MY SPOTS</h1>
+        <h2>MY SPOTS</h2>
         <p class="sub-text">View my spots</p>
         <div className="buttons">
           <button

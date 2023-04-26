@@ -34,7 +34,7 @@ export default function UpcomingCard() {
     <>
       <Wrapper>
         <Card className="profile-card-upcom" bordered={false}>
-          <h1>UPCOMING RESERVATIONS</h1>
+          <h2>UPCOMING RESERVATIONS</h2>
 
           {data.length === 0 ? (
             <h2 style={{ alignSelf: "center" }}>{error}</h2>
