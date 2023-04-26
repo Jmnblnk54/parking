@@ -1,6 +1,7 @@
 import { Card } from "antd";
 import moment from "moment";
 import React, { useEffect, useState } from "react";
+import styled from "styled-components";
 import { useHistory } from "react-router";
 import fire from "../../../config/config";
 import { Wrapper } from "../Cards.styled";
@@ -33,6 +34,7 @@ export default function UpcomingTrip() {
 
   return (
     <>
+    <Wrapping>
       <Wrapper>
         <Card
           className="profile-card-upcom"
@@ -52,24 +54,19 @@ export default function UpcomingTrip() {
                     />
                   </div>
                   <div className="details">
-                    {/* <h3>{val?.spotData.spotName}</h3> */}
-                    <div className="green-title">
-                      {"Spot Name:" + "\t" + val?.spotData.spotName}
+                    
+                    <div className="details-title">
+                      <p>Spot Name: <span>{"\t" + val?.spotData.spotName}</span></p>
                     </div>
 
-                    <div>Starting&nbsp;On</div>
-                    <div className="date">
-                      <div>
-                        {moment(val?.startDate, "MM/DD/YYYY, ddd hh:mm").format("MM/DD/YYYY, ddd hh:mm a").toString()}
-                      </div>
+                    <div className="details-title">
+                      <p>Starting&nbsp;On: <span>{moment(val?.startDate, "MM/DD/YYYY, ddd hh:mm").format("MM/DD/YYYY, ddd hh:mm a").toString()}</span></p>
                     </div>
 
-                    <div>Leaving&nbsp;On</div>
-                    <div className="date">
-                      <div>
-                        {moment(val?.endDate, "MM/DD/YYYY, ddd hh:mm").format("MM/DD/YYYY, ddd hh:mm a").toString()}
-                      </div>
+                    <div className="details-title">
+                      <p>Leaving&nbsp;On: <span>{moment(val?.endDate, "MM/DD/YYYY, ddd hh:mm").format("MM/DD/YYYY, ddd hh:mm a").toString()}</span></p>
                     </div>
+
                   </div>
                 </div>
               );
@@ -86,6 +83,35 @@ export default function UpcomingTrip() {
           </div>
         </Card>
       </Wrapper>
+      </Wrapping>
     </>
   );
 }
+
+const Wrapping = styled.div`
+  .details-title {
+    text-transform: capitalize;
+    color: #b5b4b4;
+
+    span {
+      color: #4d9d74;
+      font-weight: bold;
+    }
+
+    p {
+      display: flex;
+      flex-direction: column;
+      margin: 0;
+      padding: 0;
+      line-height: 19px;
+    }
+  }
+
+  .details {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 10px;
+  }
+`;
