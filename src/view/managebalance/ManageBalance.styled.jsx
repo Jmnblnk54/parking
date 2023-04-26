@@ -1,7 +1,9 @@
 import styled from "styled-components";
 
 export const Wrapper = styled.div`
-  background-color: rgba(77, 157, 116, 0.2);
+  height: 100%!important;
+
+  background-color: rgb(77 157 116 / 7%);
 
   .CreditCardInput {
     border: 1px solid rgba(77, 157, 116, 0.2);
