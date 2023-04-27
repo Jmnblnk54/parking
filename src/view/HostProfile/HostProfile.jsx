@@ -260,10 +260,11 @@ export default function MyProfile() {
 
 const Wrapper = styled.div`
   // height: calc(100% - 114.25px);
+  background-color: rgba(77, 157, 116, 0.2);
   height: 100%;
 
   .profile-sub-wrap {
-    background-color: #e7f0eb;
+    // background-color: #e7f0eb;
     height: 100%;
     padding: 30px 30px 20px 30px;
     height: 100%;

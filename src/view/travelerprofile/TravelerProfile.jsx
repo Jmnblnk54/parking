@@ -234,10 +234,10 @@ export default function TravellerProfile() {
 
 export const Wrapper = styled.div`
   background-color: rgba(77, 157, 116, 0.2);
-  height: 100%;
+  // height: 100%;
 
   .profile-sub-wrap {
-    background-color: #e7f0eb;
+    // background-color: #e7f0eb;
     padding: 30px 30px 20px 30px;
     height: 100%;
   }
