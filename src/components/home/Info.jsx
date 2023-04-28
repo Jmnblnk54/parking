@@ -100,7 +100,8 @@ export const Wrapper = styled.div`
       position: absolute;
       right: -49px;
       bottom: -30px;
-      width: 373px;
+      width: 100%;
+      max-width: 373px;
     }
   }
   .user-card:last-child {
@@ -152,6 +153,14 @@ export const Wrapper = styled.div`
       right: 0 !important;
       bottom: 0 !important;
       width: 150px;
+    }
+  }
+
+  @media screen and (max-width: 700px) {
+    .ant-card-body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
   }
 `;
