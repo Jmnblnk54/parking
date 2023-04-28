@@ -13,9 +13,9 @@ function App() {
   // console.log(session);
 
   return (
-    <div style={{ height: "100%" }}>
+
       <Routes />
-    </div>
+
   );
 }
 

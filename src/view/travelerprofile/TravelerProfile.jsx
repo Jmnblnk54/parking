@@ -181,7 +181,7 @@ export default function TravellerProfile() {
     <>
       <Navbar />
       <Wrapper>
-        <div className="profile-sub-wrap">
+        {/* <div className="profile-sub-wrap"> */}
           {error ? <Alert message={error} closable /> : null}
           <div className="my-Profile">
             <h1>MY PROFILE</h1>
@@ -226,7 +226,7 @@ export default function TravellerProfile() {
               <FavoriteCard />
             </Col>
           </Row>
-        </div>
+        {/* </div> */}
       </Wrapper>
     </>
   );
@@ -234,13 +234,9 @@ export default function TravellerProfile() {
 
 export const Wrapper = styled.div`
   background-color: rgba(77, 157, 116, 0.2);
-  // height: 100%;
+  height: 100%;
+  padding: 30px 30px 20px 30px;
 
-  .profile-sub-wrap {
-    // background-color: #e7f0eb;
-    padding: 30px 30px 20px 30px;
-    height: 100%;
-  }
   .my-Profile {
     display: flex;
     align-items: center;
@@ -276,6 +272,12 @@ export const Wrapper = styled.div`
     background-color: #080f28;
     color: white;
     height: 38px;
+  }
+
+  @media screen and (max-width: 991px) {
+    overflow-y: scroll;
+    overflow-x: hidden;
+    background-color: rgba(77, 157, 116, 0.2);
   }
 
   @media screen and (max-width: 670px) {

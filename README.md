@@ -33,6 +33,13 @@ Must have a NodeJs installed on your machine
     3. npm install --force
     4. npm start
 
+Deployment
+    1. firebase init
+    2. Choose && confrim the project being de
+    3. npm run build
+    4. firebase deply
+
+
 ### Contributing ###
 
 Always do a git pull from 'main' before making a new branch or any other changes locally

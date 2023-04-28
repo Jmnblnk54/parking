@@ -213,6 +213,8 @@ export default function Hostprofilecard({
   );
 }
 export const Wrapper = styled.div`
+  height: 100%;
+
   .ant-upload {
     width: 0px;
   }
@@ -344,6 +346,12 @@ export const Wrapper = styled.div`
     a {
       color: black;
     }
+  }
+
+  @media screen and (max-width: 991px) {
+    overflow-y: scroll;
+    overflow-x: hidden;
+    background-color: rgba(77, 157, 116, 0.2);
   }
 
   @media screen and (max-width: 1300px) {
