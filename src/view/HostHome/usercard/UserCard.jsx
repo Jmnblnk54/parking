@@ -87,7 +87,8 @@ export const Wrapper = styled.div`
     position: absolute;
     right: -49px;
     bottom: -30px;
-    width: 373px;
+    width: 100%;
+    max-width: 373px;
   }
 
   @media screen and (max-width: 930px) {
@@ -103,12 +104,7 @@ export const Wrapper = styled.div`
       .ant-card-body {
         display: flex;
         justify-content: space-between;
-        .text-responsive {
-          width: 70%;
-        }
-        .text-responsive-center {
-          width: 80%;
-        }
+
         label {
           line-height: 50px;
           .bar {
@@ -124,18 +120,28 @@ export const Wrapper = styled.div`
         }
       }
     }
+    .user-card .ant-card-body .text-responsive {
+      width: 100%;
+    }
     #location-icon,
     #money-icon {
       position: relative;
       right: 0;
       bottom: 0;
-      width: 30%;
+      // width: 30%;
     }
     #mobile-icon {
       position: relative;
       right: 0;
       bottom: 0;
-      width: 20%;
+      // width: 20%;
+    }
+  }
+  @media screen and (max-width: 700px) {
+    .ant-card-body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
   }
 `;
