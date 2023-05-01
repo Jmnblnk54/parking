@@ -41,5 +41,6 @@ border: none;
   }
   label {
     cursor: pointer;
+    font-size: 1rem;
   }
 `;

@@ -107,7 +107,7 @@ box-shadow: 0px 0px 37px -3px rgba(194,194,194,1);
       border: none;
       border-radius: 20px;
       color: #fff;
-      font-size: 14px;
+      font-size: 1rem;
       cursor: pointer;
       margin-left: 5px;
     }

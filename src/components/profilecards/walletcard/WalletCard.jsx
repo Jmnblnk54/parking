@@ -75,7 +75,7 @@ export const Wrapper = styled.div`
     width: 100%;
     padding: 9px;
     border: 0px;
-    font-size: 18px;
+    font-size: 1rem;
     font-weight: normal;
     cursor: pointer;
   }

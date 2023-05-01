@@ -113,7 +113,7 @@ export const Wrapper = styled.div`
     border: none;
     border-radius: 30px;
     color: #fff;
-    font-size: 16px;
+    font-size: 1rem;
     cursor: pointer;
   }
 

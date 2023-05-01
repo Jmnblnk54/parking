@@ -225,7 +225,7 @@ const Wrapper = styled.div`
     border: none;
     border-radius: 20px;
     color: #fff;
-    font-size: 14px;
+    font-size: 1rem;
     cursor: pointer;
     margin-left: 5px;
   }
@@ -265,7 +265,7 @@ const Wrapper = styled.div`
     }
     .book-now-button {
       padding: 3px 10px;
-      font-size: 10px;
+      font-size: 1rem;
     }
     .details-button {
       font-size: 10px;

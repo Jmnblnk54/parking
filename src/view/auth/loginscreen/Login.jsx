@@ -281,7 +281,7 @@ export default function IndexPage() {
                     style={{
                       textAlign: "center",
                       fontFamily: "sans-serif",
-                      fontSize: "14px",
+                      fontSize: "1rem",
                       fontWeight: "bold",
                     }}
                   >
@@ -293,7 +293,7 @@ export default function IndexPage() {
                     style={{
                       textAlign: "center",
                       fontFamily: "sans-serif",
-                      fontSize: "14px",
+                      fontSize: "1rem",
                       fontWeight: "bold",
                     }}
                   >
@@ -318,7 +318,7 @@ export default function IndexPage() {
                       textAlign: "center",
                       fontFamily: "sans-serif",
                       fontWeight: "bold",
-                      fontSize: "14px",
+                      fontSize: "1rem",
                       color: "white",
                     }}
                   >

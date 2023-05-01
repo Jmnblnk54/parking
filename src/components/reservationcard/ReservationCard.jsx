@@ -295,7 +295,7 @@ export const Wrapper = styled.div`
     border: none;
     border-radius: 20px;
     color: #fff;
-    font-size: 14px;
+    font-size: 1rem;
     cursor: pointer;
     margin-left: 5px;
   }
@@ -368,7 +368,7 @@ export const Wrapper = styled.div`
     .book-now-button-decline {
       margin-top: 7px;
       padding: 4px 10px;
-      font-size: 12px;
+      font-size: 1rem;
     }
     .center-details {
       font-size: 12px;

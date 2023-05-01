@@ -264,6 +264,7 @@ export const Wrapper = styled.div`
     color: white;
     height: 38px;
     border: none;
+    font-size: 1rem;
   }
   .switchButton {
     width: 100%;

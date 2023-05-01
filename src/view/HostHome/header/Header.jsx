@@ -104,6 +104,9 @@ export const Wrapper = styled.div`
     width: 100%;
     padding: 2%;
   }
+  button span {
+    font-size: 1rem;
+  }
   @media screen and (max-width: 720px) {
     margin: 0px;
     height: fit-content;
