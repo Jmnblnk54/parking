@@ -28,16 +28,16 @@ None Yet
 
 ### Usage ###
 Must have a NodeJs installed on your machine
-    1. Git clone https://github.com/YugoPark/Yugo-Web.git
-    2. cd yugo-web
-    3. npm install --force
-    4. npm start
+    1. Git clone https://github.com/YugoPark/Yugo-Web.git <br />
+    2. cd yugo-web <br />
+    3. npm install --force <br />
+    4. npm start 
 
 Deployment
-    1. firebase init
-    2. Choose && confrim the project being de
-    3. npm run build
-    4. firebase deply
+    1. firebase init <br />
+    2. Choose && confrim the project being deployed <br />
+    3. npm run build <br />
+    4. firebase deply <br />
 
 
 ### Contributing ###
