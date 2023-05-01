@@ -651,11 +651,11 @@ align-items: center;
   .ant-menu-horizontal:not(.ant-menu-dark) > .ant-menu-item,
   .ant-menu-horizontal:not(.ant-menu-dark) > .ant-menu-submenu {
     padding: 3px;
-    color: #1a1818;
+    color: rgb(8,15,40);
     font-family: arciform;
     font-size: 19px;
     font-weight: 800;
-    -webkit-text-fill-color: #1a1818;
+    -webkit-text-fill-color: rgb(8,15,40);
   }
   .ant-input-affix-wrapper {
     height: 40px;
@@ -673,6 +673,10 @@ align-items: center;
     font-family: "Arciform";
     src: local("Arciform"), url("./fonts/Arciform.otf") format("otf");
     font-weight: normal;
+  }
+
+  .sub-menu-item {
+    color: rgb(8,15,40);
   }
 
   .search-drop-down {
@@ -697,6 +701,10 @@ align-items: center;
   }
   .click-menu-div {
     display: none;
+  }
+
+  .location-search-input {
+    border: 2px solid rgb(8,15,40);
   }
 
   @media screen and (max-width: 999px) {

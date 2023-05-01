@@ -154,6 +154,7 @@ export const Wrapper = styled.div`
 
     p {
       padding: 30px 30px 0px 30px;
+      color: rgb(8,15,40);
     }
     .overlay {
       position: relative;

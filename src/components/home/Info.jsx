@@ -71,7 +71,7 @@ export const Wrapper = styled.div`
       font-size: 50px;
 
       margin: 0;
-      color: #1b233c;
+      color: rgb(8,15,40);
       .bar1,
       .bar2 {
         position: absolute;
@@ -81,13 +81,11 @@ export const Wrapper = styled.div`
     }
     p {
       width: 80%;
-
       font-family: arciform;
       font-size: 20px;
       line-height: 22px;
       font-weight: semi-bold;
-
-      color: black;
+      color: rgb(8,15,40);
     }
     .top-image-center {
       width: 110px;

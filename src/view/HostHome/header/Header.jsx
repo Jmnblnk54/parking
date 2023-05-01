@@ -26,19 +26,19 @@ export default function Header() {
             <Row>
               <Col lg={24} xl={24} sm={24} md={12} xs={24}>
                 <div className="side-header-text">
-                  <h2>
+                  <h2 className="host-sub-title-text">
                     <img src={circle} width={"12px"} alt="" />
                     &nbsp;Flexible schedule
                   </h2>
 
-                  <p>list your space whenever you want.</p>
+                  <p className="host-sub-title-text">list your space whenever you want.</p>
 
-                  <h2>
+                  <h2 className="host-sub-title-text">
                     <img src={circle} width={"12px"} alt="" />
                     &nbsp;Get paid how you want, when you want
                   </h2>
 
-                  <p>
+                  <p className="host-sub-title-text">
                     cash out whenever you want or keep your balance in your YUGO
                     WALLET.{" "}
                   </p>
@@ -81,10 +81,12 @@ export const Wrapper = styled.div`
 
   h1 {
     font-family: arciform;
+    color: rgb(8,15,40);
   }
   #share-space {
     line-height: 60px;
     font-size: 70px;
+    color: rgb(8,15,40);
   }
   .ant-btn {
     background-color: #080f28 !important;
@@ -106,6 +108,9 @@ export const Wrapper = styled.div`
   }
   button span {
     font-size: 1rem;
+  }
+  .host-sub-title-text {
+    color: rgb(8,15,40)!important;
   }
   @media screen and (max-width: 720px) {
     margin: 0px;
@@ -135,6 +140,7 @@ export const Wrapper = styled.div`
       line-height: 1;
       P {
         font-size: 17px;
+        color: rgb(8,15,40);
       }
       img {
         width: 5px;

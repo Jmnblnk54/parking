@@ -48,7 +48,7 @@ const Wrapper = styled.div`
         h1{
             font-size: 60px;
             margin: 0;
-            color: #1B233C;
+            color: rgb(8,15,40);
         }
         .text {
             text-align: center;

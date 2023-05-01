@@ -189,7 +189,7 @@ body {
 }
 .loginModal .top h2 {
   margin: 0px 0px 0px 20px;
-  color: #080f28;
+  color: rgb(8,15,40);
   font-size: 36px;
 }
 .loginModal .bottom {
@@ -206,7 +206,7 @@ body {
   }
   .loginModal .top h2 {
     margin: 0px 0px 0px 20px;
-    color: #080f28;
+    color: rgb(8,15,40);
     font-size: 30px;
   }
   .loginModal .bottom {

@@ -62,7 +62,7 @@ export const Wrapper = styled.div`
       font-size: 50px;
 
       margin: 0;
-      color: #1b233c;
+      color: rgb(8,15,40);
 
       .bar {
         position: absolute;
