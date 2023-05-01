@@ -219,137 +219,139 @@ export default function IndexPage() {
   };
 
   return (
-    <Wrapper>
+    <>
       <Navbar />
-      <div className="signup-container">
-        <div className="bodyContent">
-          <div className="top">
-            <ArrowLeftOutlined onClick={() => history.goBack()} />
-            <h2>Sign Up</h2>
-          </div>
-          <p>Please fill in this form to create an account!</p>
+      <Wrapper>
+        <div className="signup-container">
+          <div className="bodyContent">
+            <div className="top">
+              <ArrowLeftOutlined onClick={() => history.goBack()} />
+              <h2>Sign Up</h2>
+            </div>
+            <p>Please fill in this form to create an account!</p>
 
-          <div className="inputField">
-            <Input
-              name="firstName"
-              value={values.firstName}
-              type="text"
-              placeholder="FIRST NAME"
-              onChange={(e) => handleChange(e)}
-            />
-          </div>
+            <div className="inputField">
+              <Input
+                name="firstName"
+                value={values.firstName}
+                type="text"
+                placeholder="FIRST NAME"
+                onChange={(e) => handleChange(e)}
+              />
+            </div>
 
-          <div className="inputField">
-            <Input
-              name="lastName"
-              value={values.lastName}
-              type="text"
-              placeholder="LAST NAME"
-              onChange={(e) => handleChange(e)}
-            />
-          </div>
+            <div className="inputField">
+              <Input
+                name="lastName"
+                value={values.lastName}
+                type="text"
+                placeholder="LAST NAME"
+                onChange={(e) => handleChange(e)}
+              />
+            </div>
 
-          <div className="inputField">
-            <PhoneInput
-              countries={["US"]}
-              international
-              countryCallingCodeEditable={false}
-              defaultCountry="US"
-              value={values.phoneNumber}
-              onChange={(e) =>
-                setValues({
-                  ...values,
-                  phoneNumber: e,
-                })
-              }
-            />
-          </div>
+            <div className="inputField">
+              <PhoneInput
+                countries={["US"]}
+                international
+                countryCallingCodeEditable={false}
+                defaultCountry="US"
+                value={values.phoneNumber}
+                onChange={(e) =>
+                  setValues({
+                    ...values,
+                    phoneNumber: e,
+                  })
+                }
+              />
+            </div>
 
-          <div className="inputField">
-            <Input
-              name="email"
-              type="email"
-              value={values.email}
-              placeholder="EMAIL"
-              onChange={(e) => handleChange(e)}
-            />
-          </div>
+            <div className="inputField">
+              <Input
+                name="email"
+                type="email"
+                value={values.email}
+                placeholder="EMAIL"
+                onChange={(e) => handleChange(e)}
+              />
+            </div>
 
-          <div className="inputField">
-            <Input.Password
-              name="password"
-              placeholder="CREATE PASSWORD"
-              onChange={(e) => handleChange(e)}
-              iconRender={(visible) =>
-                visible ? <EyeTwoTone /> : <EyeInvisibleOutlined />
-              }
-            />
-          </div>
+            <div className="inputField">
+              <Input.Password
+                name="password"
+                placeholder="CREATE PASSWORD"
+                onChange={(e) => handleChange(e)}
+                iconRender={(visible) =>
+                  visible ? <EyeTwoTone /> : <EyeInvisibleOutlined />
+                }
+              />
+            </div>
 
-          <div className="inputField">
-            <Input.Password
-              name="confirmPassword"
-              placeholder="CONFIRM PASSWORD"
-              onChange={(e) => handleChange(e)}
-              iconRender={(visible) =>
-                visible ? <EyeTwoTone /> : <EyeInvisibleOutlined />
-              }
-            />
-          </div>
-          <div className="inputField">
-            <Input
-              name="referral"
-              type="text"
-              value={values.referral}
-              placeholder="Referral Code"
-              onChange={(e) => handleChange(e)}
-            />
-          </div>
-          {/* {history?.location?.pathname.includes("host") ? (
+            <div className="inputField">
+              <Input.Password
+                name="confirmPassword"
+                placeholder="CONFIRM PASSWORD"
+                onChange={(e) => handleChange(e)}
+                iconRender={(visible) =>
+                  visible ? <EyeTwoTone /> : <EyeInvisibleOutlined />
+                }
+              />
+            </div>
+            <div className="inputField">
+              <Input
+                name="referral"
+                type="text"
+                value={values.referral}
+                placeholder="Referral Code"
+                onChange={(e) => handleChange(e)}
+              />
+            </div>
+            {/* {history?.location?.pathname.includes("host") ? (
             <div className="inputField">
               <Input type="email" placeholder="CREDIT CARD" />
             </div>
           ) : null} */}
 
-          <div className="bottomSection">
-            <input
-              type="checkbox"
-              value={values.checkBox}
-              onClick={() =>
-                setValues({ ...values, checkBox: !values.checkBox })
-              }
-            />
-            <p>
-              I accept the{" "}
-              <span
-                style={{
-                  color: "#79A182",
-                  cursor: "pointer",
-                }}
-              >
-                Terms of Use & Privacy Policy
-              </span>
-            </p>
+            <div className="bottomSection">
+              <input
+                type="checkbox"
+                value={values.checkBox}
+                onClick={() =>
+                  setValues({ ...values, checkBox: !values.checkBox })
+                }
+              />
+              <p>
+                I accept the{" "}
+                <span
+                  style={{
+                    color: "#79A182",
+                    cursor: "pointer",
+                  }}
+                >
+                  Terms of Use & Privacy Policy
+                </span>
+              </p>
+            </div>
+            <div>
+              {values.error === "" ? null : (
+                <Alert message={values.error} type="error" />
+              )}
+            </div>
+            <div className="signin">
+              <button className="signin-button" onClick={handleClick}>
+                Sign up
+              </button>
+            </div>
+            {/* <Modal visible={!isModalVisible} closable={false} footer={false}> */}
+            {/* </Modal> */}
           </div>
-          <div>
-            {values.error === "" ? null : (
-              <Alert message={values.error} type="error" />
-            )}
-          </div>
-          <div className="signin">
-            <button className="signin-button" onClick={handleClick}>
-              Sign up
-            </button>
-          </div>
-          {/* <Modal visible={!isModalVisible} closable={false} footer={false}> */}
-          {/* </Modal> */}
         </div>
-      </div>
-      {showSpinner ? (
-        <div className="spinner">
-          <Spin indicator={antIcon} />
-        </div>
-      ) : null}
-    </Wrapper>
+        {showSpinner ? (
+          <div className="spinner">
+            <Spin indicator={antIcon} />
+          </div>
+        ) : null}
+      </Wrapper>
+    </>
   );
 }
