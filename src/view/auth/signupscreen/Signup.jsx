@@ -15,6 +15,7 @@ import { Spin } from "antd";
 import fire from "../../../config/config";
 import { SignupValidations } from "../../../functions/functions.js";
 import { getCustomerId } from "../../../utils/keys";
+import Navbar from "../../../components/common/navbar/Navbar";
 
 const antIcon = (
   <LoadingOutlined
@@ -219,6 +220,7 @@ export default function IndexPage() {
 
   return (
     <Wrapper>
+      <Navbar />
       <div className="signup-container">
         <div className="bodyContent">
           <div className="top">
