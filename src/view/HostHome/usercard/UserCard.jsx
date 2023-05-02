@@ -85,10 +85,10 @@ export const Wrapper = styled.div`
   #mobile-icon,
   #money-icon {
     position: absolute;
-    right: -49px;
+    right: -28px;
     bottom: -30px;
     width: 100%;
-    max-width: 373px;
+    max-width: 260px;
   }
 
   @media screen and (max-width: 930px) {
@@ -128,13 +128,13 @@ export const Wrapper = styled.div`
       position: relative;
       right: 0;
       bottom: 0;
-      // width: 30%;
+      max-width: 40%!important;
     }
     #mobile-icon {
       position: relative;
       right: 0;
       bottom: 0;
-      // width: 20%;
+      max-width: 40%!important;
     }
   }
   @media screen and (max-width: 700px) {

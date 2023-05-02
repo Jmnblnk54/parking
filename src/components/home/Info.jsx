@@ -96,10 +96,10 @@ export const Wrapper = styled.div`
     #car-icon,
     #home-icon {
       position: absolute;
-      right: -49px;
+      right: -28px;
       bottom: -30px;
       width: 100%;
-      max-width: 373px;
+      max-width: 360px;
     }
   }
   .user-card:last-child {
@@ -150,7 +150,8 @@ export const Wrapper = styled.div`
       position: relative !important;
       right: 0 !important;
       bottom: 0 !important;
-      width: 150px;
+      width: 100%;
+      max-width: 50%!important;
     }
   }
 
