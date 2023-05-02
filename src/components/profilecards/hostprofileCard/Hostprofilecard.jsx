@@ -32,6 +32,10 @@ const HostProfileCard = ({
     setShowReferral(e);
   };
 
+  const handleShowPersonal = (e) => {
+    setShowPersonal(e);
+  };
+
   const getBase64 = (file, fileName) => {
     var reader = new FileReader();
     reader.readAsDataURL(file);
@@ -124,7 +128,7 @@ const HostProfileCard = ({
           </div>
           <Row style={{ marginTop: "10px" }}>
             <Col className="personal-Info-Col">
-              <a onClick={() => setShowPersonal(true)}>
+              <a onClick={() => handleShowPersonal(true)}>
                 <div className="settings-li">Personal Information</div>
               </a>
               {/* <Select
@@ -185,8 +189,7 @@ const HostProfileCard = ({
       </Wrapper>
       <PersonalInformation
         show={showPersonal}
-        setShow={setShowPersonal}
-        {...{ user, handleSetUser }}
+        {...{ user, handleSetUser, handleShowPersonal }}
       />
       <PaymentMethodModal
         {...{

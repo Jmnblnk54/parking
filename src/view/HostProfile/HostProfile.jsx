@@ -61,6 +61,22 @@ const MyProfile = () => {
     getData();
   }, []);
 
+  const handleSetUser = (e) => {
+    setUser({
+      email: e.data().email,
+      firstName: e.data().firstName,
+      lastName: e.data().lastName,
+      phoneNumber: e.data().phoneNumber,
+      wallet: e.data().wallet,
+      rating: e.data().rating,
+      profileImageUrl: e.data().profileImageUrl,
+      userType: e.data().userType,
+      docId: e.id,
+      stripeAccountId: e.data().stripeAccountId,
+      myRefCode: e.data().myRefCode,
+    });
+  };
+
   function getData() {
     fire
       .firestore()
@@ -72,19 +88,7 @@ const MyProfile = () => {
           console.log("NO FOUND");
         } else {
           query.forEach((e) => {
-            setUser({
-              email: e.data().email,
-              firstName: e.data().firstName,
-              lastName: e.data().lastName,
-              phoneNumber: e.data().phoneNumber,
-              wallet: e.data().wallet,
-              rating: e.data().rating,
-              profileImageUrl: e.data().profileImageUrl,
-              userType: e.data().userType,
-              docId: e.id,
-              stripeAccountId: e.data().stripeAccountId,
-              myRefCode: e.data().myRefCode,
-            });
+            handleSetUser(e);
             setLoader(true);
             if (e.data().stripeAccountId == null) {
               setAddButton(true);
@@ -227,6 +231,7 @@ const MyProfile = () => {
                       stripeAccount,
                       handleAddClick,
                       handleSetAccount,
+                      handleSetUser,
                     }}
                   />
                 </Col>
