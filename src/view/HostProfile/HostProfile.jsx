@@ -3,7 +3,7 @@ import { Col, message, Modal, Row, Spin } from "antd";
 import MessageCard from "../../components/profilecards/messagecard/MessageCard";
 import UpcomingReservation from "../../components/profilecards/upcomingcard/UpcomingCard";
 import addNewSpot from "../../components/profilecards/addSpot/addSpot";
-import {BrowserRouter as Router, useHistory } from "react-router-dom";
+import { BrowserRouter as Router, useHistory } from "react-router-dom";
 import HostProfileCard from "../../components/profilecards/hostprofileCard/Hostprofilecard";
 import WalletCard from "../../components/profilecards/walletcard/WalletCard";
 import Navbar from "../../components/common/navbar/Navbar";
@@ -26,7 +26,7 @@ const antIcon = (
   />
 );
 
-export default function MyProfile() {
+const MyProfile = () => {
   const history = useHistory();
   const [loader, setLoader] = useState(false);
   const [userData, setUser] = useState({
@@ -43,7 +43,6 @@ export default function MyProfile() {
   const userId = localStorage.getItem("USERID");
   const uType = localStorage.getItem("User Type");
   const token = localStorage.getItem("Auth Token");
-  console.log('this' + history);
 
   const [error, setError] = useState("");
   const [stripeAccount, setStripeAccount] = useState("");
@@ -243,7 +242,7 @@ export default function MyProfile() {
                   <HostSpot />
                 </Col>
                 <Col xs={24} sm={24} md={24} lg={8} xl={8}>
-                <AddNewSpot />
+                  <AddNewSpot />
                 </Col>
               </Row>
             </>
@@ -256,7 +255,9 @@ export default function MyProfile() {
       </Wrapper>
     </>
   );
-}
+};
+
+export default MyProfile;
 
 const Wrapper = styled.div`
   // height: calc(100% - 114.25px);
@@ -323,13 +324,12 @@ const Wrapper = styled.div`
     }
 
     .price-spot {
-      width: 50%!important;
+      width: 50% !important;
     }
 
     .availability-card {
-      width: 50%!important;
+      width: 50% !important;
     }
-
   }
   @media screen and (max-width: 670px) {
     .my-Profile {

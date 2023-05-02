@@ -113,19 +113,15 @@ export default function UserProfileCard({ user, setUser }) {
           </div>
           <Row style={{ marginTop: "10px" }}>
             <Col className="personal-Info-Col">
-            <a onClick={() => setShowPersonal(true)}>
-              <div className="settings-li">
-                  Personal Information
-                </div>
+              <a onClick={() => setShowPersonal(true)}>
+                <div className="settings-li">Personal Information</div>
               </a>
             </Col>
           </Row>
           <Row>
             <Col className="personal-Info-Col">
-            <a href onClick={() => setShowPaymentModal(true)}>
-              <div className="settings-li">
-                  Payment Method
-              </div>
+              <a href onClick={() => setShowPaymentModal(true)}>
+                <div className="settings-li">Payment Method</div>
               </a>
               {/* <Select
                 defaultValue="payout method"
@@ -150,11 +146,8 @@ export default function UserProfileCard({ user, setUser }) {
           </Row> */}
           <Row>
             <Col xs={24} className="personal-Info-Col">
-              
-            <a onClick={() => setShowReferral(true)}>
-              <div className="settings-li">
-                My Referral Code
-              </div>
+              <a onClick={() => setShowReferral(true)}>
+                <div className="settings-li">My Referral Code</div>
               </a>
               {/* <Select
                 defaultValue="my referral code"
@@ -205,9 +198,9 @@ border-radius: 20px;
     line-height: 0.7;
     min-height: 370px;
     width: 100%;
-    -webkit-box-shadow: 0px 0px 37px -3px rgba(194,194,194,1);
-    -moz-box-shadow: 0px 0px 37px -3px rgba(194,194,194,1);
-    box-shadow: 0px 0px 37px -3px rgba(194,194,194,1);
+    -webkit-box-shadow: 0px 0px 37px -3px rgba(194, 194, 194, 1);
+    -moz-box-shadow: 0px 0px 37px -3px rgba(194, 194, 194, 1);
+    box-shadow: 0px 0px 37px -3px rgba(194, 194, 194, 1);
     h1 {
       margin: 0px;
       font-size: 40px;
@@ -290,7 +283,6 @@ border-radius: 20px;
     }
   }
   .image-Div {
-
     img {
       width: 150px;
       height: 150px;
