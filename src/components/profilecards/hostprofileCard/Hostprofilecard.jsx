@@ -7,27 +7,30 @@ import styled from "styled-components";
 import fire from "../../../config/config";
 import MyReferralCode from "../../../view/HostProfile/settings/MyReferralCode";
 import PaymentMethodModal from "../../../view/HostProfile/settings/PaymentMethodModal";
-import Personalnformation from "../../../view/HostProfile/settings/Personalnformation";
+import PersonalInformation from "../../../view/HostProfile/settings/PersonalInformation";
 import ImageUploader from "../../common/imageUploader/ImageUploader";
 
 const { Option } = Select;
 
 const HostProfileCard = ({
   user,
-  setUser,
+  handleSetUser,
   handleAddClick,
   stripeAccount,
-  setStripeAccount,
+  handleSetAccount,
   addButton,
-  setAddButton,
+  handleAddButton,
   show,
-  setShow,
+  handleShow,
 }) => {
   const history = useHistory();
   const [image, setImage] = useState(null);
   const [showReferral, setShowReferral] = useState(false);
-
   const [showPersonal, setShowPersonal] = useState(false);
+
+  const handleShowReferral = (e) => {
+    setShowReferral(e);
+  };
 
   const getBase64 = (file, fileName) => {
     var reader = new FileReader();
@@ -141,7 +144,7 @@ const HostProfileCard = ({
           </Row>
           <Row>
             <Col className="personal-Info-Col">
-              <a href onClick={() => setShow(true)}>
+              <a href onClick={() => handleShow(true)}>
                 <div className="settings-li">Payout Method</div>
               </a>
               {/* <Select
@@ -167,7 +170,7 @@ const HostProfileCard = ({
           </Row>
           <Row>
             <Col xs={24} className="personal-Info-Col">
-              <a onClick={() => setShowReferral(true)}>
+              <a onClick={() => handleShowReferral(true)}>
                 <div className="settings-li">My Referral Code</div>
               </a>
               {/* <Select
@@ -180,27 +183,24 @@ const HostProfileCard = ({
           </Row>
         </Card>
       </Wrapper>
-      <Personalnformation
-        user={user}
-        setUser={setUser}
+      <PersonalInformation
         show={showPersonal}
         setShow={setShowPersonal}
+        {...{ user, handleSetUser }}
       />
       <PaymentMethodModal
-        user={user}
-        stripeAccount={stripeAccount}
-        setStripeAccount={setStripeAccount}
-        addButton={addButton}
-        setAddButton={setAddButton}
-        show={show}
-        setShow={setShow}
-        handleAddClick={handleAddClick}
+        {...{
+          handleShow,
+          user,
+          stripeAccount,
+          addButton,
+          show,
+          handleAddClick,
+          handleAddButton,
+          handleSetAccount,
+        }}
       />
-      <MyReferralCode
-        user={user}
-        show={showReferral}
-        setShow={setShowReferral}
-      />
+      <MyReferralCode show={showReferral} {...{ handleShowReferral, user }} />
     </>
   );
 };

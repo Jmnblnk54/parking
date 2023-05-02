@@ -1,27 +1,32 @@
 import { ArrowLeftOutlined } from "@ant-design/icons";
 import { Input, Modal } from "antd";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useHistory } from "react-router";
 
 import PhoneInput from "react-phone-number-input";
 import fire from "../../../config/config";
 import { Wrapper } from "./SettingsCard.styled";
 
-function Personalnformation(props) {
-  const [data, setData] = React.useState({
-    firstName: props.user.firstName,
-    lastName: props.user.lastName,
-    phoneNumber: props.user.phoneNumber,
-    email: props.user.email,
+const PersonalInformation = ({
+  show,
+  user,
+  handleSetUser,
+  handleShowPersonal,
+}) => {
+  const [data, setData] = useState({
+    firstName: user.firstName,
+    lastName: user.lastName,
+    phoneNumber: user.phoneNumber,
+    email: user.email,
   });
 
-  React.useEffect(() => {
-    if (props.show) {
+  useEffect(() => {
+    if (show) {
       setData({
-        firstName: props.user.firstName,
-        lastName: props.user.lastName,
-        phoneNumber: props.user.phoneNumber,
-        email: props.user.email,
+        firstName: user.firstName,
+        lastName: user.lastName,
+        phoneNumber: user.phoneNumber,
+        email: user.email,
       });
     } else {
       setData({
@@ -31,12 +36,12 @@ function Personalnformation(props) {
         email: "",
       });
     }
-  }, [props.show]);
+  }, [show]);
 
   const history = useHistory();
 
   const handleCancel = () => {
-    props.setShow(false);
+    handleShowPersonal(false);
   };
   console.log(data);
   const onChangeInformation = () => {
@@ -54,7 +59,7 @@ function Personalnformation(props) {
               email: data.email,
               phoneNumber: data.phoneNumber,
             })
-            .then(() => props.setShow(false));
+            .then(() => handleShowPersonal(false));
         });
       });
     // .update({
@@ -64,14 +69,14 @@ function Personalnformation(props) {
     //   phoneNumber: phoneNumber,
     // })
     // .then(() => {
-    //   props.setShow(false);
+    //   handleShowPersonal(false);
     // });
   };
   return (
     <Wrapper>
       <Modal
         className="edit-modal"
-        visible={props.show}
+        visible={show}
         closable={false}
         footer={false}
       >
@@ -151,6 +156,6 @@ function Personalnformation(props) {
       </Modal>
     </Wrapper>
   );
-}
+};
 
-export default Personalnformation;
+export default PersonalInformation;

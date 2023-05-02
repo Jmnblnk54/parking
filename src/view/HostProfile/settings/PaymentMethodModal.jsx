@@ -14,20 +14,20 @@ import CreditCardInfo from "./CreditCardInfo";
 import { loadStripe } from "@stripe/stripe-js";
 import { Elements } from "@stripe/react-stripe-js";
 
-const PaymentMethodModal = (props) => {
+const PaymentMethodModal = ({
+  show,
+  handleShowPaymentModal,
+  stripeAccount,
+  addButton,
+  handleAddClick,
+}) => {
   const uId = localStorage.getItem("USERID");
   const [loader, setLoader] = useState(false);
   const [cardDetails, setCardDetails] = useState([]);
   console.log(cardDetails, "card details");
   const handleCancel = () => {
-    props.setShow(!props.show);
+    handleShowPaymentModal(!show);
   };
-
-  //  if(detailsCard?.cards?.lenght == 1 ){
-  //     detailsCard?.cards?.lenght = 0
-  //   }else {
-
-  //   }
 
   const handleRemoveCard = (stripeId) => {
     const filteredCards = cardDetails?.cards?.filter(
@@ -79,7 +79,7 @@ const PaymentMethodModal = (props) => {
     <Wrapper>
       <Modal
         className="editPayment-modal"
-        visible={props.show}
+        visible={show}
         closable={false}
         footer={false}
       >
@@ -138,7 +138,7 @@ const PaymentMethodModal = (props) => {
                     </Elements>
                   </div>
                 </div>
-                {props.addButton === true ? ( //what is this? no prop coming in
+                {addButton === true ? ( //what is this? no prop coming in
                   <div
                     style={{
                       display: "flex",
@@ -147,8 +147,8 @@ const PaymentMethodModal = (props) => {
                     }}
                   >
                     <Input
-                      value={props.stripeAccount}
-                      onChange={(e) => props.setStripeAccount(e.target.value)}
+                      value={stripeAccount}
+                      onChange={(e) => e.target.value}
                       placeholder="Enter your stripe account ID here"
                       style={{
                         borderBottomWidth: 1,
@@ -159,7 +159,7 @@ const PaymentMethodModal = (props) => {
                     <button
                       className="button"
                       style={{ marginTop: 10 }}
-                      onClick={props.handleAddClick}
+                      onClick={handleAddClick}
                     >
                       ADD
                     </button>

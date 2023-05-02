@@ -49,6 +49,14 @@ const MyProfile = () => {
   const [addButton, setAddButton] = useState(false);
   const [show, setShow] = useState(false);
 
+  const handleSetAccount = (e) => {
+    setStripeAccount(e);
+  };
+
+  const handleShow = (e) => {
+    setShow(e);
+  };
+
   useEffect(() => {
     getData();
   }, []);
@@ -185,7 +193,7 @@ const MyProfile = () => {
         <div className="profile-sub-wrap">
           {error ? (
             <Modal
-              visible={error ? true : false}
+              visible={error}
               onCancel={() => setError("")}
               onOk={() => setError("")}
             ></Modal>
@@ -212,13 +220,14 @@ const MyProfile = () => {
                 <Col xs={24} sm={24} md={12} lg={8} xl={8}>
                   <HostProfileCard
                     user={userData}
-                    handleAddClick={handleAddClick}
-                    stripeAccount={stripeAccount}
-                    setStripeAccount={setStripeAccount}
-                    addButton={addButton}
-                    setAddButton={setAddButton}
-                    show={show}
-                    setShow={setShow}
+                    {...{
+                      show,
+                      handleShow,
+                      addButton,
+                      stripeAccount,
+                      handleAddClick,
+                      handleSetAccount,
+                    }}
                   />
                 </Col>
                 <Col xs={24} sm={24} md={12} lg={8} xl={8}>

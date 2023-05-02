@@ -6,7 +6,7 @@ import styled from "styled-components";
 import fire from "../../../config/config";
 import MyReferralCode from "../../../view/HostProfile/settings/MyReferralCode";
 import PaymentMethodModal from "../../../view/HostProfile/settings/PaymentMethodModal";
-import Personalnformation from "../../../view/HostProfile/settings/Personalnformation";
+import Personalnformation from "../../../view/HostProfile/settings/PersonalInformation";
 import ImageUploader from "../../common/imageUploader/ImageUploader";
 
 const { Option } = Select;
@@ -17,6 +17,10 @@ export default function UserProfileCard({ user, setUser }) {
   const [showPaymentModal, setShowPaymentModal] = useState(false);
   const [showPersonal, setShowPersonal] = useState(false);
   const [showReferral, setShowReferral] = useState(false);
+
+  const handleShowPaymentModal = () => {
+    setShowPaymentModal(!showPaymentModal);
+  };
 
   const getBase64 = (file, fileName) => {
     var reader = new FileReader();
@@ -120,7 +124,7 @@ export default function UserProfileCard({ user, setUser }) {
           </Row>
           <Row>
             <Col className="personal-Info-Col">
-              <a href onClick={() => setShowPaymentModal(true)}>
+              <a href onClick={handleShowPaymentModal}>
                 <div className="settings-li">Payment Method</div>
               </a>
               {/* <Select
@@ -172,13 +176,13 @@ export default function UserProfileCard({ user, setUser }) {
       />
       <PaymentMethodModal
         show={showPaymentModal}
-        setShow={setShowPaymentModal}
+        {...{ handleShowPaymentModal }}
       />
     </>
   );
 }
 export const Wrapper = styled.div`
-border-radius: 20px;
+  border-radius: 20px;
   .ant-upload {
     width: 0px;
   }
