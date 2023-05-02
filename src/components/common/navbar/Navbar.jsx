@@ -608,6 +608,7 @@ export const Super = styled.div`
   @media screen and (max-width: 999px) {
     .search-div {
       width: 100%;
+      padding: 10px;
       input {
         width: 100%;
         border-radius: 20px;
@@ -629,7 +630,7 @@ export const Wrapper = styled.div`
 padding: 20px;
 width: 100%;
 display: flex;
-justify-content: center;
+justify-content: space-between;
 margin: auto;
 max-width: 1800px;
 align-items: center;

@@ -214,6 +214,7 @@ export default function Hostprofilecard({
 }
 export const Wrapper = styled.div`
   height: 100%;
+  border-radius: 20px;
 
   .ant-upload {
     width: 0px;

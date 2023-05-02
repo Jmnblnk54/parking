@@ -185,6 +185,7 @@ export default function UserProfileCard({ user, setUser }) {
   );
 }
 export const Wrapper = styled.div`
+border-radius: 20px;
   .ant-upload {
     width: 0px;
   }
