@@ -151,7 +151,7 @@ export const Wrapper = styled.div`
       right: 0 !important;
       bottom: 0 !important;
       width: 100%;
-      max-width: 50%!important;
+      max-width: 30%!important;
     }
   }
 

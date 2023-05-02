@@ -128,13 +128,13 @@ export const Wrapper = styled.div`
       position: relative;
       right: 0;
       bottom: 0;
-      max-width: 40%!important;
+      max-width: 30%!important;
     }
     #mobile-icon {
       position: relative;
       right: 0;
       bottom: 0;
-      max-width: 40%!important;
+      max-width: 30%!important;
     }
   }
   @media screen and (max-width: 700px) {
