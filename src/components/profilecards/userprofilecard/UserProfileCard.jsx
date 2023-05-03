@@ -6,7 +6,7 @@ import styled from "styled-components";
 import fire from "../../../config/config";
 import MyReferralCode from "../../../view/HostProfile/settings/MyReferralCode";
 import PaymentMethodModal from "../../../view/HostProfile/settings/PaymentMethodModal";
-import Personalnformation from "../../../view/HostProfile/settings/Personalnformation";
+import Personalnformation from "../../../view/HostProfile/settings/PersonalInformation";
 import ImageUploader from "../../common/imageUploader/ImageUploader";
 
 const { Option } = Select;
@@ -17,6 +17,10 @@ export default function UserProfileCard({ user, setUser }) {
   const [showPaymentModal, setShowPaymentModal] = useState(false);
   const [showPersonal, setShowPersonal] = useState(false);
   const [showReferral, setShowReferral] = useState(false);
+
+  const handleShowPaymentModal = () => {
+    setShowPaymentModal(!showPaymentModal);
+  };
 
   const getBase64 = (file, fileName) => {
     var reader = new FileReader();
@@ -113,19 +117,15 @@ export default function UserProfileCard({ user, setUser }) {
           </div>
           <Row style={{ marginTop: "10px" }}>
             <Col className="personal-Info-Col">
-            <a onClick={() => setShowPersonal(true)}>
-              <div className="settings-li">
-                  Personal Information
-                </div>
+              <a onClick={() => setShowPersonal(true)}>
+                <div className="settings-li">Personal Information</div>
               </a>
             </Col>
           </Row>
           <Row>
             <Col className="personal-Info-Col">
-            <a href onClick={() => setShowPaymentModal(true)}>
-              <div className="settings-li">
-                  Payment Method
-              </div>
+              <a href onClick={handleShowPaymentModal}>
+                <div className="settings-li">Payment Method</div>
               </a>
               {/* <Select
                 defaultValue="payout method"
@@ -150,11 +150,8 @@ export default function UserProfileCard({ user, setUser }) {
           </Row> */}
           <Row>
             <Col xs={24} className="personal-Info-Col">
-              
-            <a onClick={() => setShowReferral(true)}>
-              <div className="settings-li">
-                My Referral Code
-              </div>
+              <a onClick={() => setShowReferral(true)}>
+                <div className="settings-li">My Referral Code</div>
               </a>
               {/* <Select
                 defaultValue="my referral code"
@@ -179,13 +176,13 @@ export default function UserProfileCard({ user, setUser }) {
       />
       <PaymentMethodModal
         show={showPaymentModal}
-        setShow={setShowPaymentModal}
+        {...{ handleShowPaymentModal }}
       />
     </>
   );
 }
 export const Wrapper = styled.div`
-border-radius: 20px;
+  border-radius: 20px;
   .ant-upload {
     width: 0px;
   }
@@ -205,9 +202,9 @@ border-radius: 20px;
     line-height: 0.7;
     min-height: 370px;
     width: 100%;
-    -webkit-box-shadow: 0px 0px 37px -3px rgba(194,194,194,1);
-    -moz-box-shadow: 0px 0px 37px -3px rgba(194,194,194,1);
-    box-shadow: 0px 0px 37px -3px rgba(194,194,194,1);
+    -webkit-box-shadow: 0px 0px 37px -3px rgba(194, 194, 194, 1);
+    -moz-box-shadow: 0px 0px 37px -3px rgba(194, 194, 194, 1);
+    box-shadow: 0px 0px 37px -3px rgba(194, 194, 194, 1);
     h1 {
       margin: 0px;
       font-size: 40px;
@@ -290,7 +287,6 @@ border-radius: 20px;
     }
   }
   .image-Div {
-
     img {
       width: 150px;
       height: 150px;

@@ -3,7 +3,7 @@ import { Col, message, Modal, Row, Spin } from "antd";
 import MessageCard from "../../components/profilecards/messagecard/MessageCard";
 import UpcomingReservation from "../../components/profilecards/upcomingcard/UpcomingCard";
 import addNewSpot from "../../components/profilecards/addSpot/addSpot";
-import {BrowserRouter as Router, useHistory } from "react-router-dom";
+import { BrowserRouter as Router, useHistory } from "react-router-dom";
 import HostProfileCard from "../../components/profilecards/hostprofileCard/Hostprofilecard";
 import WalletCard from "../../components/profilecards/walletcard/WalletCard";
 import Navbar from "../../components/common/navbar/Navbar";
@@ -26,7 +26,7 @@ const antIcon = (
   />
 );
 
-export default function MyProfile() {
+const MyProfile = () => {
   const history = useHistory();
   const [loader, setLoader] = useState(false);
   const [userData, setUser] = useState({
@@ -43,16 +43,39 @@ export default function MyProfile() {
   const userId = localStorage.getItem("USERID");
   const uType = localStorage.getItem("User Type");
   const token = localStorage.getItem("Auth Token");
-  console.log('this' + history);
 
   const [error, setError] = useState("");
   const [stripeAccount, setStripeAccount] = useState("");
   const [addButton, setAddButton] = useState(false);
   const [show, setShow] = useState(false);
 
+  const handleSetAccount = (e) => {
+    setStripeAccount(e);
+  };
+
+  const handleShow = (e) => {
+    setShow(e);
+  };
+
   useEffect(() => {
     getData();
   }, []);
+
+  const handleSetUser = (e) => {
+    setUser({
+      email: e.data().email,
+      firstName: e.data().firstName,
+      lastName: e.data().lastName,
+      phoneNumber: e.data().phoneNumber,
+      wallet: e.data().wallet,
+      rating: e.data().rating,
+      profileImageUrl: e.data().profileImageUrl,
+      userType: e.data().userType,
+      docId: e.id,
+      stripeAccountId: e.data().stripeAccountId,
+      myRefCode: e.data().myRefCode,
+    });
+  };
 
   function getData() {
     fire
@@ -65,19 +88,7 @@ export default function MyProfile() {
           console.log("NO FOUND");
         } else {
           query.forEach((e) => {
-            setUser({
-              email: e.data().email,
-              firstName: e.data().firstName,
-              lastName: e.data().lastName,
-              phoneNumber: e.data().phoneNumber,
-              wallet: e.data().wallet,
-              rating: e.data().rating,
-              profileImageUrl: e.data().profileImageUrl,
-              userType: e.data().userType,
-              docId: e.id,
-              stripeAccountId: e.data().stripeAccountId,
-              myRefCode: e.data().myRefCode,
-            });
+            handleSetUser(e);
             setLoader(true);
             if (e.data().stripeAccountId == null) {
               setAddButton(true);
@@ -186,7 +197,7 @@ export default function MyProfile() {
         <div className="profile-sub-wrap">
           {error ? (
             <Modal
-              visible={error ? true : false}
+              visible={error}
               onCancel={() => setError("")}
               onOk={() => setError("")}
             ></Modal>
@@ -213,13 +224,15 @@ export default function MyProfile() {
                 <Col xs={24} sm={24} md={12} lg={8} xl={8}>
                   <HostProfileCard
                     user={userData}
-                    handleAddClick={handleAddClick}
-                    stripeAccount={stripeAccount}
-                    setStripeAccount={setStripeAccount}
-                    addButton={addButton}
-                    setAddButton={setAddButton}
-                    show={show}
-                    setShow={setShow}
+                    {...{
+                      show,
+                      handleShow,
+                      addButton,
+                      stripeAccount,
+                      handleAddClick,
+                      handleSetAccount,
+                      handleSetUser,
+                    }}
                   />
                 </Col>
                 <Col xs={24} sm={24} md={12} lg={8} xl={8}>
@@ -243,7 +256,7 @@ export default function MyProfile() {
                   <HostSpot />
                 </Col>
                 <Col xs={24} sm={24} md={24} lg={8} xl={8}>
-                <AddNewSpot />
+                  <AddNewSpot />
                 </Col>
               </Row>
             </>
@@ -256,7 +269,9 @@ export default function MyProfile() {
       </Wrapper>
     </>
   );
-}
+};
+
+export default MyProfile;
 
 const Wrapper = styled.div`
   // height: calc(100% - 114.25px);
@@ -323,13 +338,12 @@ const Wrapper = styled.div`
     }
 
     .price-spot {
-      width: 50%!important;
+      width: 50% !important;
     }
 
     .availability-card {
-      width: 50%!important;
+      width: 50% !important;
     }
-
   }
   @media screen and (max-width: 670px) {
     .my-Profile {

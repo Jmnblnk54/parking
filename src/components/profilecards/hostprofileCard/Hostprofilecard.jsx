@@ -7,27 +7,34 @@ import styled from "styled-components";
 import fire from "../../../config/config";
 import MyReferralCode from "../../../view/HostProfile/settings/MyReferralCode";
 import PaymentMethodModal from "../../../view/HostProfile/settings/PaymentMethodModal";
-import Personalnformation from "../../../view/HostProfile/settings/Personalnformation";
+import PersonalInformation from "../../../view/HostProfile/settings/PersonalInformation";
 import ImageUploader from "../../common/imageUploader/ImageUploader";
 
 const { Option } = Select;
 
-export default function Hostprofilecard({
+const HostProfileCard = ({
   user,
-  setUser,
+  handleSetUser,
   handleAddClick,
   stripeAccount,
-  setStripeAccount,
+  handleSetAccount,
   addButton,
-  setAddButton,
+  handleAddButton,
   show,
-  setShow,
-}) {
+  handleShow,
+}) => {
   const history = useHistory();
   const [image, setImage] = useState(null);
   const [showReferral, setShowReferral] = useState(false);
-
   const [showPersonal, setShowPersonal] = useState(false);
+
+  const handleShowReferral = (e) => {
+    setShowReferral(e);
+  };
+
+  const handleShowPersonal = (e) => {
+    setShowPersonal(e);
+  };
 
   const getBase64 = (file, fileName) => {
     var reader = new FileReader();
@@ -121,10 +128,8 @@ export default function Hostprofilecard({
           </div>
           <Row style={{ marginTop: "10px" }}>
             <Col className="personal-Info-Col">
-              <a onClick={() => setShowPersonal(true)}>
-                <div className="settings-li">    
-                    Personal Information
-                </div>
+              <a onClick={() => handleShowPersonal(true)}>
+                <div className="settings-li">Personal Information</div>
               </a>
               {/* <Select
                 defaultValue="personal information"
@@ -143,10 +148,8 @@ export default function Hostprofilecard({
           </Row>
           <Row>
             <Col className="personal-Info-Col">
-              <a href onClick={() => setShow(true)}>
-                <div className="settings-li">
-                    Payout Method
-                </div>
+              <a href onClick={() => handleShow(true)}>
+                <div className="settings-li">Payout Method</div>
               </a>
               {/* <Select
                 defaultValue="payout method"
@@ -159,9 +162,7 @@ export default function Hostprofilecard({
           <Row>
             <Col className="personal-Info-Col">
               <a onClick={() => history.push("/host/myspots")}>
-                <div className="settings-li">             
-                    Listing Information
-                </div>
+                <div className="settings-li">Listing Information</div>
               </a>
               {/* <Select
                 defaultValue="listing information"
@@ -173,10 +174,8 @@ export default function Hostprofilecard({
           </Row>
           <Row>
             <Col xs={24} className="personal-Info-Col">
-            <a onClick={() => setShowReferral(true)}>
-              <div className="settings-li">
-              My Referral Code
-              </div>
+              <a onClick={() => handleShowReferral(true)}>
+                <div className="settings-li">My Referral Code</div>
               </a>
               {/* <Select
                 defaultValue="my referral code"
@@ -188,31 +187,30 @@ export default function Hostprofilecard({
           </Row>
         </Card>
       </Wrapper>
-      <Personalnformation
-        user={user}
-        setUser={setUser}
+      <PersonalInformation
         show={showPersonal}
-        setShow={setShowPersonal}
+        {...{ user, handleSetUser, handleShowPersonal }}
       />
       <PaymentMethodModal
-        user={user}
-        stripeAccount={stripeAccount}
-        setStripeAccount={setStripeAccount}
-        addButton={addButton}
-        setAddButton={setAddButton}
-        show={show}
-        setShow={setShow}
-        handleAddClick={handleAddClick}
+        {...{
+          handleShow,
+          user,
+          stripeAccount,
+          addButton,
+          show,
+          handleAddClick,
+          handleAddButton,
+          handleSetAccount,
+        }}
       />
-      <MyReferralCode
-        user={user}
-        show={showReferral}
-        setShow={setShowReferral}
-      />
+      <MyReferralCode show={showReferral} {...{ handleShowReferral, user }} />
     </>
   );
-}
-export const Wrapper = styled.div`
+};
+
+export default HostProfileCard;
+
+const Wrapper = styled.div`
   height: 100%;
   border-radius: 20px;
 
@@ -231,9 +229,9 @@ export const Wrapper = styled.div`
     line-height: 0.7;
   }
   .user-profile-card {
-    -webkit-box-shadow: 0px 0px 37px -3px rgba(194,194,194,1);
-    -moz-box-shadow: 0px 0px 37px -3px rgba(194,194,194,1);
-    box-shadow: 0px 0px 37px -3px rgba(194,194,194,1);
+    -webkit-box-shadow: 0px 0px 37px -3px rgba(194, 194, 194, 1);
+    -moz-box-shadow: 0px 0px 37px -3px rgba(194, 194, 194, 1);
+    box-shadow: 0px 0px 37px -3px rgba(194, 194, 194, 1);
     border-radius: 20px;
     line-height: 0.7;
     min-height: 370px;

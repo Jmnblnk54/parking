@@ -14,38 +14,37 @@ import CreditCardInfo from "./CreditCardInfo";
 import { loadStripe } from "@stripe/stripe-js";
 import { Elements } from "@stripe/react-stripe-js";
 
-function PaymentMethodModal(props) {
+const PaymentMethodModal = ({
+  show,
+  handleShowPaymentModal,
+  stripeAccount,
+  addButton,
+  handleAddClick,
+}) => {
   const uId = localStorage.getItem("USERID");
-  const [loader, setLoader] = React.useState(true);
-  const [detailsCard, setDetailsCard] = useState([]);
-  console.log(detailsCard, "detailsCard");
+  const [loader, setLoader] = useState(false);
+  const [cardDetails, setCardDetails] = useState([]);
+  console.log(cardDetails, "card details");
   const handleCancel = () => {
-    props.setShow(!props.show);
+    handleShowPaymentModal(!show);
   };
 
-
-  //  if(detailsCard?.cards?.lenght == 1 ){
-  //     detailsCard?.cards?.lenght = 0
-  //   }else {
-      
-  //   }
-  
   const handleRemoveCard = (stripeId) => {
-    const filteredCards = detailsCard?.cards?.filter(
+    const filteredCards = cardDetails?.cards?.filter(
       (card) => card.stripeId !== stripeId
     );
-    setDetailsCard((prevState) => ({ ...prevState, cards: filteredCards }));
+    setCardDetails((prevState) => ({ ...prevState, cards: filteredCards }));
     fire
-    .firestore()
-    .collection("card-details")
-    .doc(uId)
-    .set({ cards: filteredCards })
-    .then(() => {
-      message.success("Card Removed Successfully");
-    })
-    .catch((err) => {
-      console.log(err);
-    });
+      .firestore()
+      .collection("card-details")
+      .doc(uId)
+      .set({ cards: filteredCards })
+      .then(() => {
+        message.success("Card Removed Successfully");
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   };
 
   const getCardDetails = async () => {
@@ -60,14 +59,16 @@ function PaymentMethodModal(props) {
       .then((e) => {
         let cardData = e.data();
         cardData.docid = e.id;
-        setDetailsCard(cardData);
+        setCardDetails(cardData);
         console.log(cardData);
         setLoader(false);
       });
   };
-
+  console.log(cardDetails.length, "card length");
   useEffect(() => {
-    getCardDetails();
+    if (!cardDetails.length) {
+      getCardDetails();
+    }
   }, []);
 
   const stripePromise = loadStripe(
@@ -78,7 +79,7 @@ function PaymentMethodModal(props) {
     <Wrapper>
       <Modal
         className="editPayment-modal"
-        visible={props.show}
+        visible={show}
         closable={false}
         footer={false}
       >
@@ -96,7 +97,7 @@ function PaymentMethodModal(props) {
             <div className="main">
               <div className="row">
                 <div style={{ width: "100%" }}>
-                  {detailsCard?.cards?.map((card) => (
+                  {cardDetails?.cards?.map((card) => (
                     <div
                       style={{
                         display: "flex",
@@ -105,8 +106,16 @@ function PaymentMethodModal(props) {
                         padding: "0px 10px 5px 10px",
                       }}
                     >
-                      <span style={{fontSize:"18px", fontWeight:"600", fontFamily:"sans-serif"}}>
-                      {card?.cardDetails.brand} **** {card?.cardDetails?.last4}{" "}</span>
+                      <span
+                        style={{
+                          fontSize: "18px",
+                          fontWeight: "600",
+                          fontFamily: "sans-serif",
+                        }}
+                      >
+                        {card?.cardDetails.brand} ****{" "}
+                        {card?.cardDetails?.last4}{" "}
+                      </span>
                       <span>
                         <button
                           style={{ cursor: "pointer" }}
@@ -129,7 +138,7 @@ function PaymentMethodModal(props) {
                     </Elements>
                   </div>
                 </div>
-                {props.addButton == true ? (
+                {addButton === true ? ( //what is this? no prop coming in
                   <div
                     style={{
                       display: "flex",
@@ -138,8 +147,8 @@ function PaymentMethodModal(props) {
                     }}
                   >
                     <Input
-                      value={props.stripeAccount}
-                      onChange={(e) => props.setStripeAccount(e.target.value)}
+                      value={stripeAccount}
+                      onChange={(e) => e.target.value}
                       placeholder="Enter your stripe account ID here"
                       style={{
                         borderBottomWidth: 1,
@@ -150,7 +159,7 @@ function PaymentMethodModal(props) {
                     <button
                       className="button"
                       style={{ marginTop: 10 }}
-                      onClick={props.handleAddClick}
+                      onClick={handleAddClick}
                     >
                       ADD
                     </button>
@@ -175,6 +184,6 @@ function PaymentMethodModal(props) {
       </Modal>
     </Wrapper>
   );
-}
+};
 
 export default PaymentMethodModal;
