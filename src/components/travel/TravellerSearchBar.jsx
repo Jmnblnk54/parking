@@ -222,7 +222,7 @@ const Wrapper = styled.div`
   display: flex;
   width: 100%;
   height: 80px;
-  background: #9c9fa9;
+  background: #4d9d74;
   .left,
   .right {
     flex: 1;

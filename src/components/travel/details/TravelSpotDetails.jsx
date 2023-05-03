@@ -101,18 +101,19 @@ function TravelSpotDetails(props) {
         <Wrapper maxheight={props.maxheight}>
           <div className="top">
             <div className="div-img">
-              <img
-                style={{ width: 180, height: 180, border: 40 }}
-                src={spotData?.secondImageUrl}
-                alt=""
-              />
+              <img src={spotData?.secondImageUrl} alt="" />
             </div>
-            <div className="div-title">
-              <div className="title">{spotData?.spotName}</div>
-              {/* <div className="miles">
-                <img src={miles} alt="" />
-                <div>1.2 miles</div>
-              </div> */}
+            <div
+              style={{ position: "absolute", right: "0px", cursor: "pointer" }}
+              onClick={() => {
+                props.setVisible(false);
+              }}
+            >
+              <CloseRoundedIcon />
+            </div>
+          </div>
+          <div className="div-title">
+          <div className="title">{spotData?.spotName}</div>
               <div className="rating">
                 <Rate
                   disabled
@@ -132,15 +133,7 @@ function TravelSpotDetails(props) {
                 </button>
               </div>
             </div>
-            <div
-              style={{ position: "absolute", right: "0px", cursor: "pointer" }}
-              onClick={() => {
-                props.setVisible(false);
-              }}
-            >
-              <CloseRoundedIcon />
-            </div>
-          </div>
+
           <div className="middle">
             {/* <div className="div-date">
               <div style={{ flex: 1 }}>
@@ -415,9 +408,10 @@ const Wrapper = styled.div`
     position: relative;
     .div-img {
       flex: 1;
+      margin-top: 5%;
       img {
         width: 100%;
-        height: 100%;
+        height: 280px;
         object-fit: cover;
         border-radius: 30px;
       }

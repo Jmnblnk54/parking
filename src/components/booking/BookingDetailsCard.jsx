@@ -12,13 +12,13 @@ function BookingDetailsCard(props) {
         <div className="div-img">
           <img src={props.data?.firstImageUrl} alt="" />
         </div>
-        <div className="div-title">
-          <div className="title">{props.data.spotName}</div>
+      </div>
+      <div className="div-title">
+          <div className="spot-name-title">{props.data.spotName}</div>
           <div className="rating">
             <Rate disabled defaultValue={3} value={props.data.rating} />
           </div>
         </div>
-      </div>
       <div className="middle">
         <div className="div-date">
           {/* <div style={{ flex: 1 }}>
@@ -105,6 +105,11 @@ const Wrapper = styled.div`
   border-radius: 35px;
   padding: 20px;
   background: white;
+
+  .spot-name-title {
+    font-size: 1.5rem;
+  }
+
   .payNow {
     width: 80%;
     margin-top: 10px;
@@ -121,11 +126,13 @@ const Wrapper = styled.div`
       flex: 1;
     }
     .div-img {
+      width: 100%;
+      // padding: 10px;
       img {
-        width: 100%;
-        height: 100%;
         object-fit: cover;
-        border-radius: 30px;
+        width: 100%;
+        height: 300px;
+        border-radius: 20px;
       }
     }
     .div-title {
@@ -141,7 +148,7 @@ const Wrapper = styled.div`
         .ant-rate {
           color: #4d9d74;
           li {
-            font-size: 15px;
+            font-size: 1rem;
             margin-right: 4px;
           }
         }
@@ -152,7 +159,7 @@ const Wrapper = styled.div`
     display: flex;
     flex-direction: column;
     padding: 15px 0px;
-    font-size: 15px;
+    font-size: 1rem;
     .div-date {
       display: flex;
       width: 85%;
@@ -178,11 +185,11 @@ const Wrapper = styled.div`
     padding-top: 10px;
     .duration {
       .title {
-        font-size: 15px;
+        font-size: 1rem;
       }
       .text {
-        font-size: 14px;
-        line-height: 12px;
+        font-size: 1rem;
+        line-height: 14px;
         color: #4d9d74;
       }
     }
@@ -195,7 +202,7 @@ const Wrapper = styled.div`
       border-radius: 17px;
 
       line-height: 30px;
-      font-size: 22px;
+      font-size: 1.375rem;
 
       .text {
         text-align: right;

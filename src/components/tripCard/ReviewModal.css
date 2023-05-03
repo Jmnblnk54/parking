@@ -59,8 +59,16 @@
   border-radius: 5px;
   color: #091028 !important;
   font-weight: 500;
-  border: none;
+  border-radius: 0;
+  border: 0;
+  border-top: 1px solid #b5b4b4;
   outline: none;
+}
+
+.review-modal .review-modal-input textarea {
+  border-radius: 0;
+  margin-top: 2%;
+  margin-bottom: 2%;
 }
 
 .review-modal .ant-input-affix-wrapper,
@@ -94,3 +102,8 @@
   background: #6db992;
   cursor: no-drop;
 }
+
+.anticon-arrow-left {
+  color: #080f28;
+}
+

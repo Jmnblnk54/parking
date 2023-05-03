@@ -445,6 +445,12 @@ export const Wrapper = styled.div`
     }
   }
 
+  .review-modal .review-modal-input textarea {
+    border-top: 1px solid #b5b4b4;
+    border-radius: 0;
+    margin-top: 2%;
+  }
+
   .right-details {
     display: flex;
     flex-direction: column;
