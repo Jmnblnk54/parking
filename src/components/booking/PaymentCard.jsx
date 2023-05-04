@@ -67,7 +67,6 @@ export default function PaymentCard(props) {
 
 export const Wrapper = styled.div`
   width: 50%;
-
   background: white;
   margin: 20px;
   border-radius: 35px;

@@ -64,10 +64,10 @@ function BookingDetailsCard(props) {
       </div>
       <div className="bottom">
         <div className="duration">
-          <div className="title">TOTAL DURATION</div>
-          <div className="text">{props.spotType}</div>
+          <div className="title">PARKING SPACE DETAILS</div>
+          <div className="text"><span className="sub-title">Parking Duration:</span> {props.spotType}</div>
           <div className="text">
-            Reserved until{" "}
+            <span className="sub-title">Reserved until:</span> {" "}
             {moment(props.endDate, "MM-DD-YYYY, ddd hh:mm").format("hh:mm a")}
           </div>
           {/* <div className="text">{"Number of Days" + "\t" + props?.days}</div> */}
@@ -110,6 +110,11 @@ const Wrapper = styled.div`
     font-size: 1.5rem;
   }
 
+  .title, .sub-title {
+    font-size: 1rem;
+    color: #b5b4b4;
+  }
+
   .payNow {
     width: 80%;
     margin-top: 10px;
@@ -137,11 +142,15 @@ const Wrapper = styled.div`
     }
     .div-title {
       margin-left: 10px;
+      margin-top: 2%;
       display: flex;
       flex-direction: column;
       justify-content: center;
+      padding-left: 10px;
+      padding-right: 10px;
       .title {
-        font-size: 22px;
+        font-size: 1rem;
+        color: #b5b4b4;
       }
       .rating {
         margin-top: -10px;
@@ -163,9 +172,10 @@ const Wrapper = styled.div`
     .div-date {
       display: flex;
       width: 85%;
+      color: #b5b4b4;
       .div-date-main {
         flex: 1;
-        padding-left: 10px;
+        padding-right: 10px;
       }
 
       .date-time {
@@ -189,7 +199,7 @@ const Wrapper = styled.div`
       }
       .text {
         font-size: 1rem;
-        line-height: 14px;
+        line-height: 25px;
         color: #4d9d74;
       }
     }

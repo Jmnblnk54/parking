@@ -113,7 +113,7 @@ function TravelSpotDetails(props) {
             </div>
           </div>
           <div className="div-title">
-          <div className="title">{spotData?.spotName}</div>
+          <div className="booking-title"><p>{spotData?.spotName}</p></div>
               <div className="rating">
                 <Rate
                   disabled
@@ -403,9 +403,14 @@ const Wrapper = styled.div`
   margin: 20px;
   border-radius: 50px;
   padding: 20px;
-  .top {
-    display: flex;
-    position: relative;
+  .booking-title {
+    font-size: 1.5rem!important;
+  
+    p {
+      margin: 0;
+    }
+  }
+
     .div-img {
       flex: 1;
       margin-top: 5%;
@@ -416,12 +421,15 @@ const Wrapper = styled.div`
         border-radius: 30px;
       }
     }
+
     .div-title {
       margin-left: 10px;
       align-self: flex-end;
+      font-size: 1.5rem;
       flex: 2;
+      width: 100%;
       .title {
-        font-size: 20px;
+        font-size: 1.5rem!important;
       }
       .miles {
         display: flex;
@@ -445,9 +453,10 @@ const Wrapper = styled.div`
       .booking {
         display: flex;
         flex-direction: column;
-        align-items: end;
+        // align-items: end;
+        width: 100%;
         .rate {
-          font-size: 25px;
+          font-size: 1.4rem;
           font-weight: bold;
         }
         .book-btn {
@@ -462,7 +471,10 @@ const Wrapper = styled.div`
         }
       }
     }
-  }
+    .top {
+      display: flex;
+      position: relative;
+    }
   .middle {
     display: flex;
     flex-direction: column;
@@ -532,7 +544,8 @@ const Wrapper = styled.div`
       flex: 0.7;
       margin-right: 10px;
       .title {
-        font-size: 18px;
+        font-size: 1rem;
+        color: #b5b4b4;
       }
       .des {
         font-size: 12px;
@@ -543,7 +556,8 @@ const Wrapper = styled.div`
     .rev {
       flex: 1;
       .title {
-        font-size: 18px;
+        font-size: 1rem;
+        color: #b5b4b4;
       }
     }
   }
@@ -552,9 +566,11 @@ const Wrapper = styled.div`
   }
   @media screen and (max-width: 720px) {
     width: 100%;
-    max-height: ${(props) => (props.maxheight ? props.maxheight : "unset")};
+    // max-height: ${(props) => (props.maxheight ? props.maxheight : "unset")};
+    height: 100%;
     padding: 10px;
     margin: 0px;
+    margin-bottom: 10px;
     position: initial;
     border-radius: 30px;
 
