@@ -71,6 +71,7 @@ export const Wrapper = styled.div`
   margin: 20px;
   border-radius: 35px;
   padding: 20px;
+  height: 80%;
   .main {
     display: flex;
     flex-direction: column;
@@ -114,6 +115,7 @@ export const Wrapper = styled.div`
   }
   @media only screen and (max-width: 999px) {
     width: 95%;
+    height: 100%;
     align-self: center;
   }
 `;

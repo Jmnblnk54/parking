@@ -98,9 +98,9 @@ const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-
   width: 40%;
-  height: 100%;
+  // height: 80%;
+  height: auto;
   margin: 20px;
   border-radius: 35px;
   padding: 20px;
@@ -226,6 +226,8 @@ const Wrapper = styled.div`
   @media screen and (max-width: 999px) {
     width: 95%;
     align-self: center;
+    height: 100%;
+    margin-bottom: 20px;
     .div-date {
       flex-direction: column;
       width: 100% !important;

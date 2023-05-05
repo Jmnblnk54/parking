@@ -1,6 +1,5 @@
 import styled from 'styled-components'
 
 export const Wrapper = styled.div`
-height: 100%;
-// background-color: rgba(77, 157, 116, 0.2);
+    height: 100%;
 `
