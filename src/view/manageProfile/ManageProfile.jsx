@@ -110,18 +110,18 @@ function ManageProfile() {
               align="middle"
               justify="center"
             >
-              <Col xs={24} lg={7} style={{ height: "450px" }}>
+              <div className="manage-col">
                 <CarRegistration data={data} setData={setData} />
-              </Col>
+              </div>
 
-              <Col xs={24} lg={7} style={{ height: "450px" }}>
+              <div className="manage-col">
                 {/* <UploadLicense /> */}
                 <UploadLicense
                   data={data}
                   setData={setData}
                   handleCarRegistration={handleCarRegistration}
                 />
-              </Col>
+              </div>
             </Row>
           </div>
         </div>
@@ -133,15 +133,32 @@ function ManageProfile() {
 export default ManageProfile;
 
 const Wrapper = styled.div`
-  height: calc(100% -102px);
-  /* height: 100%; */
+  height: 100%;
+  padding: 30px 30px 20px 30px;
   background-color: rgb(77 157 116 / 7%);
+  overflow-x: auto;
+  // overflow-y: hidden;
+
+  .manage-col {
+    width: 50%;
+    height: 500px
+  }
+  
   .header-content-div {
     padding: 30px 50px 50px 50px;
   }
   .header-div {
     h1 {
       font-size: 25px;
+    }
+  }
+
+  @media screen and (max-width: 991px) {
+    display: flex;
+    flex-direction: column;
+
+    .manage-col {
+      width: 100%;
     }
   }
 `;

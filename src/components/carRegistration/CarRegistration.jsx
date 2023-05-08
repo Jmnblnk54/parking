@@ -23,7 +23,7 @@ function CarRegistration(props) {
   }, [props.data?.make]);
 
   return (
-    <Wrapper>
+    <Wrapperr>
       <div className="main-div">
         <div className="car-registration-div">
           <div className="header-div">
@@ -131,14 +131,17 @@ function CarRegistration(props) {
           </div>
         </div>
       </div>
-    </Wrapper>
+    </Wrapperr>
   );
 }
 
 export default CarRegistration;
 
-const Wrapper = styled.div`
+const Wrapperr = styled.div`
   height: 100%;
+  padding: 30px 30px 20px 30px;
+  width: 100%;
+
   .main-div {
     background-color: #fff;
     width: 100%;

@@ -176,6 +176,9 @@ function UploadLicense(props) {
 export default UploadLicense;
 
 const Wrapper = styled.div`
+  height: 100%;
+  padding: 30px 30px 20px 30px;
+  width: 100%;
   .main-div {
     background-color: #fff;
     width: 100%;
@@ -193,7 +196,7 @@ const Wrapper = styled.div`
     padding: 5px 0px 0px 5px;
     width: 100%;
     p {
-      font-size: 10px;
+      font-size: 1rem;
       margin: 0px;
     }
   }
