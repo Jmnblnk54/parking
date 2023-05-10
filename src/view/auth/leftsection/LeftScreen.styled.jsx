@@ -7,7 +7,7 @@ export const Wrapper = styled.div`
   .left-container-host {
     background: rgba(77,157,116,0.2);
     height: 100%;
-    width: 90%;
+    width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -32,20 +32,57 @@ export const Wrapper = styled.div`
     }
   }
 
-  .host-bg-icon {
+  .left-container-traveler {
+    background: #080F28C4;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    span {
+      margin: 0px 15px;
+    }
+
+    h2 {
+      text-align: center;
+      color: white;
+      font-size: 50px;
+      margin-bottom: 10px;
+    }
+    p {
+      color: #fff;
+      margin: 0px;
+      line-height: 22px;
+      font-size: 18px;
+      text-align: center;
+    }
+  }
+
+  .bg-icon {
     height: 100%;
     z-index: 1;
     position: relative;
     overflow: hidden;
   }
 
-  .host-icon {
+  .icon {
     position: absolute;
     z-index: -1;
     height: 600px;
     left: -140px;
     bottom: -41px;
     opacity: 10%;
+  }
+
+  .icon-car {
+    position: absolute;
+    z-index: -1;
+    height: 400px;
+    left: -140px;
+    bottom: -41px;
+    opacity: 15%;
   }
 
   .signup-button-host {
@@ -60,9 +97,22 @@ export const Wrapper = styled.div`
     cursor: pointer;
   }
 
+  .signup-button-traveler {
+    background: #4D9D74;
+    padding: 6px 30px;
+    width: 60%;
+    border: 1px solid #4D9D74;
+    border-radius: 30px;
+    color: #fff;
+    margin-top: 20px;
+    font-size: 1rem;
+    cursor: pointer;
+  }
+
   .signup-button:hover {
     background: #6db992;
   }
+
   @media screen and (max-width: 900px) {
     .left-container {
       h2 {
