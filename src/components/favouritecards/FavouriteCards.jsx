@@ -148,7 +148,7 @@ const Wrapper = styled.div`
     border: none;
     border-radius: 20px;
     color: black;
-    font-size: 14px;
+    font-size: 1rem;
     cursor: pointer;
     margin-right: 5px;
     text-decoration: underline;
@@ -203,7 +203,7 @@ const Wrapper = styled.div`
       font-size: 10px;
     }
     .details-button {
-      font-size: 10px;
+      font-size: 1rem;
     }
   }
 `;

@@ -273,6 +273,7 @@ const Wrapper = styled.div`
   flex-direction: column-reverse !important;
   height: 100%;
   width: 100%;
+
   .close-map {
     position: absolute;
     z-index: 1;
@@ -340,19 +341,29 @@ const Wrapper = styled.div`
       }
     }
   }
+  .css-gjbq6i-MuiInputBase-root-MuiFilledInput-root::before {
+    border: none;
+    border-radoius: 10px;
+  }
+  .css-gjbq6i-MuiInputBase-root-MuiFilledInput-root::after {
+    border: none;
+  }
+  .MuiInputBase-root, .MuiFilledInput-root {
+    border-radius: 10px!important;
+  }
   .travel-spot-details {
+    background: #4d9d74;
     display: flex;
     align-items: center;
     justify-content: center;
     position: absolute;
     top: 77.14px;
     padding: 11px;
-    backdrop-filter: blur(0.5px) brightness(60%);
     z-index: 1;
-
     transition: 0.5s;
     width: 100%;
     height: calc(50vh - 30px);
+
     .mobile-main {
       display: flex;
       flex-direction: column;
@@ -375,12 +386,12 @@ const Wrapper = styled.div`
       }
       .title {
         color: white;
-        font-size: 19px;
+        font-size: 1.125rem;
       }
       .date-main {
         display: flex;
         .date-card {
-          font-size: 12px;
+          font-size: 1rem;
           color: white;
           .date-input {
             width: 100%;
@@ -398,15 +409,17 @@ const Wrapper = styled.div`
       }
 
       .submit-btn {
-        align-self: flex-end;
+        background: #080F28;
+        padding: 6px 30px;
+        width: 100%;
+        border: 1px solid #080f28;
         border-radius: 30px;
-        border: none;
-        margin-top: 10px;
-        padding: 0px 40px;
-        background: #4d9d74;
-        color: white;
-        font-size: 12px;
+        color: #fff;
+        margin-top: 20px;
+        font-size: 1rem;
+        cursor: pointer;
       }
     }
   }
+
 `;

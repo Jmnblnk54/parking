@@ -75,7 +75,7 @@ export default function MySpots() {
                     {noData ? (
                       <h1>No Data Found</h1>
                     ) : (
-                      <>
+                      <div className="map-box">
                         {upcomingData?.map((item, key) => {
                           return (
                             <MySpotCard
@@ -84,7 +84,7 @@ export default function MySpots() {
                             />
                           );
                         })}
-                      </>
+                      </div>
                     )}
                   </Col>
                 </Row>

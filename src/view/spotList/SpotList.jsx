@@ -93,7 +93,7 @@ const Wrapper = styled.div`
     border: none;
     border-radius: 20px;
     color: black;
-    font-size: 14px;
+    font-size: 1rem;
     cursor: pointer;
     margin-left: 5px;
     text-decoration: underline;
@@ -113,6 +113,7 @@ const Wrapper = styled.div`
   .book-now-button:hover {
     background: #6db992;
   }
+
   @media screen and (max-width: 900px) {
     .spot-card-container {
       display: flex;
