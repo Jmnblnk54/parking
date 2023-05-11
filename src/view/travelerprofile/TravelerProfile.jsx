@@ -268,7 +268,7 @@ export const Wrapper = styled.div`
   }
   .switchButton {
     width: 100%;
-
+    font-size: 1rem;
     border-radius: 20px;
     background-color: #080f28;
     color: white;

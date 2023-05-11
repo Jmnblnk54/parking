@@ -112,4 +112,8 @@ const Wrapper = styled.div`
     color: white;
     background: #4d9d74bd !important;
   }
+
+  .ant-table-tbody {
+    font-size: 1rem;
+  }
 `;

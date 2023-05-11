@@ -44,6 +44,9 @@ export const Wrapper = styled.div`
       margin: 0px;
       margin-top: -5px;
     }
+    h2 {
+      font-size: 1.5rem;
+    }
     .buttons {
       float: right;
       margin-top: -4px;

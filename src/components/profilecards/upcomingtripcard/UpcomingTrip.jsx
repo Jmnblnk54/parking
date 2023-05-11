@@ -92,7 +92,9 @@ const Wrapping = styled.div`
   .details-title {
     text-transform: capitalize;
     color: #b5b4b4;
-
+    .switchButton {
+      font-size: 1rem;
+    }
     span {
       color: #4d9d74;
       font-weight: bold;
@@ -105,6 +107,10 @@ const Wrapping = styled.div`
       padding: 0;
       line-height: 19px;
     }
+  }
+
+  h2 {
+    font-size: 1.5rem;
   }
 
   .details {

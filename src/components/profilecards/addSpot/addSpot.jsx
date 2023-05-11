@@ -51,6 +51,7 @@ export const Wrapper = styled.div`
     }
     h2 {
       color: #fff;
+      font-size: 1.5rem;
     }
     .buttons {
       float: right;

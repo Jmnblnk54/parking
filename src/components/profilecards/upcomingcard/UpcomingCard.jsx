@@ -92,6 +92,10 @@ const Wrapping = styled.div`
       font-weight: bold;
     }
 
+    .switchButton {
+      font-size: 1rem;
+    }
+
     p {
       display: flex;
       flex-direction: column;
@@ -99,6 +103,10 @@ const Wrapping = styled.div`
       padding: 0;
       line-height: 19px;
     }
+  }
+
+  h2 {
+    font-size: 1.5rem;
   }
 
   .details {

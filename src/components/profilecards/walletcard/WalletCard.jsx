@@ -59,7 +59,7 @@ export const Wrapper = styled.div`
     }
   }
   h2 {
-    font-size: 28px;
+    font-size: 1.5rem;
 
     font-weight: normal;
   }

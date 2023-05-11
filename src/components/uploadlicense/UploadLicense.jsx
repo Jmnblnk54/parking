@@ -231,7 +231,7 @@ const Wrapper = styled.div`
     border: none;
     border-radius: 20px;
     color: rgb(255, 255, 255);
-    font-size: 14px;
+    font-size: 1rem;
     cursor: pointer;
   }
 `;

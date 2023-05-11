@@ -38,6 +38,10 @@ box-shadow: 0px 0px 37px -3px rgba(194,194,194,1);
       h1 {
         margin: 0px;
       }
+
+      h2 {
+        font-size: 1.5rem;
+      }
     }
     .static-text {
       text-transform: capitalize;

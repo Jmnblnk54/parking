@@ -320,7 +320,7 @@ const Wrapper = styled.div`
       display: flex;
       align-items: center;
       justify-content: center;
-
+      font-size: 1rem;
       border-radius: 20px;
       background-color: #080f28;
       color: white;

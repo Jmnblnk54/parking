@@ -85,6 +85,9 @@ export const Wrapper = styled.div`
         margin: 0px;
       }
     }
+    h2 {
+      font-size: 1.5rem;
+    }
     p {
       margin: 0px;
       margin-top: -5px;
