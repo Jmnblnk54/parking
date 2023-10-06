@@ -20,8 +20,8 @@ export default function Info() {
             <img src={bar} className="bar1" />u find.
           </label>
           <p>
-            input your desired location to compare prices of YUGO spots in the
-            area
+            input your desired location to compare prices of parking spots in
+            the area
           </p>
         </div>
         <img width="250" id="location-icon" src={location} />
@@ -71,7 +71,7 @@ export const Wrapper = styled.div`
       font-size: 50px;
 
       margin: 0;
-      color: rgb(8,15,40);
+      color: rgb(8, 15, 40);
       .bar1,
       .bar2 {
         position: absolute;
@@ -85,7 +85,7 @@ export const Wrapper = styled.div`
       font-size: 20px;
       line-height: 22px;
       font-weight: semi-bold;
-      color: rgb(8,15,40);
+      color: rgb(8, 15, 40);
     }
     .top-image-center {
       width: 110px;
@@ -151,7 +151,7 @@ export const Wrapper = styled.div`
       right: 0 !important;
       bottom: 0 !important;
       width: 100%;
-      max-width: 30%!important;
+      max-width: 30% !important;
     }
   }
 

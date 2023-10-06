@@ -74,7 +74,7 @@ export default function Navbar(props) {
               HOW IT WORKS&nbsp;
             </Menu.Item>
             <Menu.Item onClick={() => history.push("/host/profile")}>
-              Host YUGO
+              Host parking
               <img
                 style={{
                   marginLeft: "10px",
@@ -104,7 +104,7 @@ export default function Navbar(props) {
             </Menu.Item>
 
             <Menu.Item onClick={() => history.push("/traveler/profile")}>
-              MY YUGO
+              MY parking
               <img
                 style={{
                   marginLeft: "10px",
@@ -207,225 +207,128 @@ export default function Navbar(props) {
             : { background: "white" }
         }
       >
-
-
-          <div className="logo">
-            <img
-              src={logo}
-              height={"40px"}
-              onClick={() => history.push("/travelers")}
-              alt=""
-            />
-          </div>
-          {location.pathname.includes("/search") ? null : (
-            <div className="search-drop-down">
-              <div className="search-image">
-                <SearchOutlined
-                  style={{ fill: "black" }}
-                  onClick={() => setshowSearch(!showSearch)}
-                />
-              </div>
+        <div className="logo">
+          <img
+            src={logo}
+            height={"40px"}
+            onClick={() => history.push("/travelers")}
+            alt=""
+          />
+        </div>
+        {location.pathname.includes("/search") ? null : (
+          <div className="search-drop-down">
+            <div className="search-image">
+              <SearchOutlined
+                style={{ fill: "black" }}
+                onClick={() => setshowSearch(!showSearch)}
+              />
             </div>
-          )}
-
-          {location.pathname.includes("/search") ? null : (
-            <div className="search-div1">
-              <PlacesAutocomplete
-                value={addressSearchByTraveler}
-                onChange={(e) => handleChange(e)}
-                onSelect={(e) => handleChange(e)}
-              >
-                {({
-                  getInputProps,
-                  suggestions,
-                  getSuggestionItemProps,
-                  loading,
-                }) => {
-                  return (
-                    <Dropdown
-                      overlayClassName="top-search-dd"
-                      key="dropdown"
-                      placement="bottom"
-                      visible={true}
-                      overlay={
-                        suggestions.length > 0 ? (
-                          <Menu className="autocomplete-dropdown-container">
-                            {loading}
-                            {suggestions.map((suggestion, key) => {
-                              const className = suggestion.active
-                                ? "suggestion-item--active"
-                                : "suggestion-item";
-                              return (
-                                <Menu.Item
-                                  className={className}
-                                  key={key}
-                                  onClick={(event) => {
-                                    getSuggestionItemProps(suggestion).onClick(
-                                      event
-                                    );
-                                  }}
-                                  onMouseDown={(event) => {
-                                    getSuggestionItemProps(
-                                      suggestion
-                                    ).onMouseDown(event);
-                                  }}
-                                  onTouchEnd={(event) => {
-                                    getSuggestionItemProps(suggestion).onTouchEnd(
-                                      event
-                                    );
-                                  }}
-                                  onTouchStart={(event) => {
-                                    getSuggestionItemProps(
-                                      suggestion
-                                    ).onTouchStart(event);
-                                  }}
-                                  role="option"
-                                >
-                                  {suggestion.description.substring(0, 50)}
-                                  {suggestion.description.length > 50 && "..."}
-                                </Menu.Item>
-                              );
-                            })}
-                          </Menu>
-                        ) : (
-                          <></>
-                        )
-                      }
-                    >
-                      <Input
-                        placeholder="where are you going ? "
-                        size="large"
-                        suffix={suffix}
-                        {...getInputProps({
-                          className: "location-search-input",
-                          name: "address",
-                          placeholder: "where are you going ?",
-                          size: "large",
-                        })}
-                        value={addressSearchByTraveler}
-                        onKeyDownCapture={(e) => {
-                          if (e.key == "Enter") {
-                            handleMethod();
-                          }
-                        }}
-                      />
-                    </Dropdown>
-                  );
-                }}
-              </PlacesAutocomplete>
-            </div>
-          )}
-          <div className="click-menu-div">
-            <Dropdown overlay={renderItems} trigger={["click"]}>
-              <MenuFoldOutlined />
-            </Dropdown>
           </div>
-          <div className="nav-menu-div">
-            <Menu mode="horizontal" disabledOverflow>
-              {/* // <Popover placement="bottomLeft" content={content} trigger="click"> */}
+        )}
 
-              {session ? (
-                type === "HOST" ? (
-                  <>
-                    <Menu.Item onClick={() => history.push("/host/home")}>
-                      HOST&nbsp;
-                      <img src={Line1} height={"40px"} alt="" />
-                    </Menu.Item>
-                    <Menu.Item onClick={() => setShowVideo(true)}>
-                      HOW IT WORKS&nbsp;
-                      <img src={Line1} height={"40px"} alt="" />
-                    </Menu.Item>
-                    <Menu.SubMenu
-                      className="sub-menu"
-                      title={
-                        <Menu.Item style={{ padding: "0px" }}>
-                          Host YUGO
-                          <img
-                            style={{ margin: "10px", width: "30px" }}
-                            src={avatar}
-                            alt=""
-                          />
-                        </Menu.Item>
-                      }
-                    >
-                      <Menu.Item
-                        className="sub-menu-item"
-                        onClick={() => history.push("/host/profile")}
-                      >
-                        PROFILE
-                      </Menu.Item>
-                      <Menu.Item
-                        className="sub-menu-item"
-                        onClick={() => history.push("/host/transactions")}
-                      >
-                        TRANSACTION
-                      </Menu.Item>
-                      <Menu.Item
-                        className="sub-menu-item"
-                        style={{ color: "red" }}
-                        onClick={logoutHandle}
-                      >
-                        LOGOUT
-                      </Menu.Item>
-                    </Menu.SubMenu>
-                  </>
-                ) : (
-                  <>
-                    <Menu.Item onClick={() => history.push("/traveler/home")}>
-                      TRAVELER&nbsp;
-                      <img src={Line1} height={"40px"} alt="" />
-                    </Menu.Item>
-                    <Menu.Item onClick={() => setShowVideo(true)}>
-                      HOW IT WORKS&nbsp;
-                      <img src={Line1} height={"40px"} alt="" />
-                    </Menu.Item>
+        {location.pathname.includes("/search") ? null : (
+          <div className="search-div1">
+            <PlacesAutocomplete
+              value={addressSearchByTraveler}
+              onChange={(e) => handleChange(e)}
+              onSelect={(e) => handleChange(e)}
+            >
+              {({
+                getInputProps,
+                suggestions,
+                getSuggestionItemProps,
+                loading,
+              }) => {
+                return (
+                  <Dropdown
+                    overlayClassName="top-search-dd"
+                    key="dropdown"
+                    placement="bottom"
+                    visible={true}
+                    overlay={
+                      suggestions.length > 0 ? (
+                        <Menu className="autocomplete-dropdown-container">
+                          {loading}
+                          {suggestions.map((suggestion, key) => {
+                            const className = suggestion.active
+                              ? "suggestion-item--active"
+                              : "suggestion-item";
+                            return (
+                              <Menu.Item
+                                className={className}
+                                key={key}
+                                onClick={(event) => {
+                                  getSuggestionItemProps(suggestion).onClick(
+                                    event
+                                  );
+                                }}
+                                onMouseDown={(event) => {
+                                  getSuggestionItemProps(
+                                    suggestion
+                                  ).onMouseDown(event);
+                                }}
+                                onTouchEnd={(event) => {
+                                  getSuggestionItemProps(suggestion).onTouchEnd(
+                                    event
+                                  );
+                                }}
+                                onTouchStart={(event) => {
+                                  getSuggestionItemProps(
+                                    suggestion
+                                  ).onTouchStart(event);
+                                }}
+                                role="option"
+                              >
+                                {suggestion.description.substring(0, 50)}
+                                {suggestion.description.length > 50 && "..."}
+                              </Menu.Item>
+                            );
+                          })}
+                        </Menu>
+                      ) : (
+                        <></>
+                      )
+                    }
+                  >
+                    <Input
+                      placeholder="where are you going ? "
+                      size="large"
+                      suffix={suffix}
+                      {...getInputProps({
+                        className: "location-search-input",
+                        name: "address",
+                        placeholder: "where are you going ?",
+                        size: "large",
+                      })}
+                      value={addressSearchByTraveler}
+                      onKeyDownCapture={(e) => {
+                        if (e.key == "Enter") {
+                          handleMethod();
+                        }
+                      }}
+                    />
+                  </Dropdown>
+                );
+              }}
+            </PlacesAutocomplete>
+          </div>
+        )}
+        <div className="click-menu-div">
+          <Dropdown overlay={renderItems} trigger={["click"]}>
+            <MenuFoldOutlined />
+          </Dropdown>
+        </div>
+        <div className="nav-menu-div">
+          <Menu mode="horizontal" disabledOverflow>
+            {/* // <Popover placement="bottomLeft" content={content} trigger="click"> */}
 
-                    <Menu.SubMenu
-                      className="sub-menu"
-                      title={
-                        <Menu.Item style={{ padding: "0px" }}>
-                          MY YUGO
-                          <img
-                            style={{ margin: "10px", width: "30px" }}
-                            src={avatar}
-                            alt=""
-                          />
-                        </Menu.Item>
-                      }
-                    >
-                      <Menu.Item
-                        className="sub-menu-item"
-                        onClick={() => history.push("/traveler/profile")}
-                      >
-                        PROFILE
-                      </Menu.Item>
-                      <Menu.Item
-                        className="sub-menu-item"
-                        onClick={() => history.push("/traveler/transactions")}
-                      >
-                        TRANSACTION
-                      </Menu.Item>
-                      <Menu.Item
-                        className="sub-menu-item"
-                        style={{ color: "red" }}
-                        onClick={logoutHandle}
-                      >
-                        LOGOUT
-                      </Menu.Item>
-                    </Menu.SubMenu>
-                  </>
-                )
-              ) : (
+            {session ? (
+              type === "HOST" ? (
                 <>
-                  <Menu.Item onClick={() => history.push("/hosts")}>
+                  <Menu.Item onClick={() => history.push("/host/home")}>
                     HOST&nbsp;
                     <img src={Line1} height={"40px"} alt="" />
                   </Menu.Item>
-                  <Menu.Item onClick={() => history.push("/travelers")}>
-                    TRAVELER&nbsp;
-                    <img src={Line1} height={"40px"} alt="" />
-                  </Menu.Item>
-
                   <Menu.Item onClick={() => setShowVideo(true)}>
                     HOW IT WORKS&nbsp;
                     <img src={Line1} height={"40px"} alt="" />
@@ -434,32 +337,127 @@ export default function Navbar(props) {
                     className="sub-menu"
                     title={
                       <Menu.Item style={{ padding: "0px" }}>
-                        LOG IN&nbsp;&nbsp;
+                        Host parking
+                        <img
+                          style={{ margin: "10px", width: "30px" }}
+                          src={avatar}
+                          alt=""
+                        />
                       </Menu.Item>
                     }
                   >
                     <Menu.Item
                       className="sub-menu-item"
-                      onClick={() => history.push("/host/login")}
+                      onClick={() => history.push("/host/profile")}
                     >
-                      LOGIN HOST
+                      PROFILE
                     </Menu.Item>
                     <Menu.Item
                       className="sub-menu-item"
-                      onClick={() => history.push("/traveler/login")}
+                      onClick={() => history.push("/host/transactions")}
                     >
-                      LOGIN TRAVELER
+                      TRANSACTION
+                    </Menu.Item>
+                    <Menu.Item
+                      className="sub-menu-item"
+                      style={{ color: "red" }}
+                      onClick={logoutHandle}
+                    >
+                      LOGOUT
                     </Menu.Item>
                   </Menu.SubMenu>
                 </>
-              )}
+              ) : (
+                <>
+                  <Menu.Item onClick={() => history.push("/traveler/home")}>
+                    TRAVELER&nbsp;
+                    <img src={Line1} height={"40px"} alt="" />
+                  </Menu.Item>
+                  <Menu.Item onClick={() => setShowVideo(true)}>
+                    HOW IT WORKS&nbsp;
+                    <img src={Line1} height={"40px"} alt="" />
+                  </Menu.Item>
 
-              {/* // </Popover> */}
-              {/* <Menu.Item onClick={() => history.push("/traveler/profile")}>
-                    My YUGO <img style={{ width: "30px" }} src={avatar} />
+                  <Menu.SubMenu
+                    className="sub-menu"
+                    title={
+                      <Menu.Item style={{ padding: "0px" }}>
+                        MY parking
+                        <img
+                          style={{ margin: "10px", width: "30px" }}
+                          src={avatar}
+                          alt=""
+                        />
+                      </Menu.Item>
+                    }
+                  >
+                    <Menu.Item
+                      className="sub-menu-item"
+                      onClick={() => history.push("/traveler/profile")}
+                    >
+                      PROFILE
+                    </Menu.Item>
+                    <Menu.Item
+                      className="sub-menu-item"
+                      onClick={() => history.push("/traveler/transactions")}
+                    >
+                      TRANSACTION
+                    </Menu.Item>
+                    <Menu.Item
+                      className="sub-menu-item"
+                      style={{ color: "red" }}
+                      onClick={logoutHandle}
+                    >
+                      LOGOUT
+                    </Menu.Item>
+                  </Menu.SubMenu>
+                </>
+              )
+            ) : (
+              <>
+                <Menu.Item onClick={() => history.push("/hosts")}>
+                  HOST&nbsp;
+                  <img src={Line1} height={"40px"} alt="" />
+                </Menu.Item>
+                <Menu.Item onClick={() => history.push("/travelers")}>
+                  TRAVELER&nbsp;
+                  <img src={Line1} height={"40px"} alt="" />
+                </Menu.Item>
+
+                <Menu.Item onClick={() => setShowVideo(true)}>
+                  HOW IT WORKS&nbsp;
+                  <img src={Line1} height={"40px"} alt="" />
+                </Menu.Item>
+                <Menu.SubMenu
+                  className="sub-menu"
+                  title={
+                    <Menu.Item style={{ padding: "0px" }}>
+                      LOG IN&nbsp;&nbsp;
+                    </Menu.Item>
+                  }
+                >
+                  <Menu.Item
+                    className="sub-menu-item"
+                    onClick={() => history.push("/host/login")}
+                  >
+                    LOGIN HOST
+                  </Menu.Item>
+                  <Menu.Item
+                    className="sub-menu-item"
+                    onClick={() => history.push("/traveler/login")}
+                  >
+                    LOGIN TRAVELER
+                  </Menu.Item>
+                </Menu.SubMenu>
+              </>
+            )}
+
+            {/* // </Popover> */}
+            {/* <Menu.Item onClick={() => history.push("/traveler/profile")}>
+                    My parking <img style={{ width: "30px" }} src={avatar} />
                   </Menu.Item> */}
 
-              {/* {isLoggedIn ? (
+            {/* {isLoggedIn ? (
               history?.location?.pathname.includes("host") ? (
                 <Menu.Item onClick={() => history.push("/host/login")}>
                   LOG IN&nbsp;&nbsp;
@@ -471,16 +469,16 @@ export default function Navbar(props) {
               )
             ) : history?.location?.pathname.includes("host") ? (
               <Menu.Item onClick={() => history.push("/host/profile")}>
-                Host YUGO
+                Host parking
                 <img style={{ width: "30px" }} src={avatar} />
               </Menu.Item>
             ) : (
               <Menu.Item onClick={() => history.push("/traveler/profile")}>
-                My YUGO <img style={{ width: "30px" }} src={avatar} />
+                My parking <img style={{ width: "30px" }} src={avatar} />
               </Menu.Item>
             )} */}
-            </Menu>
-          </div>
+          </Menu>
+        </div>
 
         <Modal
           className="video-modal"
@@ -496,7 +494,7 @@ export default function Navbar(props) {
             width="100%"
             height="100%"
             src="https://www.youtube.com/embed/wyIsVNGgdKk?rel=0"
-            title="YUGO"
+            title="parking"
             frameborder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowfullscreen="allowfullscreen"
@@ -597,7 +595,6 @@ export default function Navbar(props) {
   );
 }
 export const Super = styled.div`
-
   @media screen and (min-width: 999px) {
     margin: -30px;
     display: none;
@@ -627,13 +624,13 @@ export const Super = styled.div`
   }
 `;
 export const Wrapper = styled.div`
-padding: 20px;
-width: 100%;
-display: flex;
-justify-content: space-between;
-margin: auto;
-max-width: 1800px;
-align-items: center;
+  padding: 20px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin: auto;
+  max-width: 1800px;
+  align-items: center;
 
   .logo {
     flex: 2;
@@ -652,11 +649,11 @@ align-items: center;
   .ant-menu-horizontal:not(.ant-menu-dark) > .ant-menu-item,
   .ant-menu-horizontal:not(.ant-menu-dark) > .ant-menu-submenu {
     padding: 3px;
-    color: rgb(8,15,40);
+    color: rgb(8, 15, 40);
     font-family: arciform;
     font-size: 19px;
     font-weight: 800;
-    -webkit-text-fill-color: rgb(8,15,40);
+    -webkit-text-fill-color: rgb(8, 15, 40);
   }
   .ant-input-affix-wrapper {
     height: 40px;
@@ -677,7 +674,7 @@ align-items: center;
   }
 
   .sub-menu-item {
-    color: rgb(8,15,40);
+    color: rgb(8, 15, 40);
   }
 
   .search-drop-down {
@@ -705,7 +702,7 @@ align-items: center;
   }
 
   .location-search-input {
-    border: 2px solid rgb(8,15,40);
+    border: 2px solid rgb(8, 15, 40);
   }
 
   @media screen and (max-width: 999px) {

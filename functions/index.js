@@ -3,20 +3,20 @@ const admin = require("firebase-admin");
 const cors = require("cors");
 const moment = require("moment");
 const sgMail = require("@sendgrid/mail");
-var serviceAccount = require("./yugo-97d77-firebase-adminsdk-y2mc2-e1c9820664.json");
+var serviceAccount = require("./parking-97d77-firebase-adminsdk-y2mc2-e1c9820664.json");
 
 const KEY =
   "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";
 const appCheck = false;
-const fromEmail = "manage@yugopark.com";
+const fromEmail = "";
 
 admin.initializeApp({
   credential: admin.credential.cert(serviceAccount),
   apiKey: "AIzaSyALL4Iypql0OrVwJJn0IjOcG8rkRDq8FE8",
-  authDomain: "yugo-97d77.firebaseapp.com",
-  databaseURL: "https://yugo-97d77-default-rtdb.firebaseio.com",
-  projectId: "yugo-97d77",
-  storageBucket: "yugo-97d77.appspot.com",
+  authDomain: "parking-97d77.firebaseapp.com",
+  databaseURL: "https://parking-97d77-default-rtdb.firebaseio.com",
+  projectId: "parking-97d77",
+  storageBucket: "parking-97d77.appspot.com",
   messagingSenderId: "669606420518",
   appId: "1:669606420518:web:233baf144a8dc2e06486e7",
   measurementId: "G-VT4RBH556M",
@@ -43,7 +43,7 @@ exports.sendEmailWhenUserCreated = functions
     const msg = {
       from: fromEmail,
       to: email,
-      subject: "Welcome to Yugo Park",
+      subject: "Welcome to Parking app",
       html: `
       <html>
           <head>
@@ -91,13 +91,13 @@ exports.sendEmailWhenUserCreated = functions
               </style>
           </head>
           <body>
-          <img src="https://firebasestorage.googleapis.com/v0/b/yugo-97d77.appspot.com/o/yugo%20icon.png?alt=media&token=cbe7314b-f46e-42d6-ba76-c814488f4b7a" 
+          <img src="https://firebasestorage.googleapis.com/v0/b/parking-97d77.appspot.com/o/parking%20icon.png?alt=media&token=cbe7314b-f46e-42d6-ba76-c814488f4b7a" 
           class="logo" />
               <h3 style="margin-top: 2rem; margin-left: 10px; color: black;">Hi ${Name},</h3>
-              <h4 style="margin-left: 10px; color: black;">Welcome to Yugo Park,
+              <h4 style="margin-left: 10px; color: black;">Welcome to Parking,
                you can use this app to rent a spot or host your own Spot for other people to rent.</h4>
                <h4 style="margin-left: 10.1px; color: black;">Best regards,</h4>
-               <h4 style="margin-left: 10.1px; color: black;">The Yugo Team</h4>
+               <h4 style="margin-left: 10.1px; color: black;">The parking Team</h4>
           </body>
       </html>`,
     };
@@ -198,7 +198,7 @@ exports.createReservations = functions
     const msg = {
       from: fromEmail,
       to: travelerUser.email,
-      subject: "Reservation Confirmed with Yugo Park",
+      subject: "Reservation Confirmed with Park",
       html: `<!DOCTYPE html>
       <html>
       <head>
@@ -247,14 +247,14 @@ exports.createReservations = functions
           </style>
       </head>
       <body>
-      <img src="https://firebasestorage.googleapis.com/v0/b/yugo-97d77.appspot.com/o/yugo%20icon.png?alt=media&token=cbe7314b-f46e-42d6-ba76-c814488f4b7a" 
+      <img src="https://firebasestorage.googleapis.com/v0/b/parking-97d77.appspot.com/o/parking%20icon.png?alt=media&token=cbe7314b-f46e-42d6-ba76-c814488f4b7a" 
       class="logo" />
-          <h4 style="margin-left: 10px; color: black;">Hello Yugo customer,</h4>
+          <h4 style="margin-left: 10px; color: black;">Hello parking customer,</h4>
           <h4 style="margin-left: 10px; color: black;">Your reservation is confirmed for ${moment(
             startDate
           ).format("DD MMM YYYY")}.</h4>
           <h4 style="margin-left: 10px; color: black;">Thanks</h4>
-          <h4 style="margin-left: 10.1px; color: black;">The Yugo Team</h4>
+          <h4 style="margin-left: 10.1px; color: black;">The parking Team</h4>
       </body>
       </html>`,
     };
@@ -262,7 +262,7 @@ exports.createReservations = functions
     const hostMessage = {
       from: fromEmail,
       to: hostEmail,
-      subject: "New Reservation Received with Yugo Park",
+      subject: "New Reservation Received with parking Park",
       html: `<!DOCTYPE html>
       <html>
       <head>
@@ -311,14 +311,14 @@ exports.createReservations = functions
           </style>
       </head>
       <body>
-      <img src="https://firebasestorage.googleapis.com/v0/b/yugo-97d77.appspot.com/o/yugo%20icon.png?alt=media&token=cbe7314b-f46e-42d6-ba76-c814488f4b7a" 
+      <img src="https://firebasestorage.googleapis.com/v0/b/parking-97d77.appspot.com/o/parking%20icon.png?alt=media&token=cbe7314b-f46e-42d6-ba76-c814488f4b7a" 
       class="logo" />
-          <h4 style="margin-left: 10px; color: black;">Hello Yugo customer,</h4>
+          <h4 style="margin-left: 10px; color: black;">Hello parking customer,</h4>
           <h4 style="margin-left: 10px; color: black;">You Received new reservation for ${moment(
             startDate
           ).format("DD MMM YYYY")}.</h4>
           <h4 style="margin-left: 10px; color: black;">Thanks</h4>
-          <h4 style="margin-left: 10.1px; color: black;">The Yugo Team</h4>
+          <h4 style="margin-left: 10.1px; color: black;">The parking Team</h4>
       </body>
       </html>`,
     };
@@ -367,7 +367,7 @@ exports.cancelReservationByTraveler = functions
     const msgToTraveler = {
       from: fromEmail,
       to: travelerEmail,
-      subject: "Reservation Cancelled with Yugo Park",
+      subject: "Reservation Cancelled with parking Park",
       html: `<!DOCTYPE html>
       <html>
       <head>
@@ -415,14 +415,14 @@ exports.cancelReservationByTraveler = functions
           </style>
       </head>
       <body>
-      <img src="https://firebasestorage.googleapis.com/v0/b/yugo-97d77.appspot.com/o/yugo%20icon.png?alt=media&token=cbe7314b-f46e-42d6-ba76-c814488f4b7a" 
+      <img src="https://firebasestorage.googleapis.com/v0/b/parking-97d77.appspot.com/o/parking%20icon.png?alt=media&token=cbe7314b-f46e-42d6-ba76-c814488f4b7a" 
       class="logo" />
-          <h4 style="margin-left: 10px; color: black;">Hello Yugo customer,</h4>
+          <h4 style="margin-left: 10px; color: black;">Hello parking customer,</h4>
           <h4 style="margin-left: 10px; color: black;">Your reservation for the spot located at ${startDate} on ${endDate} has been canceled. 
           Below is details regarding your refund. </h4>
           <h4 style="margin-left: 10px; color: black;">For any further questions or concerns, please feel free to refer to our cancellation policy or email us at ${fromEmail}</h4>
           <h4 style="margin-left: 10.1px; color: black;">Best regards,</h4>
-          <h4 style="margin-left: 10.1px; color: black;">The Yugo Team</h4>
+          <h4 style="margin-left: 10.1px; color: black;">The parking Team</h4>
       </body>
       </html>`,
     };
@@ -430,7 +430,7 @@ exports.cancelReservationByTraveler = functions
     const msgToHost = {
       from: fromEmail,
       to: hostEmail,
-      subject: "Reservation Cancelled with Yugo Park",
+      subject: "Reservation Cancelled with parking Park",
       html: `<!DOCTYPE html>
       <html>
       <head>
@@ -478,16 +478,16 @@ exports.cancelReservationByTraveler = functions
           </style>
       </head>
       <body>
-      <img src="https://firebasestorage.googleapis.com/v0/b/yugo-97d77.appspot.com/o/yugo%20icon.png?alt=media&token=cbe7314b-f46e-42d6-ba76-c814488f4b7a" 
+      <img src="https://firebasestorage.googleapis.com/v0/b/parking-97d77.appspot.com/o/parking%20icon.png?alt=media&token=cbe7314b-f46e-42d6-ba76-c814488f4b7a" 
       class="logo" />
-          <h4 style="margin-left: 10px; color: black;">Hello Yugo customer,</h4>
+          <h4 style="margin-left: 10px; color: black;">Hello parking customer,</h4>
           <h4 style="margin-left: 10px; color: black;">We are sorry to inform you that the reservation ${reservationId} for
            your spot on ${startDate} has been canceled by 
           the traveler. Please refer back to the cancellation policy for more details.</h4>
           <h4 style="margin-left: 10px; color: black;">For any further questions or concerns, 
           please feel free to refer to our cancellation policy or email us at ${fromEmail}</h4>
           <h4 style="margin-left: 10.1px; color: black;">Best regards,</h4>
-          <h4 style="margin-left: 10.1px; color: black;">The Yugo Team</h4>
+          <h4 style="margin-left: 10.1px; color: black;">The parking Team</h4>
       </body>
       </html>`,
     };
@@ -536,7 +536,7 @@ exports.cancelReservationByHost = functions
     const msgToTraveler = {
       from: fromEmail,
       to: travelerEmail,
-      subject: "Reservation Cancelled with Yugo Park",
+      subject: "Reservation Cancelled with parking Park",
       html: `<!DOCTYPE html>
       <html>
       <head>
@@ -584,15 +584,15 @@ exports.cancelReservationByHost = functions
           </style>
       </head>
       <body>
-      <img src="https://firebasestorage.googleapis.com/v0/b/yugo-97d77.appspot.com/o/yugo%20icon.png?alt=media&token=cbe7314b-f46e-42d6-ba76-c814488f4b7a" 
+      <img src="https://firebasestorage.googleapis.com/v0/b/parking-97d77.appspot.com/o/parking%20icon.png?alt=media&token=cbe7314b-f46e-42d6-ba76-c814488f4b7a" 
       class="logo" />
-          <h4 style="margin-left: 10px; color: black;">Hello Yugo customer</h4>
+          <h4 style="margin-left: 10px; color: black;">Hello parking customer</h4>
           <h4 style="margin-left: 10px; color: black;">We are sorry to inform you that your host has canceled
            your reservation for the spot located at 27/07/2022 on 05/08/2022. Below are details regarding your refund.</h4>
           <h4 style="margin-left: 10px; color: black;">For any further questions or concerns,
            please feel free to email us at ${fromEmail}</h4>
           <h4 style="margin-left: 10.1px; color: black;">Best regards,</h4>
-          <h4 style="margin-left: 10.1px; color: black;">The Yugo Team</h4>
+          <h4 style="margin-left: 10.1px; color: black;">The parking Team</h4>
       </body>
       </html>`,
     };
@@ -693,7 +693,7 @@ exports.updateReservationBeforeStart = functions.pubsub
                 </head>
                 <body>
                   <img
-                    src="https://firebasestorage.googleapis.com/v0/b/yugo-97d77.appspot.com/o/yugo%20icon.png?alt=media&token=cbe7314b-f46e-42d6-ba76-c814488f4b7a"
+                    src="https://firebasestorage.googleapis.com/v0/b/parking-97d77.appspot.com/o/parking%20icon.png?alt=media&token=cbe7314b-f46e-42d6-ba76-c814488f4b7a"
                     class="logo"
                   />
                   <h3 style="margin-top: 2rem; margin-left: 10px; color: black">
@@ -711,7 +711,7 @@ exports.updateReservationBeforeStart = functions.pubsub
                   <h4 style="margin-left: 10.1px; color: black; margin-bottom: 0px">
                     Best regards,
                   </h4>
-                  <h4 style="margin-left: 10.1px; color: black">The Yugo Team</h4>
+                  <h4 style="margin-left: 10.1px; color: black">The parking Team</h4>
                 </body>
               </html>
               `,
@@ -817,7 +817,7 @@ exports.onTripFinish = functions.pubsub
                 </head>
                 <body>
                   <img
-                    src="https://firebasestorage.googleapis.com/v0/b/yugo-97d77.appspot.com/o/yugo%20icon.png?alt=media&token=cbe7314b-f46e-42d6-ba76-c814488f4b7a"
+                    src="https://firebasestorage.googleapis.com/v0/b/parking-97d77.appspot.com/o/parking%20icon.png?alt=media&token=cbe7314b-f46e-42d6-ba76-c814488f4b7a"
                     class="logo"
                   />
                   <h3 style="margin-top: 2rem; margin-left: 10px; color: black">
@@ -836,7 +836,7 @@ exports.onTripFinish = functions.pubsub
                   <h4 style="margin-left: 10.1px; color: black; margin-bottom: 0px">
                     Best regards,
                   </h4>
-                  <h4 style="margin-left: 10.1px; color: black">The Yugo Team</h4>
+                  <h4 style="margin-left: 10.1px; color: black">The parking Team</h4>
                 </body>
               </html>              
                 `,
@@ -967,7 +967,7 @@ exports.onReservationComplete = functions.pubsub
                       </head>
                       <body>
                         <img
-                          src="https://firebasestorage.googleapis.com/v0/b/yugo-97d77.appspot.com/o/yugo%20icon.png?alt=media&token=cbe7314b-f46e-42d6-ba76-c814488f4b7a"
+                          src="https://firebasestorage.googleapis.com/v0/b/parking-97d77.appspot.com/o/parking%20icon.png?alt=media&token=cbe7314b-f46e-42d6-ba76-c814488f4b7a"
                           class="logo"
                         />
                         <h3>Hi ${hostData?.firstName},</h3>
@@ -987,7 +987,7 @@ exports.onReservationComplete = functions.pubsub
                         <p>Free free to revert back to us for any queries.</p>
                         <h4>
                           Best regards, <br />
-                          The Yugo Team
+                          The parking Team
                         </h4>
                       </body>
                     </html>

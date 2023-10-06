@@ -150,13 +150,13 @@ export default function Footer() {
               <div className="title">SOCIALS</div>
             </div>
             <div className="social-icon">
-              <a href="https://www.facebook.com/YugoPark-103906632191524">
+              <a href="https://www.facebook.com/parkingPark-103906632191524">
                 <img src={facebook} alt="" />
               </a>
-              <a href="https://twitter.com/YugoPark">
+              <a href="https://twitter.com/parkingPark">
                 <img src={twitter} alt="" />
               </a>
-              <a href="https://www.instagram.com/yugopark/?hl=en ">
+              <a href="https://www.instagram.com/parkingpark/?hl=en ">
                 <img src={instagram} alt="" />
               </a>
             </div>

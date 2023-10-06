@@ -17,7 +17,7 @@ export default function Header() {
       <div className="bg-opacity">
         <Row style={{ height: "100%" }} align="middle">
           <Col lg={10} xl={12} md={12} sm={24} xs={24} flex>
-            <h1>HOST WITH YUGO.</h1>
+            <h1>HOST WITH parking.</h1>
             <h2 id="share-space">
               SHARE YOUR SPACE.
               <br />
@@ -31,7 +31,9 @@ export default function Header() {
                     &nbsp;Flexible schedule
                   </h2>
 
-                  <p className="host-sub-title-text">list your space whenever you want.</p>
+                  <p className="host-sub-title-text">
+                    list your space whenever you want.
+                  </p>
 
                   <h2 className="host-sub-title-text">
                     <img src={circle} width={"12px"} alt="" />
@@ -39,8 +41,8 @@ export default function Header() {
                   </h2>
 
                   <p className="host-sub-title-text">
-                    cash out whenever you want or keep your balance in your YUGO
-                    WALLET.{" "}
+                    cash out whenever you want or keep your balance in your
+                    parking WALLET.{" "}
                   </p>
                 </div>
               </Col>
@@ -81,12 +83,12 @@ export const Wrapper = styled.div`
 
   h1 {
     font-family: arciform;
-    color: rgb(8,15,40);
+    color: rgb(8, 15, 40);
   }
   #share-space {
     line-height: 60px;
     font-size: 70px;
-    color: rgb(8,15,40);
+    color: rgb(8, 15, 40);
   }
   .ant-btn {
     background-color: #080f28 !important;
@@ -110,7 +112,7 @@ export const Wrapper = styled.div`
     font-size: 1rem;
   }
   .host-sub-title-text {
-    color: rgb(8,15,40)!important;
+    color: rgb(8, 15, 40) !important;
   }
   @media screen and (max-width: 720px) {
     margin: 0px;
@@ -140,7 +142,7 @@ export const Wrapper = styled.div`
       line-height: 1;
       P {
         font-size: 17px;
-        color: rgb(8,15,40);
+        color: rgb(8, 15, 40);
       }
       img {
         width: 5px;

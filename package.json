@@ -1,6 +1,6 @@
 {
-  "name": "yugoparkwebsite",
-  "homepage": "https://yugo-97d77.web.app/",
+  "name": "parkingapp",
+  "homepage": "",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

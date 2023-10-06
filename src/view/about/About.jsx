@@ -23,7 +23,7 @@ export default function About() {
             <span>go back</span>
           </div>
 
-          <h1>What is Yugo?</h1>
+          <h1>What is parking?</h1>
           <h2>About Us</h2>
         </div>
 
@@ -34,17 +34,17 @@ export default function About() {
             <div className="content">
               <h2>About us</h2>
               <p>
-                <h3>Introducing Yugo:</h3> The game-changing app that's making
-                parking a breeze! Imagine finding a secure parking spot or
-                turning unused space into a cash-generating asset. With Yugo,
-                we're making that dream a reality.
+                <h3>Introducing parking:</h3> The game-changing app that's
+                making parking a breeze! Imagine finding a secure parking spot
+                or turning unused space into a cash-generating asset. With
+                parking, we're making that dream a reality.
                 <p>
                   {" "}
-                  Born in Tampa, Florida in 2021, Yugo's mission is to
+                  Born in Tampa, Florida in 2021, parking's mission is to
                   revolutionize parking by seamlessly connecting savvy travelers
                   with enterprising property owners. With just a few taps on our
-                  user-friendly app, Yugo transforms the parking experience into
-                  a hassle-free and enjoyable endeavor.
+                  user-friendly app, parking transforms the parking experience
+                  into a hassle-free and enjoyable endeavor.
                 </p>{" "}
                 <p>
                   Our passionate team understands the daily struggles of finding
@@ -64,13 +64,13 @@ export default function About() {
                 </ol>
               </p>
               <p>
-                <h3>Why choose Yugo?</h3> Picture this: No more circling the
+                <h3>Why choose parking?</h3> Picture this: No more circling the
                 block, exorbitant parking fees, and no more stress! Instead,
-                Yugo delivers a world of parking bliss, where secure spots are
-                just a tap away and extra income streams right to your pocket.
-                Get ready to embrace the future of parking with Yugo, where
-                convenience, reliability, and affordability come together
-                perfectly. Join the Yugo family today and experience the
+                parking delivers a world of parking bliss, where secure spots
+                are just a tap away and extra income streams right to your
+                pocket. Get ready to embrace the future of parking with parking,
+                where convenience, reliability, and affordability come together
+                perfectly. Join the parking family today and experience the
                 difference for yourself!
               </p>
               <p>
@@ -111,11 +111,11 @@ export default function About() {
                 concerts, more than 60% of attendees reported difficulty in
                 finding parking, often resorting to expensive or unsafe options.
                 These alarming statistics highlight the urgent need for
-                innovative parking solutions like Yugo. Our platform addresses
-                these pain points head-on, providing a convenient and reliable
-                alternative for travelers and property owners alike. Say goodbye
-                to the frustration of parking and embrace a world where securing
-                a spot is as simple as tapping a button!
+                innovative parking solutions like parking. Our platform
+                addresses these pain points head-on, providing a convenient and
+                reliable alternative for travelers and property owners alike.
+                Say goodbye to the frustration of parking and embrace a world
+                where securing a spot is as simple as tapping a button!
               </p>
             </div>
           </Col>

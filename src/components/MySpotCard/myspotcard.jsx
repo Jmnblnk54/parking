@@ -208,7 +208,7 @@ function MySpotCard({ data, getUpdatedData }) {
                 {data.status == "Rejected" && (
                   <Tooltip
                     title="Your spot date is expired, kindly update the date and
-                 wait for the YUGO associate authorization"
+                 wait for the parking associate authorization"
                   >
                     <InfoCircleFilled style={{ marginLeft: "5px" }} />
                   </Tooltip>

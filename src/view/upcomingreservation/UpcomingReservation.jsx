@@ -58,7 +58,7 @@ export default function UpcomingReservation() {
     };
     await axios
       .post(
-        `https://yugo-97d77.uc.r.appspot.com/transaction?amount=${
+        `https://parking-97d77.uc.r.appspot.com/transaction?amount=${
           value?.totalPrice
         }&application_fee_amount=${value?.servicesFees}&email=${
           value?.travelerUser?.email

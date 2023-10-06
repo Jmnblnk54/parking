@@ -56,7 +56,7 @@ function ManageBalance() {
         <div className="main">
           <div className="top">
             <Card className="card" bordered={false}>
-              <h2>MY YUGO WALLET</h2>
+              <h2>MY parking WALLET</h2>
               <h1>
                 {" "}
                 {walletData?.balance === ""

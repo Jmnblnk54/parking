@@ -1426,7 +1426,7 @@ export const VehicleTypesMakes = [
     ],
   },
   {
-    brand: "Yugo",
+    brand: "parking",
     models: ["GV", "GVC", "GVL", "GVS", "GVX"],
   },
 ];

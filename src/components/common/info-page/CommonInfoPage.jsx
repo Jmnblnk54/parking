@@ -44,7 +44,7 @@ export default function CommonInfoPage({ title, subtitle, children }) {
               <h1 style={{ margin: 0 }}>Need to get in touch?</h1>
             </Col>
             <Col className="right" span={24}>
-              <h2>Yugo Support</h2>
+              <h2>parking Support</h2>
               <Button className="btn">Contact us</Button>
             </Col>
           </Row>
@@ -56,7 +56,7 @@ export default function CommonInfoPage({ title, subtitle, children }) {
 
 const MainWrapper = styled.div`
   /* height: calc(100vh - 114px); */
- 
+
   padding: 10px 40px 40px 40px;
   background-color: #eff0f2ff;
   .top {

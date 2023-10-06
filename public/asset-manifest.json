@@ -32,7 +32,7 @@
     "static/media/paypal.svg": "/static/media/paypal.c1a344ff26bb7246658f3d39b1b0eb4d.svg",
     "static/media/reactions.svg": "/static/media/reactions.7b8c5bff4dad6f617d60c0eacd36fa43.svg",
     "static/media/logo-blue.svg": "/static/media/logo-blue.b584372cad9b5d860cb6849385c5f0bb.svg",
-    "static/media/yugoWhite.svg": "/static/media/yugoWhite.9b3b41110741869995ced2c0dc994c9b.svg",
+    "static/media/parkingWhite.svg": "/static/media/parkingWhite.9b3b41110741869995ced2c0dc994c9b.svg",
     "static/media/logo.svg": "/static/media/logo.15ce8331918ce2a7d4d611bd5fda9dc7.svg",
     "static/media/logo-white.svg": "/static/media/logo-white.9dd4f7473c90c9a8a79a1458ff868da6.svg",
     "static/media/private-group.svg": "/static/media/private-group.01b98fbca06abeef2546f920d704d7a3.svg",
@@ -116,8 +116,5 @@
     "main.d8ea3a1f.js.map": "/static/js/main.d8ea3a1f.js.map",
     "787.1cb24ad7.chunk.js.map": "/static/js/787.1cb24ad7.chunk.js.map"
   },
-  "entrypoints": [
-    "static/css/main.67778d14.css",
-    "static/js/main.d8ea3a1f.js"
-  ]
+  "entrypoints": ["static/css/main.67778d14.css", "static/js/main.d8ea3a1f.js"]
 }

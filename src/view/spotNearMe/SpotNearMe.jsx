@@ -14,7 +14,7 @@ export default function IndexPage() {
             <button className="list-button">LIST YOUR SPOT NOW</button>
           </div>
           <div className="heading">
-            <h2>YUGO SPOTS NEAR ME</h2>
+            <h2>parking SPOTS NEAR ME</h2>
           </div>
 
           <div className="main-sport-card-div">
